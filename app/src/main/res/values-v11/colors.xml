@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="txtColor">#FFFF0000</color>
+    <color name="weatherTextColor">#FFFFFF00</color>
+    <color name="timeTextColor">#F0FF00FF</color>
+    <color name="backColor">#FFFF0F0F</color>
+    <color name="funtion_weater">#FFFF4369</color>
+</resources>

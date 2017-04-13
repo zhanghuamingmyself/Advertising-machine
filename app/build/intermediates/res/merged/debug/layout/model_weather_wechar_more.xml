@@ -1,0 +1,154 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.Activity.TeamActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10.0dip">
+
+
+            <RelativeLayout
+                android:id="@+id/funtion_weater"
+                android:layout_width="610dp"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:id="@+id/weather_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="30dip"
+                    android:focusable="false"
+                    android:src="@drawable/biz_plugin_weather_baoxue" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/weather_img">
+
+                    <TextView
+                        android:id="@+id/week_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="5dip"
+                        android:layout_marginLeft="10dip"
+                        android:focusable="false"
+                        android:text="week_today"
+                        android:textColor="@android:color/white"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/week_today"
+                        android:layout_margin="5dip"
+                        android:layout_marginLeft="10dip"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:fadingEdgeLength="10dip"
+                        android:focusable="false"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:text="temperature"
+                        android:textColor="@android:color/white"
+                        android:textSize="45sp" />
+
+
+                    <TextView
+                        android:id="@+id/climate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/temperature"
+                        android:layout_margin="5dip"
+                        android:layout_marginLeft="10dip"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:fadingEdgeLength="10dip"
+                        android:focusable="false"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:text="climate"
+                        android:textColor="@android:color/white"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/climate"
+                        android:layout_margin="5dip"
+                        android:layout_marginLeft="10dip"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:fadingEdgeLength="10dip"
+                        android:focusable="false"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:text="wind"
+                        android:textColor="@android:color/white"
+                        android:textSize="30sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/imagecode"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:background="#34AA52"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_wechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/funtion_more"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:background="#FF0000f0">
+
+                <com.example.Util.GifView
+                    android:id="@+id/gif2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:enabled="false" />
+
+                <TextView
+                    android:id="@+id/img_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical"
+                    android:text="更多"
+                    android:textColor="#FF02FF62"
+                    android:textSize="30sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

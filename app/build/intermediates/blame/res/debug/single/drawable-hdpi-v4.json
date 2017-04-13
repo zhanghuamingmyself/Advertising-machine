@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dot_unselected.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-hdpi\\dot_unselected.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dot_selected.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-hdpi\\dot_selected.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\updating_spinner.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-hdpi\\updating_spinner.xml"
+    }
+]

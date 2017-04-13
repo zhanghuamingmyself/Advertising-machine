@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mpbackground.jpg",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-mdpi\\mpbackground.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_finish.jpg",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-mdpi\\bg_finish.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg.jpg",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-mdpi\\bg.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_playing.jpg",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\drawable-mdpi\\bg_playing.jpg"
+    }
+]

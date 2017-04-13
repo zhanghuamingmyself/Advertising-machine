@@ -1,0 +1,504 @@
+[
+    {
+        "outputFile": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 110,
+                    "endColumn": 51,
+                    "endOffset": 157
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 162,
+                    "endColumn": 45,
+                    "endOffset": 203
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 208,
+                    "endColumn": 45,
+                    "endOffset": 249
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 254,
+                    "endColumn": 46,
+                    "endOffset": 296
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 301,
+                    "endColumn": 50,
+                    "endOffset": 347
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 352,
+                    "endColumn": 50,
+                    "endOffset": 398
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 403,
+                    "endColumn": 50,
+                    "endOffset": 449
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 512,
+                        "endColumn": 50,
+                        "endOffset": 558
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 454,
+                    "endColumn": 49,
+                    "endOffset": 499
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 504,
+                    "endColumn": 44,
+                    "endOffset": 544
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 549,
+                    "endColumn": 52,
+                    "endOffset": 597
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 602,
+                    "endColumn": 52,
+                    "endOffset": 650
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 655,
+                    "endLine": 57,
+                    "endColumn": 24,
+                    "endOffset": 1874
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 1879,
+                    "endLine": 60,
+                    "endColumn": 24,
+                    "endOffset": 1997
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 2002,
+                    "endLine": 64,
+                    "endColumn": 24,
+                    "endOffset": 2154
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 2159,
+                    "endLine": 80,
+                    "endColumn": 24,
+                    "endOffset": 2596
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 81,
+                    "startColumn": 4,
+                    "startOffset": 2601,
+                    "endLine": 86,
+                    "endColumn": 24,
+                    "endOffset": 2920
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 87,
+                    "startColumn": 4,
+                    "startOffset": 2925,
+                    "endLine": 93,
+                    "endColumn": 24,
+                    "endOffset": 3290
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 94,
+                    "startColumn": 4,
+                    "startOffset": 3295,
+                    "endLine": 415,
+                    "endColumn": 24,
+                    "endOffset": 10908
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 416,
+                    "startColumn": 4,
+                    "startOffset": 10913,
+                    "endLine": 458,
+                    "endColumn": 24,
+                    "endOffset": 12093
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\attrs.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 459,
+                    "startColumn": 4,
+                    "startOffset": 12098,
+                    "endColumn": 42,
+                    "endOffset": 12136
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\ids.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 460,
+                    "startColumn": 4,
+                    "startOffset": 12141,
+                    "endLine": 462,
+                    "endColumn": 12,
+                    "endOffset": 12224
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\values-v11\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 463,
+                    "startColumn": 4,
+                    "startOffset": 12229,
+                    "endLine": 468,
+                    "endColumn": 12,
+                    "endOffset": 12643
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 469,
+                    "startColumn": 4,
+                    "startOffset": 12648,
+                    "endLine": 474,
+                    "endColumn": 12,
+                    "endOffset": 13068
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 475,
+                    "startColumn": 4,
+                    "startOffset": 13073,
+                    "endLine": 480,
+                    "endColumn": 12,
+                    "endOffset": 13496
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 481,
+                    "startColumn": 4,
+                    "startOffset": 13501,
+                    "endLine": 486,
+                    "endColumn": 12,
+                    "endOffset": 13922
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 487,
+                    "startColumn": 4,
+                    "startOffset": 13927,
+                    "endLine": 492,
+                    "endColumn": 12,
+                    "endOffset": 14351
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 493,
+                    "startColumn": 4,
+                    "startOffset": 14356,
+                    "endLine": 498,
+                    "endColumn": 12,
+                    "endOffset": 14776
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 499,
+                    "startColumn": 4,
+                    "startOffset": 14781,
+                    "endColumn": 88,
+                    "endOffset": 14865
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 500,
+                    "startColumn": 4,
+                    "startOffset": 14870,
+                    "endColumn": 100,
+                    "endOffset": 14966
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 501,
+                    "startColumn": 4,
+                    "startOffset": 14971,
+                    "endLine": 505,
+                    "endColumn": 12,
+                    "endOffset": 15374
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 506,
+                    "startColumn": 4,
+                    "startOffset": 15379,
+                    "endLine": 510,
+                    "endColumn": 12,
+                    "endOffset": 15794
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 511,
+                    "startColumn": 4,
+                    "startOffset": 15799,
+                    "endLine": 512,
+                    "endColumn": 12,
+                    "endOffset": 15901
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 513,
+                    "startColumn": 4,
+                    "startOffset": 15906,
+                    "endLine": 514,
+                    "endColumn": 12,
+                    "endOffset": 16030
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 515,
+                    "startColumn": 4,
+                    "startOffset": 16035,
+                    "endLine": 519,
+                    "endColumn": 12,
+                    "endOffset": 16394
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 520,
+                    "startColumn": 4,
+                    "startOffset": 16399,
+                    "endColumn": 70,
+                    "endOffset": 16465
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 521,
+                    "startColumn": 4,
+                    "startOffset": 16470,
+                    "endColumn": 82,
+                    "endOffset": 16548
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 522,
+                    "startColumn": 4,
+                    "startOffset": 16553,
+                    "endLine": 572,
+                    "endColumn": 12,
+                    "endOffset": 20235
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 573,
+                    "startColumn": 4,
+                    "startOffset": 20240,
+                    "endLine": 624,
+                    "endColumn": 12,
+                    "endOffset": 24062
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml"
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,296 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.Activity.TeamActivity">
+
+    <RelativeLayout
+
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <HorizontalScrollView
+            android:id="@+id/funtionlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/funtion_picture"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="5dp"
+                        android:elevation="8dp">
+
+                        <ImageView
+                            android:background="@drawable/selector_bottom_common"
+                            android:id="@+id/img_gallery"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:text="图片"
+                            android:textColor="#EA4235"
+                            android:textSize="30sp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/funtion_nearactivity"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:id="@+id/img_near"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:text="最近"
+                            android:textColor="#EA4235"
+                            android:textSize="30sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <include
+                    android:id="@+id/famouspeople"
+                    layout="@layout/modle_2x2"></include>
+
+
+                <ImageView
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+
+                <include layout="@layout/model_weather_wechar_more"></include>
+
+                <ImageView
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/funtion_ourdo"
+                        android:layout_width="600dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/holo_green_light"
+                        android:orientation="horizontal">
+
+
+                        <com.bigkoo.convenientbanner.ConvenientBanner
+                            android:id="@+id/convenientBanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:canLoop="true" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="作品展示"
+                            android:textColor="@android:color/holo_purple"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/famoursall"
+                            android:layout_width="600dp"
+                            android:layout_height="300dp"
+                            android:background="#F8026C80"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="名人语录"
+                                android:textColor="@color/button_material_light"
+                                android:textSize="60sp" />
+
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmer_view_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/peoplelanguage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:text="好好学习"
+                                    android:textSize="38sp" />
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="620dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/funtion_about_us"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="5dp">
+
+
+                            <ImageView
+                                android:id="@+id/img_about_us"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center"
+                                android:text="关于我们"
+                                android:textColor="#EA4235"
+                                android:textSize="30sp" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/funtion_open"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_margin="5dp">
+
+
+                            <ImageView
+                                android:id="@+id/img_open"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:text="开源平台"
+                                android:textColor="#34AA52"
+                                android:textSize="30sp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/funtion_ppt"
+                        android:layout_width="615dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="5dp">
+
+                        <ImageView
+                            android:id="@+id/img_ppt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Power Point"
+                            android:textColor="#34AA52"
+                            android:textSize="30sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="77dp"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="77dp"
+            android:src="@drawable/play" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/imagecodelayout"
+        layout="@layout/activity_imagecode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></include>
+
+    <TextView
+        android:id="@+id/time_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:text="00:00"
+        android:textColor="#FFFFFFFF"
+        android:textSize="80sp" />
+
+</RelativeLayout>

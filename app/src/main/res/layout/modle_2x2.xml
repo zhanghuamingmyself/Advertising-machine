@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageSwitcher
+            android:id="@+id/imageSwitcher1"
+            android:layout_width="600dp"
+            android:layout_height="620dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"></ImageSwitcher>
+
+        <TextView
+            android:id="@+id/famourname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="冯.诺依曼"
+            android:textColor="#FFFFFFFF"
+            android:textSize="40sp" />
+    </RelativeLayout>
+</LinearLayout>

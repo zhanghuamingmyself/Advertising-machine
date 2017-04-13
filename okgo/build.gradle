@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 20
+        versionName "2.0.0"
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+}
+
+//apply from: 'bintray.gradle'、

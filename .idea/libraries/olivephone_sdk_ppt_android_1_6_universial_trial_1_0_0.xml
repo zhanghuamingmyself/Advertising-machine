@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/src/main/lib/olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

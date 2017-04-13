@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\raw\\kitty.gif",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\raw\\kitty.gif"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\raw\\b.gif",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\raw\\b.gif"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\raw\\msg.mp3",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\raw\\msg.mp3"
+    }
+]

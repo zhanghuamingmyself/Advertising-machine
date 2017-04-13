@@ -1,0 +1,805 @@
+[
+    {
+        "outputFile": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ur-rPK\\values-ur-rPK.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 109,
+                    "endOffset": 210
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 109,
+                        "endOffset": 400
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 215,
+                    "endColumn": 105,
+                    "endOffset": 316
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 405,
+                        "endColumn": 105,
+                        "endOffset": 506
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 321,
+                    "endColumn": 108,
+                    "endOffset": 425
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 511,
+                        "endColumn": 108,
+                        "endOffset": 615
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 430,
+                    "endColumn": 85,
+                    "endOffset": 511
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 620,
+                        "endColumn": 85,
+                        "endOffset": 701
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 516,
+                    "endColumn": 103,
+                    "endOffset": 615
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 706,
+                        "endColumn": 103,
+                        "endOffset": 805
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 620,
+                    "endColumn": 119,
+                    "endOffset": 735
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 810,
+                        "endColumn": 119,
+                        "endOffset": 925
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 740,
+                    "endColumn": 107,
+                    "endOffset": 843
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 930,
+                        "endColumn": 107,
+                        "endOffset": 1033
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 848,
+                    "endColumn": 108,
+                    "endOffset": 952
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1038,
+                        "endColumn": 108,
+                        "endOffset": 1142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 957,
+                    "endColumn": 101,
+                    "endOffset": 1054
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1147,
+                        "endColumn": 101,
+                        "endOffset": 1244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1059,
+                    "endColumn": 110,
+                    "endOffset": 1165
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1249,
+                        "endColumn": 110,
+                        "endOffset": 1355
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1170,
+                    "endColumn": 99,
+                    "endOffset": 1265
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1360,
+                        "endColumn": 99,
+                        "endOffset": 1455
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1270,
+                    "endColumn": 107,
+                    "endOffset": 1373
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1460,
+                        "endColumn": 107,
+                        "endOffset": 1563
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1378,
+                    "endColumn": 128,
+                    "endOffset": 1502
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1568,
+                        "endColumn": 128,
+                        "endOffset": 1692
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1507,
+                    "endColumn": 258,
+                    "endOffset": 1761
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 3501,
+                        "endColumn": 262,
+                        "endOffset": 3759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1766,
+                    "endColumn": 128,
+                    "endOffset": 1890
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1313,
+                        "endColumn": 128,
+                        "endOffset": 1437
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1895,
+                    "endColumn": 195,
+                    "endOffset": 2086
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1113,
+                        "endColumn": 199,
+                        "endOffset": 1308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2091,
+                    "endColumn": 127,
+                    "endOffset": 2214
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 985,
+                        "endColumn": 127,
+                        "endOffset": 1108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 2219,
+                    "endColumn": 129,
+                    "endOffset": 2344
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 855,
+                        "endColumn": 129,
+                        "endOffset": 980
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2349,
+                    "endColumn": 204,
+                    "endOffset": 2549
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 433,
+                        "endColumn": 208,
+                        "endOffset": 637
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2554,
+                    "endColumn": 208,
+                    "endOffset": 2758
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 642,
+                        "endColumn": 212,
+                        "endOffset": 850
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2763,
+                    "endColumn": 128,
+                    "endOffset": 2887
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 304,
+                        "endColumn": 128,
+                        "endOffset": 428
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2892,
+                    "endColumn": 182,
+                    "endOffset": 3070
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2732,
+                        "endColumn": 182,
+                        "endOffset": 2910
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 3075,
+                    "endColumn": 115,
+                    "endOffset": 3186
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2616,
+                        "endColumn": 115,
+                        "endOffset": 2727
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 3191,
+                    "endColumn": 171,
+                    "endOffset": 3358
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2444,
+                        "endColumn": 171,
+                        "endOffset": 2611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 3363,
+                    "endColumn": 123,
+                    "endOffset": 3482
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2320,
+                        "endColumn": 123,
+                        "endOffset": 2439
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 3487,
+                    "endColumn": 133,
+                    "endOffset": 3616
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 133,
+                        "endOffset": 299
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 3621,
+                    "endColumn": 173,
+                    "endOffset": 3790
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 4210,
+                        "endColumn": 173,
+                        "endOffset": 4379
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 3795,
+                    "endColumn": 124,
+                    "endOffset": 3915
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 4085,
+                        "endColumn": 124,
+                        "endOffset": 4205
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 3920,
+                    "endColumn": 188,
+                    "endOffset": 4104
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 3896,
+                        "endColumn": 188,
+                        "endOffset": 4080
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 4109,
+                    "endColumn": 131,
+                    "endOffset": 4236
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 3764,
+                        "endColumn": 131,
+                        "endOffset": 3891
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 4241,
+                    "endColumn": 257,
+                    "endOffset": 4494
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.4.0\\res\\values-ur-rPK\\common_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 261,
+                        "endOffset": 427
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 4499,
+                    "endColumn": 255,
+                    "endOffset": 4750
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 3037,
+                        "endColumn": 259,
+                        "endOffset": 3292
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 4755,
+                    "endColumn": 121,
+                    "endOffset": 4872
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 2915,
+                        "endColumn": 121,
+                        "endOffset": 3032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 4877,
+                    "endColumn": 111,
+                    "endOffset": 4984
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3297,
+                        "endColumn": 111,
+                        "endOffset": 3404
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 4989,
+                    "endColumn": 197,
+                    "endOffset": 5182
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1572,
+                        "endColumn": 201,
+                        "endOffset": 1769
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 5187,
+                    "endColumn": 129,
+                    "endOffset": 5312
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1442,
+                        "endColumn": 129,
+                        "endOffset": 1567
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 5317,
+                    "endColumn": 204,
+                    "endOffset": 5517
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2111,
+                        "endColumn": 208,
+                        "endOffset": 2315
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 5522,
+                    "endColumn": 137,
+                    "endOffset": 5655
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1973,
+                        "endColumn": 137,
+                        "endOffset": 2106
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 5660,
+                    "endColumn": 198,
+                    "endOffset": 5854
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1774,
+                        "endColumn": 198,
+                        "endOffset": 1968
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 5859,
+                    "endColumn": 91,
+                    "endOffset": 5946
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 3409,
+                        "endColumn": 91,
+                        "endOffset": 3496
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 5951,
+                    "endColumn": 96,
+                    "endOffset": 6043
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 4384,
+                        "endColumn": 96,
+                        "endOffset": 4476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 6048,
+                    "endColumn": 117,
+                    "endOffset": 6161
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-ur-rPK\\base_strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 4481,
+                        "endColumn": 117,
+                        "endOffset": 4594
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layoutAnimation="@anim/anim_listview_item">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/IVfir1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/IVfir2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/IVfir10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dip"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="25dp"
+        android:scrollbars="none"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textViewWorks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textStyle="normal|bold"
+            android:background="#E8FFFFFF"/>
+    </ScrollView>
+</RelativeLayout>

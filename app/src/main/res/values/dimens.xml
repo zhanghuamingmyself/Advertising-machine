@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="biz_weather_pager_height">165.0dip</dimen>
+    <dimen name="biz_plugin_weather_paddingLeftAndRight">10.0dip</dimen>
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+
+
+    <dimen name="biz_plugin_weather_otherday_small_textsize">42.0sp</dimen>
+    <dimen name="biz_plugin_weather_otherday_image_size">180.0dip</dimen>
+    <dimen name="biz_plugin_weather_otherday_temperature_textsize">45.0sp</dimen>
+    <dimen name="biz_plugin_weather_selectcity_item_textsize">39.0sp</dimen>
+    <dimen name="biz_plugin_weather_otherday_climate_textsize">39.0sp</dimen>
+</resources>

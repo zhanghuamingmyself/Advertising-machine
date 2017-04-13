@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	<LinearLayout
+		android:id="@+id/control_box"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal" >
+
+
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/prev"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="Pre" />
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/next"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"
+			android:text="Next" />
+
+		<SeekBar
+			android:id="@+id/scale"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="8.0"
+			android:max="200"
+			android:progress="25" />
+	</LinearLayout>
+	<com.olivephone.office.powerpoint.view.PersentationView
+		android:id="@+id/content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/control_box"
+		android:layout_alignParentTop="true" >
+	</com.olivephone.office.powerpoint.view.PersentationView>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|end"
+		android:src="@drawable/back"
+		android:layout_margin="20dp"/>
+</RelativeLayout>

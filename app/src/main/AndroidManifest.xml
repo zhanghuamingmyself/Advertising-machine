@@ -71,6 +71,8 @@
             android:launchMode="singleTask"></activity>
         <activity android:name=".WeatherActivity"
             android:launchMode="singleTask"></activity>
+        <activity android:name=".CalendarActivity"
+            android:launchMode="singleTask"></activity>
         <service android:name="com.example.Server.MyFloatservice"
             android:launchMode="singleTask"></service><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

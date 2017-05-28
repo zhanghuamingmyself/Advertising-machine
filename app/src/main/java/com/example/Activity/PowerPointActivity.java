@@ -55,8 +55,8 @@ public class PowerPointActivity extends Activity implements
 	private int PPTcurrent = 0;//PPT个数
 	private String PPTPath = Environment.getExternalStorageDirectory().toString() + "/myapp/ppt";//PPT的扫描路径
 
-	private boolean isTime = true;//定时器是否允许
-	private PowerPointActivity.MyHandler mHandler = new PowerPointActivity.MyHandler(this);
+	private static boolean isTime = true;//定时器是否允许
+	private static PowerPointActivity.MyHandler mHandler ;
 	private static class MyHandler extends Handler {
 		private WeakReference<Context> reference;
 		public MyHandler(Context context) {
@@ -78,8 +78,8 @@ public class PowerPointActivity extends Activity implements
 		}
 	}
 
-	private Boolean T = true;
-	private Runnable mRunnable = new Runnable() {
+	private static Boolean T = true;
+	private static Runnable mRunnable = new Runnable() {
 
 		public void run() {
 			while (T) {
@@ -181,6 +181,7 @@ public class PowerPointActivity extends Activity implements
 
 
 		getPPT();
+		mHandler = new PowerPointActivity.MyHandler(this);
 		new Thread(mRunnable).start(); //启动新的线程
 
 	}
@@ -218,11 +219,13 @@ public class PowerPointActivity extends Activity implements
 	protected void onDestroy() {
 		if (this.session != null) {
 			this.session.endSession();
-			mHandler.removeCallbacksAndMessages(null);
+
 		}
 		super.onDestroy();
+		mHandler.removeCallbacksAndMessages(null);
 		RefWatcher refWatcher = Application.getInstance().getRefWatcher(this);
 		refWatcher.watch(this);
+		System.gc();
 	}
 
 	@Override

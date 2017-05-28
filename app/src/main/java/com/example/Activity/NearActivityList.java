@@ -39,8 +39,8 @@ public class NearActivityList extends Activity {
     private List<String> path;
     //定义ListView对象
     private ListView mListViewArray;
-    private boolean isTime = true;//定时器是否允许
-    private MyHandler mHandler = new MyHandler(this);
+    private static  boolean isTime = true;//定时器是否允许
+    private static MyHandler mHandler;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -62,8 +62,8 @@ public class NearActivityList extends Activity {
         }
     }
     //private TimeThread timeThread = new TimeThread();
-    private Boolean T = true;
-    private Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private static Runnable mRunnable = new Runnable() {
 
         public void run() {
             while (T) {
@@ -126,6 +126,7 @@ public class NearActivityList extends Activity {
                 overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
             }
         });
+        mHandler = new MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
     }
 

@@ -38,8 +38,8 @@ public class WorksActivity extends FragmentActivity {
     private String Path = Environment.getExternalStorageDirectory().toString() + "/myapp/works";//图片的扫描路径
 
 
-    private boolean isTime = true;//定时器是否允许
-    private WorksActivity.MyHandler mHandler = new WorksActivity.MyHandler(this);
+    private static boolean isTime = true;//定时器是否允许
+    private static WorksActivity.MyHandler mHandler;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -61,8 +61,8 @@ public class WorksActivity extends FragmentActivity {
             }
         }
     }
-    private Boolean T = true;
-    private  Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private  static Runnable mRunnable = new Runnable() {
         public void run() {
             while (T) {
                 while (isTime) {
@@ -118,6 +118,7 @@ public class WorksActivity extends FragmentActivity {
         mPagerAdapter = new PagerAdapter(
                 getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mPagerAdapter);
+        mHandler = new WorksActivity.MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
 
     }

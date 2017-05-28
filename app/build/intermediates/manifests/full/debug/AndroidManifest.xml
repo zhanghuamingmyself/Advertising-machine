@@ -84,6 +84,9 @@
         <activity
             android:name="com.example.Activity.WeatherActivity"
             android:launchMode="singleTask" />
+        <activity
+            android:name="com.example.Activity.CalendarActivity"
+            android:launchMode="singleTask" />
 
         <service
             android:name="com.example.Server.MyFloatservice"

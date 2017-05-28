@@ -3,6 +3,8 @@ package com.example.Activity;
 团队展示主Activity
  */
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -39,7 +41,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -70,6 +71,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.request.BaseRequest;
+import com.nineoldandroids.view.ViewHelper;
 import com.squareup.leakcanary.RefWatcher;
 import com.wifi.getFile.Data.ChatMessage;
 import com.wifi.getFile.Interfaces.ReceiveMsgListener;
@@ -77,7 +79,7 @@ import com.wifi.getFile.utils.IpMessageConst;
 import com.wifi.getFile.utils.IpMessageProtocol;
 
 
-import org.apache.http.conn.util.InetAddressUtils;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -92,7 +94,6 @@ import java.net.SocketException;
 import java.net.URLEncoder;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -103,8 +104,8 @@ import okhttp3.Headers;
 import okhttp3.Response;
 
 import static com.example.Activity.R.id.imagecodelayout;
-import static com.example.Activity.R.id.media_actions;
-import static com.example.Activity.R.id.vertical;
+import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
+
 
 
 public class TeamActivity extends BaseActivity implements View.OnClickListener, ReceiveMsgListener {
@@ -124,7 +125,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
             R.drawable.gdme,
             R.drawable.alk, R.drawable.lbtnys}; // 定义并初始化保存图片id的数组
     private String[] imageSwitchTitle = new String[Application.getInstance().GetImageSwitchTitleCounter()];//ImageSwitch的标题
-    private String[] world = new String[Application.getInstance().GetWorldCounter()];
+    private String[] word = new String[Application.getInstance().GetWordCounter()];
 
     private ImageSwitcher imageSwitcher; // 声明一个图像切换器对象
 
@@ -132,18 +133,19 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
     private int imageSwitchTitleIndex = 0;//名人图片索引
     private int timenumForP = 0;//进入自动播放Activity
     private int timenumForL = 0;//语录切换时间计数
-    private int worldIndex = 0;//语录索引
+    private int wordIndex = 0;//语录索引
 
 
-    private boolean TimeRunning = false;
+    private static boolean TimeRunning = false;
     private String wifimess;
     private String selfName = "广告机";
     private String selfGroup = "android";
     private String receiverIp;            //要接收本activity所发送的消息的用户IP
 
     private GifView gif2;
-    private Boolean T = true;
-    private Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private static String URIAddress = "http://172.16.40.247:57451/";
+    private static Runnable mRunnable = new Runnable() {
 
         public void run() {
             while (T) {
@@ -167,7 +169,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
     private boolean AorP = true;
     private boolean changeAP = false;
 
-    private MyHandler mHandler = new MyHandler(this);
+    private static MyHandler mHandler;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -230,6 +232,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                             activity.AorP = false;
                             // requestJson("http://www.livetune.me:57451/alldir");
                             activity.changeAppBrightness(activity, 30);
+
                         } else if (s.toString().equals("上午") && activity.AorP == false) {
                             activity.AorP = true;
                             activity.changeAppBrightness(activity, 230);
@@ -247,7 +250,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                                 activity.imageSwitchTitleIndex = 0;
                         } else activity.timenumForF++;
 
-                        if (activity.timenumForP == 300) {
+                        if (activity.timenumForP == 150) {
                             activity.timenumForP = 0;
                             activity.TimeRunning = false;
                             Intent pictureplayIntent = new Intent(activity, PicturePlayLocation.class);
@@ -256,13 +259,13 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
                         if (activity.timenumForL == 5) {
                             activity.timenumForL = 0;
-                            if (activity.worldIndex < activity.world.length) {
-                                activity.peoplelanguageTv.setText(activity.world[activity.worldIndex]);
-                                activity.worldIndex++;
+                            if (activity.wordIndex < activity.word.length) {
+                                activity.peoplelanguageTv.setText(activity.word[activity.wordIndex]);
+                                activity.wordIndex++;
                             } else {
-                                activity.worldIndex = 0;
-                                activity.peoplelanguageTv.setText(activity.world[activity.worldIndex]);
-                                activity.worldIndex++;
+                                activity.wordIndex = 0;
+                                activity.peoplelanguageTv.setText(activity.word[activity.wordIndex]);
+                                activity.wordIndex++;
                             }
                         } else activity.timenumForL++;
                         break;
@@ -281,11 +284,12 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                         for (int i = 0; i < activity.needDir.size(); i++) {
                             activity.MakeDir(activity.needDir.get(i));
                             String URL = activity.needDir.get(i).replaceFirst(Environment.getExternalStorageDirectory().toString() + "/myapp/",
-                                    "http://172.16.40.247:57451/show/"
+                                    URIAddress+"show/"
                             );
                             activity.requestFileJson(URL);
-                            Log.e(activity.TAG, "正在请求功能" + URL);
+                            Log.e(activity.TAG, "正在请求显示"+"文件夹的文件------" + URL);
                         }
+
                         break;
                     default:
                         break;
@@ -295,8 +299,9 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         }
     }
 
-    // 根据亮度值修改当前window亮度
+    // 根据亮度值修改当前window亮度随便更新天气进程
     public void changeAppBrightness(Context context, int brightness) {
+        new GetWeatherTask(cityName).execute();// 启动更新天气进程
         Window window = ((Activity) context).getWindow();
         WindowManager.LayoutParams lp = window.getAttributes();
         if (brightness == -1) {
@@ -355,7 +360,8 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
         setContentView(R.layout.activity_team);
-        world = Application.getInstance().GetWorld();//获取名人语录
+        mHandler = new MyHandler(this);
+        word = Application.getInstance().GetWord();//获取名人语录
         imageSwitchTitle = Application.getInstance().GetImageSwitchTitle();//获取ImageSwitchTitle
         initView();
         initData();
@@ -378,12 +384,10 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         netThreadHelper.addReceiveMsgListener(this);    //注册到listeners
         Iterator<ChatMessage> it = netThreadHelper.getReceiveMsgQueue().iterator();
         getWebPicture();
-        //Intent pictureplayIntent = new Intent(TeamActivity.this, PicturePlayLocation.class);
-        // startActivityForResult(pictureplayIntent, 0X11);
         gif2 = (GifView) findViewById(R.id.gif2);
         gif2.setMovieResource(R.raw.b);
 
-        changeBackGroundByAPK();
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -494,7 +498,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
                     break;
                 case FAIL:
-                    //Toast.makeText(TeamActivity.this, "updata weater false",Toast.LENGTH_SHORT).show();
                     Snackbar.make(time_show, "upadta weater false", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
                     break;
@@ -507,7 +510,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         new GetWeatherTask(cityName).execute();// 启动更新天气进程
         TimeRunning = true;
         new Thread(mRunnable).start(); //启动新的线程
-        peoplelanguageTv.setText(world[0]);
+        peoplelanguageTv.setText(word[0]);
     }
 
     private void initView() {
@@ -575,99 +578,143 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         convenientBanner = (ConvenientBanner) findViewById(R.id.convenientBanner);
     }
 
+    public interface ClickAnimation {
+        public void onClick(View v);
+    }
+
+    private void animateClickView(final View v, final ClickAnimation callback) {
+        float factor = (float)0.8;
+        animate(v).scaleX(factor).scaleY(factor).alpha(0).setListener(new com.nineoldandroids.animation.AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(com.nineoldandroids.animation.Animator animation) {
+                ViewHelper.setScaleX(v, 1);
+                ViewHelper.setScaleY(v, 1);
+                ViewHelper.setAlpha(v, 1);
+                if (callback != null) {
+                    callback.onClick(v);
+                }
+                super.onAnimationEnd(animation);
+            }
+        });
+    }
+
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
-
-        timenumForP = 0;
-        switch (view.getId()) {
-            case R.id.funtion_ppt:
-                Intent ii = new Intent();
-                ii.setClass(TeamActivity.this, PowerPointActivity.class);
-                startActivityForResult(ii, 0X13);
-                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);//设置切换动画，从右边进入，左边退出
-                break;
-            case R.id.funtion_about_us:
-
-                Dialog alertDialog = new AlertDialog.Builder(TeamActivity.this)
-                        .setTitle("关于我们：")
-                        .setIcon(android.R.drawable.ic_menu_upload_you_tube)
-                        .setMessage(
-                                "Firefly是天启科技于2014年3月成立的开源团队。致力于开源硬件的设计、生产和销售，以及开源文化和知识的推广。同时也提供软硬件定制、产品生产和技术支持等服务。\n"
-                                        + "\n"
-                                        + "Firefly开源团队由超过40人的专业成员组成，我们擅长Android、Linux的系统级开发、多平台应用开发和云服务支持，以及硬件的电路设计和工业设计。\n"
-                                        + "\n"
-                                        + "\"Light up your ideas\" 是Firefly的理念，我们希望Firefly对技术的热情和执着能帮助实现你的创意和梦想。\n")
-                        .setNegativeButton("确定",
-                                new DialogInterface.OnClickListener() {
-
-                                    @Override
-                                    public void onClick(DialogInterface arg0,
-                                                        int arg1) {
-                                        // TODO Auto-generated method stub
-                                    }
-                                }).create();
-                alertDialog.show();
-                break;
-            case R.id.funtion_more:
-                updataAPK("new.apk");
-                //changeBackGroundByAPK();
-                break;
-            case R.id.funtion_picture:
-                TimeRunning = false;
-                Intent p = new Intent();
-                p.setClass(TeamActivity.this, PictureGridActivity.class);
-                startActivityForResult(p, 0X14);
-                overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
-                break;
-            case R.id.funtion_weater:
-                //new GetWeatherTask(cityName).execute();// 启动更新天气进程
-                Intent iiiii = new Intent(TeamActivity.this,WeatherActivity.class);
-                startActivityForResult(iiiii,0X16);
-                //requestJson("http://172.16.40.247:57451/alldir");
-                break;
-            case R.id.back:
-                TimeRunning = false;
-                Intent pictureplayIntent = new Intent(TeamActivity.this, PicturePlayLocation.class);
-                startActivityForResult(pictureplayIntent, 0X11);
-                overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
-                break;
-            case R.id.imagecode:
-                imagecodeLayout.setVisibility(View.VISIBLE);
-                //  funtionlayoutView.setVisibility(View.INVISIBLE);
-                back.setVisibility(View.INVISIBLE);
-                break;
-            case imagecodelayout:
+        animateClickView(v, new ClickAnimation() {
+            @Override
+            public void onClick(View v) {
                 timenumForP = 0;
-                //  funtionlayoutView.setVisibility(View.VISIBLE);
-                imagecodeLayout.setVisibility(View.INVISIBLE);
-                back.setVisibility(View.VISIBLE);
-                break;
-            case R.id.funtion_open:
-                TimeRunning = false;
-                Intent i = new Intent();
-                i.setClass(TeamActivity.this, OpenListActivity.class);
-                startActivityForResult(i, 0X12);
-                //设置切换动画，从右边进入，左边退出,带动态效果
-                overridePendingTransition(R.anim.dync_in_from_right, R.anim.dync_out_to_left);
-                break;
-            case R.id.funtion_nearactivity:
-                TimeRunning = false;
-                Intent n = new Intent();
-                n.setClass(TeamActivity.this, NearActivityList.class);
-                startActivityForResult(n, 0X15);
-                //设置切换动画，从右边进入，左边退出,带动态效果
-                overridePendingTransition(R.anim.new_dync_in_from_right, R.anim.new_dync_out_to_left);
-                break;
-            case R.id.famouspeople:
-                timenumForF = 4;
-                break;
-            case R.id.famoursall:
-                timenumForL = 5;
-                break;
-            default:
-                break;
-        }
+                switch (v.getId()) {
+                    case R.id.funtion_ppt:
+                        Intent ii = new Intent();
+                        ii.setClass(TeamActivity.this, PowerPointActivity.class);
+                        startActivityForResult(ii, 0X13);
+                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);//设置切换动画，从右边进入，左边退出
+                        break;
+                    case R.id.funtion_about_us:
+
+                        Dialog alertDialog = new AlertDialog.Builder(TeamActivity.this)
+                                .setTitle("关于我们：")
+                                .setIcon(android.R.drawable.ic_menu_upload_you_tube)
+                                .setMessage(
+                                        "Firefly是天启科技于2014年3月成立的开源团队。致力于开源硬件的设计、生产和销售，以及开源文化和知识的推广。同时也提供软硬件定制、产品生产和技术支持等服务。\n"
+                                                + "\n"
+                                                + "Firefly开源团队由超过40人的专业成员组成，我们擅长Android、Linux的系统级开发、多平台应用开发和云服务支持，以及硬件的电路设计和工业设计。\n"
+                                                + "\n"
+                                                + "\"Light up your ideas\" 是Firefly的理念，我们希望Firefly对技术的热情和执着能帮助实现你的创意和梦想。\n")
+                                .setNegativeButton("确定",
+                                        new DialogInterface.OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface arg0,
+                                                                int arg1) {
+                                                // TODO Auto-generated method stub
+                                            }
+                                        }).create();
+                        alertDialog.show();
+                        break;
+                    case R.id.funtion_more:
+                       // updataAPK("new.apk");
+                        //changeBackGroundByAPK();
+                        //requestJson("http://172.16.40.247:57451/alldir");//获取服务器所有文件信息
+                        requestJson(URIAddress+"alldir");
+                        break;
+                    case R.id.funtion_picture:
+                        TimeRunning = false;
+                        Intent p = new Intent();
+                        p.setClass(TeamActivity.this, PictureGridActivity.class);
+                        startActivityForResult(p, 0X14);
+                        overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
+                        break;
+                    case R.id.funtion_weater:
+                        //new GetWeatherTask(cityName).execute();// 启动更新天气进程
+                        Intent iiiii = new Intent(TeamActivity.this, WeatherActivity.class);
+                        startActivityForResult(iiiii, 0X16);
+                        overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
+
+                        break;
+                    case R.id.back:
+
+                        TimeRunning = false;
+                        Intent pictureplayIntent = new Intent(TeamActivity.this, PicturePlayLocation.class);
+                        startActivityForResult(pictureplayIntent, 0X11);
+                        overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
+
+                       changeBackGroundByAPK();
+                        break;
+                    case R.id.imagecode:
+                        imagecodeLayout.setVisibility(View.VISIBLE);
+                        //  funtionlayoutView.setVisibility(View.INVISIBLE);
+                        back.setVisibility(View.INVISIBLE);
+                        break;
+                    case imagecodelayout:
+                        timenumForP = 0;
+                        //  funtionlayoutView.setVisibility(View.VISIBLE);
+                        imagecodeLayout.setVisibility(View.INVISIBLE);
+                        back.setVisibility(View.VISIBLE);
+                        break;
+                    case R.id.funtion_open:
+                        TimeRunning = false;
+                        Intent i = new Intent();
+                        i.setClass(TeamActivity.this, OpenListActivity.class);
+                        startActivityForResult(i, 0X12);
+                        //设置切换动画，从右边进入，左边退出,带动态效果
+                        overridePendingTransition(R.anim.dync_in_from_right, R.anim.dync_out_to_left);
+                        break;
+                    case R.id.funtion_nearactivity:
+                        TimeRunning = false;
+                        Intent n = new Intent();
+                        n.setClass(TeamActivity.this, NearActivityList.class);
+                        startActivityForResult(n, 0X15);
+                        //设置切换动画，从右边进入，左边退出,带动态效果
+                        overridePendingTransition(R.anim.new_dync_in_from_right, R.anim.new_dync_out_to_left);
+                        break;
+                    case R.id.famouspeople:
+                        timenumForF = 4;
+                        break;
+                    case R.id.famoursall:
+                        timenumForL = 5;
+                        break;
+                    case R.id.funtion_ourdo:
+                        TimeRunning = false;
+                        Intent nn = new Intent();
+                        nn.setClass(TeamActivity.this, WorksActivity.class);
+                        startActivityForResult(nn, 0X15);
+                        //设置切换动画，从右边进入，左边退出,带动态效果
+                        overridePendingTransition(R.anim.new_dync_in_from_right, R.anim.new_dync_out_to_left);
+                    case R.id.time_now:
+                        TimeRunning = false;
+                        Intent nnn = new Intent();
+                        nnn.setClass(TeamActivity.this, CalendarActivity.class);
+                        startActivityForResult(nnn, 0X15);
+                        //设置切换动画，从右边进入，左边退出,带动态效果
+                        overridePendingTransition(R.anim.new_dync_in_from_right, R.anim.new_dync_out_to_left);
+                    default:
+                        break;
+                }
+            }
+        });
     }
 
 
@@ -987,6 +1034,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
     void saveFile(String URL) // 将URL传入就能下载到相应的文件夹
     {
+        Log.e(TAG,"正在保存文件-----------"+URL);
         String nowPath = path;
         String fileName = null;
         String[] item = URL.split("/");
@@ -1006,10 +1054,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
             } else if (s.equals("works")) {
                 nowPath += "works/";
                 nowPath += item[i + 1];
-                fileName = item[item.length - 1];
-                break;
-            } else if (s.equals("play")) {
-                nowPath += "play/";
                 fileName = item[item.length - 1];
                 break;
             } else if (s.equals("picture")) {
@@ -1037,8 +1081,8 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                 nowPath += "music/";
                 nowPath += item[i + 1];
                 fileName = item[item.length - 1];
-            } else if (s.equals("world")) {
-                nowPath += "world/";
+            } else if (s.equals("word")) {
+                nowPath += "word/";
                 nowPath += item[i + 1];
                 fileName = item[item.length - 1];
             } else if (s.equals("ppt")) {
@@ -1100,6 +1144,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
             String path = Environment.getExternalStorageDirectory()
                     .toString() + "/myapp/";
             String[] action = json.split("/");
+            Log.i(TAG,"01Dir json get fileList            "+action[0]+"           "+action[1]);
             if (action != null) {
                 int actionLen = action.length;
                 for (int i = 0; i < actionLen; i++) {
@@ -1140,9 +1185,11 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                 if (m_diff_n == MyDir.size()) ;
                 {
                     needDir.add(netDir.get(i));
-                    Log.e(TAG, "I Want" + netDir.get(i));
+                    Log.e(TAG, "I Want the dir" + netDir.get(i));
                 }
             }
+
+
             for (int i = 0; i < MyDir.size(); i++) {
                 int n_diff_m = 0;
                 for (int j = 0; j < netDir.size(); j++) {

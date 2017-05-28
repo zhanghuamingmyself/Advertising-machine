@@ -46,8 +46,8 @@ public class NearActivty extends FragmentActivity {
     private String imagePath = Environment.getExternalStorageDirectory().toString() + "/myapp/near/";//图片的扫描路径
 
     private TextView tv;
-    private boolean isTime = true;//定时器是否允许
-    private NearActivty.MyHandler mHandler = new NearActivty.MyHandler(this);
+    private static boolean isTime = true;//定时器是否允许
+    private static MyHandler mHandler ;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -68,8 +68,8 @@ public class NearActivty extends FragmentActivity {
             }
         }
     }
-    private Boolean T = true;
-    private Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private static Runnable mRunnable = new Runnable() {
 
         public void run() {
             while (T) {
@@ -126,6 +126,7 @@ public class NearActivty extends FragmentActivity {
         mPagerAdapter = new PagerAdapter(
                 getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mPagerAdapter);
+        mHandler = new MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
 
     }

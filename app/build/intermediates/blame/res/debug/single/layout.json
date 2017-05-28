@@ -256,6 +256,10 @@
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\activity_near_activty.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\calendar_activity.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\calendar_activity.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },

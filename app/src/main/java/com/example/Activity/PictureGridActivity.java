@@ -41,9 +41,8 @@ public class PictureGridActivity extends Activity {
 	private ImageGridAdapter adapter;
 	private FloatingActionButton back;
 	private ImageView imageView;
-	private int timeNum=0;
-	private boolean isTime = true;//定时器是否允许
-	private PictureGridActivity.MyHandler mHandler = new PictureGridActivity.MyHandler(this);
+	private static boolean isTime = true;//定时器是否允许
+	private static PictureGridActivity.MyHandler mHandler;
 	private static class MyHandler extends Handler {
 		private WeakReference<Context> reference;
 		public MyHandler(Context context) {
@@ -64,8 +63,8 @@ public class PictureGridActivity extends Activity {
 			}
 		}
 	}
-	private Boolean T = true;
-	private Runnable mRunnable = new Runnable() {
+	private static Boolean T = true;
+	private static Runnable mRunnable = new Runnable() {
 
 		public void run() {
 			while (T) {
@@ -129,6 +128,7 @@ public class PictureGridActivity extends Activity {
 		adapter = new ImageGridAdapter(this, imageUrls);
 		mAdapterView.setAdapter(adapter);
 		queryMediaImages();
+		mHandler = new PictureGridActivity.MyHandler(this);
 		new Thread(mRunnable).start(); //启动新的线程
 	}
 

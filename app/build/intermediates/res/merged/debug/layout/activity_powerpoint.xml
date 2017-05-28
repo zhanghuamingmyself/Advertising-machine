@@ -12,22 +12,22 @@
 
 		<android.support.design.widget.FloatingActionButton
 			android:id="@+id/prev"
-			android:layout_width="fill_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="2.0"
+			android:layout_weight="1.0"
 			android:text="Pre" />
 		<android.support.design.widget.FloatingActionButton
 			android:id="@+id/next"
-			android:layout_width="fill_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="2.0"
+			android:layout_weight="1.0"
 			android:text="Next" />
 
 		<SeekBar
 			android:id="@+id/scale"
-			android:layout_width="fill_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="1.0"
+			android:layout_weight="8.0"
 			android:max="200"
 			android:progress="25" />
 	</LinearLayout>

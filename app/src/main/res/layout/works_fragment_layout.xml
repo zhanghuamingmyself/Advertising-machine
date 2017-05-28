@@ -8,7 +8,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layoutAnimation="@anim/anim_listview_item">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -84,13 +86,15 @@
         android:layout_height="100dip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_marginBottom="25dp"
+        android:scrollbars="none"
         android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/textViewWorks"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="5dp"
             android:layout_marginBottom="20dp"
             android:textSize="24sp"
             android:textColor="@color/abc_input_method_navigation_guard"

@@ -25,9 +25,6 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.9.0'
     compile files('src/main/lib/olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0.jar')
     compile 'com.google.code.gson:gson:2.5'
-    //    compile 'com.lzy.net:okgo:2.0.0'
-    //    compile 'com.lzy.net:okrx:0.1.0'
-    //    compile 'com.lzy.net:okserver:1.1.0'
     compile project(':okgo')
     compile 'com.android.support:design:22.2.1'
     compile project(path: ':imageLoader')

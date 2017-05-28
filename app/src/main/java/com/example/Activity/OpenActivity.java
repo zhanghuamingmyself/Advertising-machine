@@ -36,8 +36,8 @@ public class OpenActivity extends FragmentActivity {
     private MySecondFragment secondFragment;
     private FloatingActionButton back;
 
-    private boolean isTime = true;//定时器是否允许
-    private OpenActivity.MyHandler mHandler = new OpenActivity.MyHandler(this);
+    private static boolean isTime = true;//定时器是否允许
+    private static OpenActivity.MyHandler mHandler ;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -59,8 +59,8 @@ public class OpenActivity extends FragmentActivity {
         }
     }
 
-    private Boolean T = true;
-    private Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private static Runnable mRunnable = new Runnable() {
 
         public void run() {
             while (T) {
@@ -122,6 +122,7 @@ public class OpenActivity extends FragmentActivity {
         mPagerAdapter = new PagerAdapter(
                 getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mPagerAdapter);
+        mHandler = new OpenActivity.MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
 
     }

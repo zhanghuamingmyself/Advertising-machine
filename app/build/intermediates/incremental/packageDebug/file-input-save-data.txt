@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 24 23:52:01 CST 2017
+#Sat Jun 10 15:42:35 CST 2017
 20.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 340.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png
@@ -13,6 +13,7 @@
 389.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 236.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_aboutus.xml
 8.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
+407.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\push_left_out.xml
 118.set=NATIVE_RESOURCE
 0.set=ANDROID_RESOURCE
 191.set=ANDROID_RESOURCE
@@ -305,6 +306,7 @@
 203.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 220.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\common_google_signin_btn_text_light.xml
 236.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
+407.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 361.set=ANDROID_RESOURCE
 269.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 116.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\folders\\2000\\1f\\main\\lib\\x86\\libbitmaps.so
@@ -526,7 +528,7 @@
 388.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 235.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\view_pull_refresh_slide_out_to_bottom.xml
 7.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
-406.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\push_left_out.xml
+406.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\notification_template_part_time.xml
 108.set=ANDROID_RESOURCE
 181.set=NATIVE_RESOURCE
 268.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abc_primary_text_material_dark.xml
@@ -864,6 +866,7 @@
 323.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 185.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 62.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
+407.set=ANDROID_RESOURCE
 390.set=ANDROID_RESOURCE
 382.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_plus_signin_btn_icon_dark_disabled.9.png
 34.set=ANDROID_RESOURCE
@@ -1044,7 +1047,7 @@
 387.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 234.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\com\\olivephone\\office\\resource\\Trellis.dib
 6.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
-405.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\notification_template_part_time.xml
+405.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\calendar_activity.xml
 171.set=ANDROID_RESOURCE
 267.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\com\\olivephone\\office\\resource\\Pct40.dib
 23.set=JAVA_RESOURCE
@@ -1055,7 +1058,7 @@
 361.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\activity.png
 74.base=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_
 394.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\view_pull_refresh_slide_in_from_bottom.xml
-count=407
+count=408
 257.file=D\:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_weather.xml
 77.set=ANDROID_RESOURCE
 328.set=ANDROID_RESOURCE

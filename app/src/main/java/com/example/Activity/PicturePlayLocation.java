@@ -45,7 +45,7 @@ public class PicturePlayLocation extends Activity {
     private boolean isTime = true;//定时器是否允许
     //在主线程里面处理消息并更新UI界面
     private Random random = new Random();
-    private PicturePlayLocation.MyHandler mHandler = new PicturePlayLocation.MyHandler(this);
+    private static PicturePlayLocation.MyHandler mHandler ;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -68,8 +68,8 @@ public class PicturePlayLocation extends Activity {
             }
         }
     }
-    private PicturePlayLocation.TimeThread timeThread = new PicturePlayLocation.TimeThread();
-    private Boolean T = true;
+    private static PicturePlayLocation.TimeThread timeThread ;
+    private static Boolean T = true;
     class TimeThread extends Thread {
         @Override
         public void run() {
@@ -113,7 +113,8 @@ public class PicturePlayLocation extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_pictureplaylocation);
-
+        mHandler = new PicturePlayLocation.MyHandler(this);
+        timeThread = new PicturePlayLocation.TimeThread();
 
         init();
         if (musicPathList.size() > 0) {
@@ -122,6 +123,8 @@ public class PicturePlayLocation extends Activity {
     }
 
     public void init() {
+        T=true;
+        isTime=true;
         img = (ImageView) findViewById(R.id.imageView1);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,8 +154,9 @@ public class PicturePlayLocation extends Activity {
             timeThread.start(); //启动新的线程
         }else {
             playVideo();
+
         }
-        if (0 != musicPathList.size()) {
+
             mp = new MediaPlayer();        //实例化MediaPlayer对象
             mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
@@ -167,7 +171,7 @@ public class PicturePlayLocation extends Activity {
                     }
                 }
             });
-        }
+
     }
 
     public void playpicture() {
@@ -191,10 +195,12 @@ public class PicturePlayLocation extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        T=false;
         isTime = false;
         Intent i = new Intent(PicturePlayLocation.this, VideoPlayLocation.class);
         startActivityForResult(i, 0X20);
         overridePendingTransition(R.anim.out_to_up,R.anim.in_from_down); //设置切换动画，从下进入，上退出
+
     }
 
     public void playMusic(String path) {
@@ -344,9 +350,6 @@ public class PicturePlayLocation extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 0X22) {
-            int code = 0X22;
-            close(code);
-        }
+        close(0X22);
     }
 }

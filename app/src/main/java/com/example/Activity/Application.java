@@ -3,6 +3,7 @@ package com.example.Activity;
 import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.Weather.WeatherInfo;
 import com.lzy.okgo.OkGo;
@@ -46,7 +47,7 @@ public class Application extends android.app.Application {
         mApplication = this;
         refWatcher = LeakCanary.install(this);
         readSettingFile();
-        readWorldFile();
+        readWordFile();
         readImageSwitchTitleFile();
 
 
@@ -190,6 +191,7 @@ public class Application extends android.app.Application {
     public void readSettingFile() {
         BufferedReader bre = null;
         File[] fs=new File(settingFileName).listFiles();
+        Log.i(TAG,"配置文件有"+fs.length+"个");
         try {
             bre = new BufferedReader(new FileReader(fs[0].toString()+"/setting.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
@@ -200,6 +202,7 @@ public class Application extends android.app.Application {
             bre.close();
         } catch (IOException e) {
             e.printStackTrace();
+            Log.i(TAG,"找不到配置文件，或配置文件解析失败");
         }
 
     }
@@ -258,52 +261,54 @@ public class Application extends android.app.Application {
 
 
 
-    private int worldCounter = 0;
-    private String[] world = new String[30];//world最多30句
-    private String WorldFileName = Environment.getExternalStorageDirectory().toString() + "/myapp/world";
+    private int wordCounter = 0;
+    private String[] word = new String[30];//word最多30句
+    private String WordFileName = Environment.getExternalStorageDirectory().toString() + "/myapp/word";
 
     /*
-        获取world文件
+        获取word文件
      */
-    public void readWorldFile() {
+    public void readWordFile() {
         BufferedReader bre = null;
         try {
-            File[] fs=new File(WorldFileName).listFiles();
-            bre = new BufferedReader(new FileReader(fs[0].getPath()+"/world.txt"));//此时获取到的bre就是整个文件的缓存流
+            File[] fs=new File(WordFileName).listFiles();
+            bre = new BufferedReader(new FileReader(fs[0].getPath()+"/word.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
             while ((str = bre.readLine()) != null) // 判断最后一行不存在，为空结束循环
             {
-                getWorld(str);//解析设置文件
+                getWord(str);//解析设置文件
             }
             bre.close();
         } catch (IOException e) {
             e.printStackTrace();
+            Log.i(TAG,"找不到文本文件，或文本文件解析失败");
+
         }
 
     }
 
 
     /*
-解析world文件
+解析word文件
 */
-    public void getWorld(String s) {
+    public void getWord(String s) {
         String[] w = s.split(" ");
         String mess=new String();
         for(int i=1;i<w.length;i++)
         {
             mess+=' '+w[i];
         }
-        world[worldCounter] =mess;
-        worldCounter++;
+        word[wordCounter] =mess;
+        wordCounter++;
 
     }
 
-    public String[] GetWorld() {
-        return world;
+    public String[] GetWord() {
+        return word;
     }
 
-    public int GetWorldCounter() {
-        return worldCounter;
+    public int GetWordCounter() {
+        return wordCounter;
     }
 
 
@@ -314,7 +319,7 @@ public class Application extends android.app.Application {
      */
     private int ImageSwitchTitleCounter = 0;
     private String[] ImageSwitchTitle = new String[30];//ImageSwitch最多30张图切换,这里是显示图片的标题
-    private String ImageSwitchTitleFileName = Environment.getExternalStorageDirectory().toString() + "/myapp/world";
+    private String ImageSwitchTitleFileName = Environment.getExternalStorageDirectory().toString() + "/myapp/word";
 
     public void readImageSwitchTitleFile() {
         BufferedReader bre = null;

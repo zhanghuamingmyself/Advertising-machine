@@ -40,8 +40,8 @@ public class OpenListActivity extends Activity {
     private List<String> path;
     //定义ListView对象
     private ListView mListViewArray;
-    private boolean isTime = true;//定时器是否允许
-    private OpenListActivity.MyHandler mHandler = new OpenListActivity.MyHandler(this);
+    private static boolean isTime = true;//定时器是否允许
+    private static OpenListActivity.MyHandler mHandler;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -62,8 +62,8 @@ public class OpenListActivity extends Activity {
             }
         }
     }
-    private Boolean T = true;
-    private Runnable mRunnable = new Runnable() {
+    private static Boolean T = true;
+    private static Runnable mRunnable = new Runnable() {
 
         public void run() {
             while (T) {
@@ -121,6 +121,7 @@ public class OpenListActivity extends Activity {
                 overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
             }
         });
+        mHandler = new OpenListActivity.MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
     }
 
@@ -149,15 +150,16 @@ public class OpenListActivity extends Activity {
         File mFile = new File(openItemPath);
         File[] files = mFile.listFiles();
         /* 将所有文件存入ArrayList中 */
-        for (int i = 0; i < files.length; i++) {
-            File file = files[i];
-            if (file.isDirectory()) {
-                path.add(file.getPath());
-                getImagePathFromSD(file);
-                mData.add(new Open(Name.get(i), Date.get(i), imagePathList.get(i)));
+        if(files.length !=0) {
+            for (int i = 0; i < files.length; i++) {
+                File file = files[i];
+                if (file.isDirectory()) {
+                    path.add(file.getPath());
+                    getImagePathFromSD(file);
+                    mData.add(new Open(Name.get(i), Date.get(i), imagePathList.get(i)));
+                }
             }
         }
-
     }
 
     private void getImagePathFromSD(File f) {

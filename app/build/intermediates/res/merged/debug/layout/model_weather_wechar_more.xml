@@ -24,8 +24,8 @@
 
                 <ImageView
                     android:id="@+id/weather_img"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_margin="30dip"
                     android:focusable="false"

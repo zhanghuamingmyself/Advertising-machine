@@ -46,6 +46,7 @@ public class PicturePlayLocation extends Activity {
     //在主线程里面处理消息并更新UI界面
     private Random random = new Random();
     private static PicturePlayLocation.MyHandler mHandler ;
+
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -68,8 +69,10 @@ public class PicturePlayLocation extends Activity {
             }
         }
     }
+
     private static PicturePlayLocation.TimeThread timeThread ;
     private static Boolean T = true;
+
     class TimeThread extends Thread {
         @Override
         public void run() {
@@ -157,6 +160,7 @@ public class PicturePlayLocation extends Activity {
 
         }
 
+        if (0 != musicPathList.size()) {
             mp = new MediaPlayer();        //实例化MediaPlayer对象
             mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
@@ -172,6 +176,7 @@ public class PicturePlayLocation extends Activity {
                 }
             });
 
+        }
     }
 
     public void playpicture() {
@@ -351,5 +356,6 @@ public class PicturePlayLocation extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         close(0X22);
+
     }
 }

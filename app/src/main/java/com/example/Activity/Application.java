@@ -3,7 +3,6 @@ package com.example.Activity;
 import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.example.Weather.WeatherInfo;
 import com.lzy.okgo.OkGo;
@@ -191,7 +190,6 @@ public class Application extends android.app.Application {
     public void readSettingFile() {
         BufferedReader bre = null;
         File[] fs=new File(settingFileName).listFiles();
-        Log.i(TAG,"配置文件有"+fs.length+"个");
         try {
             bre = new BufferedReader(new FileReader(fs[0].toString()+"/setting.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
@@ -202,7 +200,6 @@ public class Application extends android.app.Application {
             bre.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.i(TAG,"找不到配置文件，或配置文件解析失败");
         }
 
     }
@@ -281,8 +278,6 @@ public class Application extends android.app.Application {
             bre.close();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.i(TAG,"找不到文本文件，或文本文件解析失败");
-
         }
 
     }

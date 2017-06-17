@@ -113,7 +113,7 @@ public class NearActivty extends FragmentActivity {
             }
         });
         tv = (TextView) findViewById(R.id.textnear);
-        readWorldFile(imagePath);
+        readWordFile(imagePath);
         imagePathList = new ArrayList<String>();
         fragments = new ArrayList<Fragment>();
         getImagePathFromSD(imagePath);
@@ -173,14 +173,14 @@ public class NearActivty extends FragmentActivity {
     }
 
 
-    public void readWorldFile(String P) {
+    public void readWordFile(String P) {
         BufferedReader bre = null;
         try {
-            bre = new BufferedReader(new FileReader(P + "/world.txt"));//此时获取到的bre就是整个文件的缓存流
+            bre = new BufferedReader(new FileReader(P + "/word.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
             while ((str = bre.readLine()) != null) // 判断最后一行不存在，为空结束循环
             {
-                getWorld(str);
+                getWord(str);
             }
             bre.close();
         } catch (IOException e) {
@@ -190,9 +190,9 @@ public class NearActivty extends FragmentActivity {
     }
 
     /*
-    解析world文件
+    解析word文件
      */
-    public void getWorld(String s) {
+    public void getWord(String s) {
         String[] w = s.split(" ");
         if (w[0].equals("mess")) {
             String mess=new String();

@@ -1,11 +1,15 @@
 [
     {
-        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
-        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\pull_to_refresh_header.xml"
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\firstlayout.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\firstlayout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\pull_to_refresh_header.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\__leak_canary_ref_row.xml",
@@ -116,16 +120,20 @@
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_viewpager.xml",
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\convenientbanner\\2.0.5\\res\\layout\\include_viewpager.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\open_item_layout.xml",
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\open_item_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\secondlayout.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout\\secondlayout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
@@ -212,12 +220,12 @@
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.1\\res\\layout\\layout_tab_icon.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",

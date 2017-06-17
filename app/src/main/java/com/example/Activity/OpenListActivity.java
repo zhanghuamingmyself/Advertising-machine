@@ -41,7 +41,7 @@ public class OpenListActivity extends Activity {
     //定义ListView对象
     private ListView mListViewArray;
     private static boolean isTime = true;//定时器是否允许
-    private static OpenListActivity.MyHandler mHandler;
+    private static MyHandler mHandler;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -121,7 +121,7 @@ public class OpenListActivity extends Activity {
                 overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
             }
         });
-        mHandler = new OpenListActivity.MyHandler(this);
+        mHandler = new MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
     }
 
@@ -150,16 +150,15 @@ public class OpenListActivity extends Activity {
         File mFile = new File(openItemPath);
         File[] files = mFile.listFiles();
         /* 将所有文件存入ArrayList中 */
-        if(files.length !=0) {
-            for (int i = 0; i < files.length; i++) {
-                File file = files[i];
-                if (file.isDirectory()) {
-                    path.add(file.getPath());
-                    getImagePathFromSD(file);
-                    mData.add(new Open(Name.get(i), Date.get(i), imagePathList.get(i)));
-                }
+        for (int i = 0; i < files.length; i++) {
+            File file = files[i];
+            if (file.isDirectory()) {
+                path.add(file.getPath());
+                getImagePathFromSD(file);
+                mData.add(new Open(Name.get(i), Date.get(i), imagePathList.get(i)));
             }
         }
+
     }
 
     private void getImagePathFromSD(File f) {
@@ -206,7 +205,7 @@ public class OpenListActivity extends Activity {
     public void readWorldFile(File f) {
         BufferedReader bre = null;
         try {
-            bre = new BufferedReader(new FileReader(f.getPath()+"/world.txt"));//此时获取到的bre就是整个文件的缓存流
+            bre = new BufferedReader(new FileReader(f.getPath()+"/word.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
             while ((str = bre.readLine()) != null) // 判断最后一行不存在，为空结束循环
             {

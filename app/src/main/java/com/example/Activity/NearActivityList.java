@@ -215,7 +215,7 @@ public class NearActivityList extends Activity {
     public void readWorldFile(File f) {
         BufferedReader bre = null;
         try {
-            bre = new BufferedReader(new FileReader(f.getPath()+"/world.txt"));//此时获取到的bre就是整个文件的缓存流
+            bre = new BufferedReader(new FileReader(f.getPath()+"/word.txt"));//此时获取到的bre就是整个文件的缓存流
             String str = null;
             while ((str = bre.readLine()) != null) // 判断最后一行不存在，为空结束循环
             {

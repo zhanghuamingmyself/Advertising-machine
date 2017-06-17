@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\biz_plugin_weather_item.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout-xlarge\\biz_plugin_weather_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\myweather\\app\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\biz_plugin_weather_subitem.xml",
+        "source": "D:\\AndroidStudioProjects\\myweather\\app\\src\\main\\res\\layout-xlarge\\biz_plugin_weather_subitem.xml"
+    }
+]

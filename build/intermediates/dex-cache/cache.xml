@@ -30,15 +30,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\1.1\b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635\haha-1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\haha-1.1_aeb55bfe33230c7c360497d1d38d9c122fec375e.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.9.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -54,6 +45,96 @@
         revision="24.0.2"
         sha1="f4e7adebf49e683db82fb6efac2caaf3d768b8d4">
         <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.squareup.leakcanary-leakcanary-android-1.3_33ea611db462b7c9287c3ac5e7d00268fae33ddb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\src\main\lib\olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f91ca198fb1f8350ce17b25b4674bdacf9ed7d04">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0_c7f37ed9764c6cf42318039c580498bdf5bd2cb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-22.0.0_d79873ec8a799fb1fb7b492f891ee3c89152573b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_51dbc7e834ceb51ef019c45b5afe658756ea25b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4ee95617ab850030c51486d02bc9d207b14419c6">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-0.9.0_ea526413cd6066e93f5fff93b72c076257f54670.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_9cfa38add69a7aeef42c0b4aa2e3e31390e56d97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="3158c15bb0ae97575debdb40cfcd8f0f9f244526">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-0.9.0_ad6edcf34362ca334c58d3e42d14554e51491c55.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\myweather\imageLoader\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d811a1c51f1616d9f8dab6e1592cb205f15acea2">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\myweather-imageLoader-unspecified_a97edb5c92b6acc71e96b160d6d85bee8d8e3708.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.5\686c608d1805b6d4d425ec4459e88164ffc85870\gson-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\gson-2.5_fdbad4a0e2f85c82022bd70ee29a3a1fdff69c62.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\APP\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_833f9f19a1262c9d7fbf5874875e4cdade6c7190.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\1.1\b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635\haha-1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635">
+        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\haha-1.1_aeb55bfe33230c7c360497d1d38d9c122fec375e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,15 +174,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\src\main\lib\olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f91ca198fb1f8350ce17b25b4674bdacf9ed7d04">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0_c7f37ed9764c6cf42318039c580498bdf5bd2cb8.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\myweather\shimmer-android\unspecified\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -129,15 +201,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-22.0.0_d79873ec8a799fb1fb7b492f891ee3c89152573b.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-watcher\1.3\632482a61ad24b7ec864072945d221369f9a606\leakcanary-watcher-1.3.jar"
         jumboMode="false"
         optimize="true"
@@ -156,15 +219,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_51dbc7e834ceb51ef019c45b5afe658756ea25b0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
         jumboMode="false"
         optimize="true"
@@ -174,57 +228,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.9.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4ee95617ab850030c51486d02bc9d207b14419c6">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-0.9.0_ea526413cd6066e93f5fff93b72c076257f54670.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
         <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_df36fb490291f77651aedaa849bc049949a9230d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_9cfa38add69a7aeef42c0b4aa2e3e31390e56d97.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\myweather\imageLoader\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ac4bf25dc08d4e4ddcc617b0f3584cd33348742e">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\myweather-imageLoader-unspecified_a97edb5c92b6acc71e96b160d6d85bee8d8e3708.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\AndroidStudioProjects\myweather\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\0.9.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="3158c15bb0ae97575debdb40cfcd8f0f9f244526">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-0.9.0_ad6edcf34362ca334c58d3e42d14554e51491c55.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\zhang\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.5\686c608d1805b6d4d425ec4459e88164ffc85870\gson-2.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\gson-2.5_fdbad4a0e2f85c82022bd70ee29a3a1fdff69c62.jar" />
     </item>
     <item
         is-multidex="false"
@@ -243,15 +252,6 @@
         revision="24.0.2"
         sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
         <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\com.bigkoo-convenientbanner-2.0.5_cee732e783e8a273e069dd449dc9d82b005128ea.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\APP\adt-bundle-windows-x86_64-20140702\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="D:\AndroidStudioProjects\myweather\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_833f9f19a1262c9d7fbf5874875e4cdade6c7190.jar" />
     </item>
 
 </items>

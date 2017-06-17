@@ -44,10 +44,9 @@
                         android:elevation="8dp">
 
                         <ImageView
-                            android:background="@drawable/selector_bottom_common"
                             android:id="@+id/img_gallery"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -149,23 +148,15 @@
                                 android:textColor="@color/button_material_light"
                                 android:textSize="60sp" />
 
-
-                            <com.facebook.shimmer.ShimmerFrameLayout
-                                android:id="@+id/shimmer_view_container"
+                            <TextView
+                                android:id="@+id/peoplelanguage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
-                                android:layout_gravity="center">
-
-                                <TextView
-                                    android:id="@+id/peoplelanguage"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="2dp"
-                                    android:text="好好学习"
-                                    android:textSize="38sp" />
-                            </com.facebook.shimmer.ShimmerFrameLayout>
+                                android:layout_margin="2dp"
+                                android:text="好好学习"
+                                android:textSize="38sp" />
                         </RelativeLayout>
 
                     </LinearLayout>

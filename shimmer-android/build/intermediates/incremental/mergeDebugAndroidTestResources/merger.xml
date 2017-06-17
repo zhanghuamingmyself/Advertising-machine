@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="debug$Generated" generated="true"><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\intermediates\bundles\debug\res"/></dataSet><dataSet config="main$Generated" generated="true"><source path="D:\AndroidStudioProjects\myweather\shimmer-android\src\androidTest\res"/><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\generated\res\rs\androidTest\debug"/><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\generated\res\resValues\androidTest\debug"/></dataSet><dataSet config="debug" from-dependency="true" generated-set="debug$Generated"><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\intermediates\bundles\debug\res"><file path="D:\AndroidStudioProjects\myweather\shimmer-android\build\intermediates\bundles\debug\res\values\values.xml" qualifiers=""><declare-styleable name="ShimmerFrameLayout"><attr format="boolean" name="auto_start"/><attr format="float" name="base_alpha"/><attr format="integer" name="duration"/><attr format="integer" name="repeat_count"/><attr format="integer" name="repeat_delay"/><attr format="enum" name="repeat_mode">
+      <enum name="restart" value="1"/>
+      <enum name="reverse" value="2"/>
+    </attr><attr format="enum" name="angle">
+      <enum name="cw_0" value="0"/>
+      <enum name="cw_90" value="90"/>
+      <enum name="cw_180" value="180"/>
+      <enum name="cw_270" value="270"/>
+    </attr><attr format="float" name="dropoff"/><attr format="dimension" name="fixed_width"/><attr format="dimension" name="fixed_height"/><attr format="float" name="intensity"/><attr format="float" name="relative_width"/><attr format="float" name="relative_height"/><attr format="enum" name="shape">
+      <enum name="linear" value="0"/>
+      <enum name="radial" value="1"/>
+    </attr><attr format="float" name="tilt"/></declare-styleable></file></source></dataSet><dataSet config="main" generated-set="main$Generated"><source path="D:\AndroidStudioProjects\myweather\shimmer-android\src\androidTest\res"/><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\generated\res\rs\androidTest\debug"/><source path="D:\AndroidStudioProjects\myweather\shimmer-android\build\generated\res\resValues\androidTest\debug"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="ShimmerFrameLayout"><attr format="boolean" name="auto_start"/><attr format="float" name="base_alpha"/><attr format="integer" name="duration"/><attr format="integer" name="repeat_count"/><attr format="integer" name="repeat_delay"/><attr format="enum" name="repeat_mode">
+      <enum name="restart" value="1"/>
+      <enum name="reverse" value="2"/>
+    </attr><attr format="enum" name="angle">
+      <enum name="cw_0" value="0"/>
+      <enum name="cw_90" value="90"/>
+      <enum name="cw_180" value="180"/>
+      <enum name="cw_270" value="270"/>
+    </attr><attr format="float" name="dropoff"/><attr format="dimension" name="fixed_width"/><attr format="dimension" name="fixed_height"/><attr format="float" name="intensity"/><attr format="float" name="relative_width"/><attr format="float" name="relative_height"/><attr format="enum" name="shape">
+      <enum name="linear" value="0"/>
+      <enum name="radial" value="1"/>
+    </attr><attr format="float" name="tilt"/></declare-styleable></configuration></mergedItems></merger>

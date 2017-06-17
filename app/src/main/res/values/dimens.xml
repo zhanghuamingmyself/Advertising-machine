@@ -12,9 +12,11 @@
     <dimen name="header_footer_top_bottom_padding">12dp</dimen>
 
 
+
     <dimen name="biz_plugin_weather_otherday_small_textsize">42.0sp</dimen>
     <dimen name="biz_plugin_weather_otherday_image_size">180.0dip</dimen>
     <dimen name="biz_plugin_weather_otherday_temperature_textsize">45.0sp</dimen>
     <dimen name="biz_plugin_weather_selectcity_item_textsize">39.0sp</dimen>
     <dimen name="biz_plugin_weather_otherday_climate_textsize">39.0sp</dimen>
+
 </resources>

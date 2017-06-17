@@ -75,7 +75,8 @@ public final class R {
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int absListViewStyle=0x7f010000;
-        /** <p>May be an integer value, such as "<code>100</code>".
+        /**  @hide Controls whether this view can take accessibility focus. 
+         <p>May be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -87,9 +88,39 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>yes</code></td><td>1</td><td></td></tr>
-<tr><td><code>no</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 The system determines whether the view can take accessibility focus - default
+                 (recommended).
+                 <p>
+                 Such a view is consideted by the focus search if it is:
+                 <ul>
+                 <li>
+                 Important for accessibility and actionable (clickable, long clickable, focusable)
+                 </li>
+                 <li>
+                 Important for accessibility, not actionable (clickable, long clickable, focusable),
+                 and does not have an actionable predecessor.
+                 </li>
+                 </ul>
+                 An accessibility srvice can request putting accessibility focus on such a view.
+                 </p>
+            </td></tr>
+<tr><td><code>yes</code></td><td>1</td><td>
+                 The view can take accessibility focus.
+                 <p>
+                 A view that can take accessibility focus is always considered during focus
+                 search and an accessibility service can request putting accessibility focus
+                 on it.
+                 </p>
+            </td></tr>
+<tr><td><code>no</code></td><td>2</td><td>
+                 The view can not take accessibility focus.
+                 <p>
+                 A view that can not take accessibility focus is never considered during focus
+                 search and an accessibility service can not request putting accessibility focus
+                 on it.
+                 </p>
+            </td></tr>
 </table>
          */
         public static final int accessibilityFocusable=0x7f010060;
@@ -271,7 +302,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int actualImageScaleType=0x7f0100c7;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Sets whether this ViewGroup's drawable states also include
+             its children's drawable states.  This is used, for example, to
+             make a group appear to be focused when its child EditText or button
+             is focused.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -299,7 +336,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int alertDialogTheme=0x7f010181;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /** 
+             alpha property of the view, as a value between 0 (completely transparent) and 1
+             (completely opaque).
+        
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -307,7 +348,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int alpha=0x7f010050;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Defines whether the ViewGroup should always draw its children using their
+             drawing cache or not. The default value is true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -328,7 +373,13 @@ containing a value of this type.
 </table>
          */
         public static final int angle=0x7f0100fc;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Defines whether changes in layout (caused by adding and removing items) should
+             cause a LayoutTransition to run. When this flag is set to true, a default
+             LayoutTransition object will be set on the ViewGroup container and default
+             animations will run when these layout changes occur.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -336,7 +387,13 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int animateLayoutChanges=0x7f010061;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Defines whether layout animations should create a drawing cache for their
+             children. Enabling the animation cache consumes more memory and requires
+             a longer initialization but provides better performance. The animation
+             cache is enabled by default.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -487,7 +544,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int buttonStyleSmall=0x7f010188;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+        /** 
+             Indicates that this list will always be drawn on top of solid, single-color
+             opaque background. This allows the list to optimize drawing.
+        
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -567,16 +628,28 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int checkedTextViewStyle=0x7f01018a;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Defines the choice behavior for the view. By default, lists do not have
+             any choice behavior. By setting the choiceMode to singleChoice, the list
+             allows up to one item to be in a chosen state. By setting the choiceMode to
+             multipleChoice, the list allows any number of items to be chosen.
+             Finally, by setting the choiceMode to multipleChoiceModal the list allows
+             any number of items to be chosen in a special selection mode.
+             The application will supply a
+             {@link android.widget.AbsListView.MultiChoiceModeListener} using
+             {@link android.widget.AbsListView#setMultiChoiceModeListener} to control the
+             selection mode. This uses the {@link android.view.ActionMode} API.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>singleChoice</code></td><td>1</td><td></td></tr>
-<tr><td><code>multipleChoice</code></td><td>2</td><td></td></tr>
-<tr><td><code>multipleChoiceModal</code></td><td>3</td><td></td></tr>
+<tr><td><code>none</code></td><td>0</td><td> Normal list that does not indicate choices. </td></tr>
+<tr><td><code>singleChoice</code></td><td>1</td><td> The list allows up to one choice. </td></tr>
+<tr><td><code>multipleChoice</code></td><td>2</td><td> The list allows multiple choices. </td></tr>
+<tr><td><code>multipleChoiceModal</code></td><td>3</td><td> The list allows multiple choices in a custom selection mode. </td></tr>
 </table>
          */
         public static final int choiceMode=0x7f01000b;
@@ -588,7 +661,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int circleCrop=0x7f0100da;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Defines whether this view reacts to click events. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -596,7 +670,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int clickable=0x7f010042;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Defines whether a child is limited to draw inside of its bounds or not.
+             This is useful with animations that scale the size of the children to more
+             than 100% for instance. In such a case, this property should be set to false
+             to allow the children to draw outside of their bounds. The default value of
+             this property is true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -604,7 +685,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int clipChildren=0x7f010062;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Defines whether the ViewGroup will clip its drawing surface so as to exclude
+             the padding area. This property is set to true by default.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -735,7 +820,12 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int commitIcon=0x7f0100f2;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** 
+             Defines text that briefly describes content of the view. This property is used
+             primarily for accessibility. Since some views do not have textual
+             representation this attribute can be used for providing such.
+        
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -854,15 +944,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int defaultQueryHint=0x7f0100ec;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Defines the relationship between the ViewGroup and its descendants
+             when looking for a View to take focus.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>beforeDescendants</code></td><td>0</td><td></td></tr>
-<tr><td><code>afterDescendants</code></td><td>1</td><td></td></tr>
-<tr><td><code>blocksDescendants</code></td><td>2</td><td></td></tr>
+<tr><td><code>beforeDescendants</code></td><td>0</td><td> The ViewGroup will get focus before any of its descendants. </td></tr>
+<tr><td><code>afterDescendants</code></td><td>1</td><td> The ViewGroup will get focus only if none of its descendants want it. </td></tr>
+<tr><td><code>blocksDescendants</code></td><td>2</td><td> The ViewGroup will block its descendants from receiving focus. </td></tr>
 </table>
          */
         public static final int descendantFocusability=0x7f010069;
@@ -908,7 +1002,13 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int divider=0x7f010076;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Drawable or color to draw between list items. 
+ <attr name="divider" format="reference|color" /> 
+
+             Height of the divider. Will use the intrinsic height of the divider if this
+             is not specified.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -936,7 +1036,12 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int dividerVertical=0x7f01015c;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to true, the selector will be drawn over the selected item.
+             Otherwise the selector is drawn behind the selected item. The default
+             value is false.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -958,15 +1063,28 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int drawerArrowStyle=0x7f01006b;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Defines the quality of translucent drawing caches. This property is used
+             only when the drawing cache is enabled and translucent. The default value is auto.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>low</code></td><td>1</td><td></td></tr>
-<tr><td><code>high</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 Lets the framework decide what quality level should be used
+                 for the drawing cache.
+            </td></tr>
+<tr><td><code>low</code></td><td>1</td><td>
+                 Low quality. When set to low quality, the drawing cache uses a lower color
+                 depth, thus losing precision in rendering gradients, but uses less memory.
+            </td></tr>
+<tr><td><code>high</code></td><td>2</td><td>
+                 High quality. When set to high quality, the drawing cache uses a higher
+                 color depth but uses more memory.
+            </td></tr>
 </table>
          */
         public static final int drawingCacheQuality=0x7f010046;
@@ -992,7 +1110,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int dropoff=0x7f0100fd;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When this attribute is set to true, the view gets its drawable state
+             (focused, pressed, etc.) from its direct parent rather than from itself.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1121,7 +1243,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int fadeDuration=0x7f0100bc;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Defines whether to fade out scrollbars when they are not in use. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1129,19 +1252,28 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int fadeScrollbars=0x7f010030;
-        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /** 
+             This attribute is deprecated and will be ignored as of
+             API level 14 ({@link android.os.Build.VERSION_CODES#ICE_CREAM_SANDWICH}).
+             Using fading edges may introduce noticeable performance
+             degradations and should be used only when required by the application's
+             visual design. To request fading edges with API level 14 and above,
+             use the <code>android:requiresFadingEdge</code> attribute instead.
+        
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00001000</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00002000</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No edge is faded. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00001000</td><td> Fades horizontal edges only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00002000</td><td> Fades vertical edges only. </td></tr>
 </table>
          */
         public static final int fadingEdge=0x7f01003a;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Defines the length of the fading edges. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1173,7 +1305,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int failureImageScaleType=0x7f0100c3;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to true, the list will always show the fast scroll interface.
+             This setting implies fastScrollEnabled.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1181,7 +1317,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int fastScrollAlwaysVisible=0x7f01000c;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Enables the fast scroll thumb that can be dragged to quickly scroll through
+             the list.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1189,7 +1329,13 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int fastScrollEnabled=0x7f010009;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Specifies whether to filter touches when the view's window is obscured by
+             another visible window.  When set to true, the view will not receive touches
+             whenever a toast, dialog or other window appears above the view's window.
+             Refer to the {@link android.view.View} security documentation for more details.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1197,7 +1343,13 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int filterTouchesWhenObscured=0x7f010045;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Boolean internal attribute to adjust view layout based on
+             system windows such as the status bar.
+             If true, adjusts the padding of this view to leave space for the system windows.
+             Will only take effect if this view is in a non-embedded activity.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1225,7 +1377,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int fixed_width=0x7f0100fe;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Boolean that controls whether a view can take focus.  By default the user can not
+             move focus to a view; by setting this attribute to true the view is
+             allowed to take focus.  This value does not impact the behavior of
+             directly calling {@link android.view.View#requestFocus}, which will
+             always request focus regardless of this view.  It only impacts where
+             focus navigation will try to move focus.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1233,7 +1393,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int focusable=0x7f010029;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Boolean that controls whether a view can take focus while in touch mode.
+             If this is true for a view, that view can gain focus when clicked on, and can keep
+             focus if another view is clicked on that doesn't have this attribute set to true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1241,7 +1406,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int focusableInTouchMode=0x7f01002a;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to false, the ListView will not draw the divider before each footer view.
+             The default value is true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1271,7 +1440,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int goIcon=0x7f0100ee;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Boolean that controls whether a view should have haptic feedback
+             enabled for events such as long presses.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1279,7 +1452,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int hapticFeedbackEnabled=0x7f01004c;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to false, the ListView will not draw the divider after each header view.
+             The default value is true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1333,7 +1510,18 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int iconifiedByDefault=0x7f0100ea;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Supply an identifier name for this view, to later retrieve it
+             with {@link android.view.View#findViewById View.findViewById()} or
+             {@link android.app.Activity#findViewById Activity.findViewById()}.
+             This must be a
+             resource reference; typically you set this using the
+             <code>@+</code> syntax to create a new ID resources.
+             For example: <code>android:id="@+id/my_id"</code> which
+             allows you to later retrieve the view
+             with <code>findViewById(R.id.my_id)</code>.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int id=0x7f01001e;
@@ -1357,7 +1545,13 @@ containing a value of this type.
 </table>
          */
         public static final int imageAspectRatioAdjust=0x7f0100d8;
-        /** <p>May be an integer value, such as "<code>100</code>".
+        /** 
+             Controls how this View is important for accessibility which is if it fires
+             accessibility events and if it is reported to accessibility services that
+             query the screen. Note: While not recommended, an accessibility service may
+             decide to ignore this attribute and operate on all views in the view tree.
+        
+         <p>May be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1369,9 +1563,12 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>yes</code></td><td>1</td><td></td></tr>
-<tr><td><code>no</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 The system determines whether the view is important for accessibility - default
+                 (recommended).
+            </td></tr>
+<tr><td><code>yes</code></td><td>1</td><td> The view is important for accessibility. </td></tr>
+<tr><td><code>no</code></td><td>2</td><td> The view is not important for accessibility. </td></tr>
 </table>
          */
         public static final int importantForAccessibility=0x7f01005f;
@@ -1409,7 +1606,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int isLightTheme=0x7f01006d;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Set this if the view will serve as a scrolling container, meaing
+             that it can be resized to shrink its overall window so that there
+             will be space for an input method.  If not set, the default
+             value will be true if "scrollbars" has the vertical scrollbar
+             set, else it will be false.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1449,7 +1653,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int itemTextColor=0x7f0100e2;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Controls whether the view's window should keep the screen on
+             while visible.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1461,15 +1669,28 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int keylines=0x7f0100aa;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Specifies the type of layer backing this view. The default value is none.
+             Refer to {@link android.view.View#setLayerType(int, android.graphics.Paint)}
+             for more information.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>software</code></td><td>1</td><td></td></tr>
-<tr><td><code>hardware</code></td><td>2</td><td></td></tr>
+<tr><td><code>none</code></td><td>0</td><td> Don't use a layer. </td></tr>
+<tr><td><code>software</code></td><td>1</td><td>
+                 Use a software layer. Refer to
+                 {@link android.view.View#setLayerType(int, android.graphics.Paint) for
+                 more information.
+            </td></tr>
+<tr><td><code>hardware</code></td><td>2</td><td>
+                 Use a hardware layer. Refer to
+                 {@link android.view.View#setLayerType(int, android.graphics.Paint) for
+                 more information.
+            </td></tr>
 </table>
          */
         public static final int layerType=0x7f01005b;
@@ -1477,20 +1698,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int layout=0x7f0100e9;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the layout animation to use the first time the ViewGroup is laid out.
+             Layout animations can also be started manually after the first layout.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int layoutAnimation=0x7f010064;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Defines the direction of layout drawing. This typically is associated with writing
+             direction of the language script used. The possible values are "ltr" for Left-to-Right,
+             "rtl" for Right-to-Left, "locale" and "inherit" from parent view. If there is nothing
+             to inherit, "locale" is used. "locale" falls back to "en-US". "ltr" is the direction
+             used in "en-US". The default for this attribute is "inherit".
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>ltr</code></td><td>0</td><td></td></tr>
-<tr><td><code>rtl</code></td><td>1</td><td></td></tr>
-<tr><td><code>inherit</code></td><td>2</td><td></td></tr>
-<tr><td><code>locale</code></td><td>3</td><td></td></tr>
+<tr><td><code>ltr</code></td><td>0</td><td> Left-to-Right </td></tr>
+<tr><td><code>rtl</code></td><td>1</td><td> Right-to-Left </td></tr>
+<tr><td><code>inherit</code></td><td>2</td><td> Inherit from parent </td></tr>
+<tr><td><code>locale</code></td><td>3</td><td> Locale </td></tr>
 </table>
          */
         public static final int layoutDirection=0x7f01005c;
@@ -1644,7 +1876,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int listPreferredItemPaddingRight=0x7f01016d;
-        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Drawable used to indicate the currently selected item in the list. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -1658,7 +1891,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int logo=0x7f010075;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Defines whether this view reacts to long click events. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1708,7 +1942,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int middleBarArrowSize=0x7f0100b5;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             Defines the minimum height of the view. It is not guaranteed
+             the view will be able to achieve this minimum height (for example,
+             if its parent layout constrains it with less available height).
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1718,7 +1957,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int minHeight=0x7f010049;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             Defines the minimum width of the view. It is not guaranteed
+             the view will be able to achieve this minimum width (for example,
+             if its parent layout constrains it with less available width).
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1756,27 +2000,75 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int navigationMode=0x7f01006f;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_DOWN}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int nextFocusDown=0x7f010040;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_FORWARD}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int nextFocusForward=0x7f010041;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_LEFT}.
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int nextFocusLeft=0x7f01003d;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_RIGHT}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int nextFocusRight=0x7f01003e;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** 
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_UP}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int nextFocusUp=0x7f01003f;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** 
+             Name of the method in this View's context to invoke when the view is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>android:onClick="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity).
+        
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1784,27 +2076,40 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int onClick=0x7f01004e;
-        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Drawable to draw below list content. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int overScrollFooter=0x7f010014;
-        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Drawable to draw above list content. 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int overScrollHeader=0x7f010013;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Defines over-scrolling behavior. This property is used only if the
+             View is scrollable. Over-scrolling is the ability for the user to
+             receive feedback when attempting to scroll beyond meaningful content.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>always</code></td><td>0</td><td></td></tr>
-<tr><td><code>ifContentScrolls</code></td><td>1</td><td></td></tr>
-<tr><td><code>never</code></td><td>2</td><td></td></tr>
+<tr><td><code>always</code></td><td>0</td><td>
+                 Always show over-scroll effects, even if the content fits entirely
+                 within the available space.
+            </td></tr>
+<tr><td><code>ifContentScrolls</code></td><td>1</td><td>
+                 Only show over-scroll effects if the content is large
+                 enough to meaningfully scroll.
+            </td></tr>
+<tr><td><code>never</code></td><td>2</td><td> Never show over-scroll effects. </td></tr>
 </table>
          */
         public static final int overScrollMode=0x7f01004f;
@@ -1820,7 +2125,22 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int overlayImage=0x7f0100c9;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             A drawable to use as the background.  This can be either a reference
+             to a full drawable resource (such as a PNG image, 9-patch,
+             XML state list description, etc), or a solid color such as "#ff000000"
+            (black).
+        
+ <attr name="background" format="reference|color" /> 
+
+             Sets the padding, in pixels, of all four edges.  Padding is defined as
+             space between the edges of the view and the view's content. A views size
+             will include it's padding.  If a {@link android.R.attr#background}
+             is provided, the padding will initially be set to that (0 if the
+             drawable does not have padding).  Explicitly setting a padding value
+             will override the corresponding padding found in the background.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1830,7 +2150,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int padding=0x7f010022;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the bottom edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1840,7 +2161,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paddingBottom=0x7f010026;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1858,7 +2180,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paddingEnd=0x7f010028;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the left edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1868,7 +2191,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paddingLeft=0x7f010023;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the right edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1878,7 +2202,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paddingRight=0x7f010025;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1896,7 +2221,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paddingStart=0x7f010027;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the padding, in pixels, of the top edge; see {@link android.R.attr#padding}. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -1932,16 +2258,24 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int paused=0x7f01000f;
-        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /** 
+             Defines the persistence of the drawing cache. The drawing cache might be
+             enabled by a ViewGroup for all its children in specific situations (for
+             instance during a scrolling.) This property lets you persist the cache
+             in memory after its initial usage. Persisting the cache consumes more
+             memory but may prevent frequent garbage collection is the cache is created
+             over and over again. By default the persistence is set to scrolling.
+        
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>animation</code></td><td>0x1</td><td></td></tr>
-<tr><td><code>scrolling</code></td><td>0x2</td><td></td></tr>
-<tr><td><code>all</code></td><td>0x3</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x0</td><td> The drawing cache is not persisted after use. </td></tr>
+<tr><td><code>animation</code></td><td>0x1</td><td> The drawing cache is persisted after a layout animation. </td></tr>
+<tr><td><code>scrolling</code></td><td>0x2</td><td> The drawing cache is persisted after a scroll. </td></tr>
+<tr><td><code>all</code></td><td>0x3</td><td> The drawing cache is always persisted. </td></tr>
 </table>
          */
         public static final int persistentDrawingCache=0x7f010066;
@@ -2202,15 +2536,16 @@ containing a value of this type.
 </table>
          */
         public static final int repeat_mode=0x7f0100fb;
-        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /**  Defines which edges should be faded on scrolling. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00001000</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00002000</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No edge is faded. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00001000</td><td> Fades horizontal edges only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00002000</td><td> Fades vertical edges only. </td></tr>
 </table>
          */
         public static final int requiresFadingEdge=0x7f01003b;
@@ -2245,7 +2580,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int rippleColor=0x7f0100b8;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /**  rotation of the view, in degrees. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2253,7 +2589,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int rotation=0x7f010055;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /**  rotation of the view around the x axis, in degrees. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2261,7 +2598,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int rotationX=0x7f010056;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /**  rotation of the view around the y axis, in degrees. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2357,7 +2695,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int roundingBorderWidth=0x7f0100d2;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             If unset, no state will be saved for this view when it is being
+             frozen. The default is true, allowing the view to be saved
+             (however it also must have an ID assigned to it for its
+             state to be saved).  Setting this to false only disables the
+             state for this view, not for its children which may still
+             be saved.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2365,7 +2711,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int saveEnabled=0x7f010044;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /**  scale of the view in the x direction. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2373,7 +2720,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scaleX=0x7f010058;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+        /**  scale of the view in the y direction. 
+         <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2386,7 +2734,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
          */
         public static final int scopeUris=0x7f010107;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  The initial horizontal scroll offset, in pixels. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -2396,7 +2745,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollX=0x7f010020;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  The initial vertical scroll offset, in pixels. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -2406,7 +2756,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollY=0x7f010021;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Defines whether the horizontal scrollbar track should always be drawn. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2414,7 +2765,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollbarAlwaysDrawHorizontalTrack=0x7f010038;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Defines whether the vertical scrollbar track should always be drawn. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2422,7 +2774,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollbarAlwaysDrawVerticalTrack=0x7f010039;
-        /** <p>Must be an integer value, such as "<code>100</code>".
+        /**  Defines the delay in milliseconds that a scrollbar waits before fade out. 
+         <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2430,7 +2783,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollbarDefaultDelayBeforeFade=0x7f010032;
-        /** <p>Must be an integer value, such as "<code>100</code>".
+        /**  Defines the delay in milliseconds that a scrollbar takes to fade out. 
+         <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2438,7 +2792,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollbarFadeDuration=0x7f010031;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /**  Sets the width of vertical scrollbars and height of horizontal scrollbars. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -2448,48 +2803,68 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scrollbarSize=0x7f010033;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Controls the scrollbar style and position. The scrollbars can be overlaid or
+             inset. When inset, they add to the padding of the view. And the
+             scrollbars can be drawn inside the padding area or on the edge of
+             the view. For example, if a view has a background drawable and you
+             want to draw the scrollbars inside the padding specified by the
+             drawable, you can use insideOverlay or insideInset. If you want them
+             to appear at the edge of the view, ignoring the padding, then you can
+             use outsideOverlay or outsideInset.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>insideOverlay</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>insideInset</code></td><td>0x01000000</td><td></td></tr>
-<tr><td><code>outsideOverlay</code></td><td>0x02000000</td><td></td></tr>
-<tr><td><code>outsideInset</code></td><td>0x03000000</td><td></td></tr>
+<tr><td><code>insideOverlay</code></td><td>0x0</td><td> Inside the padding and overlaid </td></tr>
+<tr><td><code>insideInset</code></td><td>0x01000000</td><td> Inside the padding and inset </td></tr>
+<tr><td><code>outsideOverlay</code></td><td>0x02000000</td><td> Edge of the view and overlaid </td></tr>
+<tr><td><code>outsideInset</code></td><td>0x03000000</td><td> Edge of the view and inset </td></tr>
 </table>
          */
         public static final int scrollbarStyle=0x7f01002e;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Defines the horizontal scrollbar thumb drawable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int scrollbarThumbHorizontal=0x7f010034;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Defines the vertical scrollbar thumb drawable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int scrollbarThumbVertical=0x7f010035;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Defines the horizontal scrollbar track drawable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int scrollbarTrackHorizontal=0x7f010036;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /**  Defines the vertical scrollbar track drawable. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int scrollbarTrackVertical=0x7f010037;
-        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /**  Defines which scrollbars should be displayed on scrolling or not. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00000100</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00000200</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No scrollbar is displayed. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00000100</td><td> Displays horizontal scrollbar only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00000200</td><td> Displays vertical scrollbar only. </td></tr>
 </table>
          */
         public static final int scrollbars=0x7f01002d;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to true, the list uses a drawing cache during scrolling.
+             This makes the rendering faster but uses more memory. The default
+             value is true.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2567,7 +2942,17 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int singleChoiceItemLayout=0x7f01008d;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen. This
+             property is set to true by default but should be set to false if your adapter
+             will display items of varying heights. When this property is set to true and
+             your adapter displays items of varying heights, the scrollbar thumb will
+             change size as the user scrolls through the list. When set to fale, the list
+             will use only the number of items in the adapter and the number of items visible
+             on screen to determine the scrollbar's properties.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2575,7 +2960,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int smoothScrollbar=0x7f01000a;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Boolean that controls whether a view should have sound effects
+             enabled for events such as clicking and touching.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2610,7 +2999,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int spinnerStyle=0x7f01018e;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             Sets whether this ViewGroup should split MotionEvents
+             to separate child views during touch event dispatch.
+             If false (default), touch events will be dispatched to
+             the child view where the first pointer went down until
+             the last pointer goes up.
+             If true, touch events may be dispatched to multiple children.
+             MotionEvents for each pointer will be dispatched to the child
+             view where the initial ACTION_DOWN event happened.
+             See {@link android.view.ViewGroup#setMotionEventSplittingEnabled(boolean)}
+             for more information.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2626,7 +3027,8 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int splitTrack=0x7f010112;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /**  Used by ListView and GridView to stack their content from the bottom. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2854,7 +3256,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tabTextColor=0x7f01011d;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** 
+             Supply a tag for this view containing a String, to be retrieved
+             later with {@link android.view.View#getTag View.getTag()} or
+             searched for with {@link android.view.View#findViewWithTag
+             View.findViewWithTag()}.  It is generally preferable to use
+             IDs (through the android:id attribute) instead of tags because
+             they are faster and allow for compile-time type checking.
+        
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2862,7 +3272,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tag=0x7f01001f;
-        /** <p>May be an integer value, such as "<code>100</code>".
+        /** 
+             Alignment of the text. A heuristic is used to determine the resolved
+            text alignment.
+        
+         <p>May be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2874,13 +3288,23 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>inherit</code></td><td>0</td><td></td></tr>
-<tr><td><code>gravity</code></td><td>1</td><td></td></tr>
-<tr><td><code>textStart</code></td><td>2</td><td></td></tr>
-<tr><td><code>textEnd</code></td><td>3</td><td></td></tr>
-<tr><td><code>center</code></td><td>4</td><td></td></tr>
-<tr><td><code>viewStart</code></td><td>5</td><td></td></tr>
-<tr><td><code>viewEnd</code></td><td>6</td><td></td></tr>
+<tr><td><code>inherit</code></td><td>0</td><td> Default </td></tr>
+<tr><td><code>gravity</code></td><td>1</td><td>
+                 Default for the root view. The gravity determines the alignment, ALIGN_NORMAL,
+                ALIGN_CENTER, or ALIGN_OPPOSITE, which are relative to each paragraph’s
+                text direction
+            </td></tr>
+<tr><td><code>textStart</code></td><td>2</td><td> Align to the start of the paragraph, e.g. ALIGN_NORMAL. </td></tr>
+<tr><td><code>textEnd</code></td><td>3</td><td> Align to the end of the paragraph, e.g. ALIGN_OPPOSITE. </td></tr>
+<tr><td><code>center</code></td><td>4</td><td> Center the paragraph, e.g. ALIGN_CENTER. </td></tr>
+<tr><td><code>viewStart</code></td><td>5</td><td>
+                 Align to the start of the view, which is ALIGN_LEFT if the view’s resolved
+                layoutDirection is LTR, and ALIGN_RIGHT otherwise.
+            </td></tr>
+<tr><td><code>viewEnd</code></td><td>6</td><td>
+                 Align to the end of the view, which is ALIGN_RIGHT if the view’s resolved
+                layoutDirection is LTR, and ALIGN_LEFT otherwise
+            </td></tr>
 </table>
          */
         public static final int textAlignment=0x7f01005e;
@@ -2925,7 +3349,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int textColorSearchUrl=0x7f010167;
-        /** <p>May be an integer value, such as "<code>100</code>".
+        /** 
+             Direction of the text. A heuristic is used to determine the resolved text direction
+             of paragraphs.
+        
+         <p>May be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2937,16 +3365,28 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>inherit</code></td><td>0</td><td></td></tr>
-<tr><td><code>firstStrong</code></td><td>1</td><td></td></tr>
-<tr><td><code>anyRtl</code></td><td>2</td><td></td></tr>
-<tr><td><code>ltr</code></td><td>3</td><td></td></tr>
-<tr><td><code>rtl</code></td><td>4</td><td></td></tr>
-<tr><td><code>locale</code></td><td>5</td><td></td></tr>
+<tr><td><code>inherit</code></td><td>0</td><td> Default </td></tr>
+<tr><td><code>firstStrong</code></td><td>1</td><td>
+                 Default for the root view. The first strong directional character determines the
+                 paragraph direction.  If there is no strong directional character, the paragraph
+                 direction is the view’s resolved layout direction.
+            </td></tr>
+<tr><td><code>anyRtl</code></td><td>2</td><td>
+                 The paragraph direction is RTL if it contains any strong RTL character, otherwise
+                 it is LTR if it contains any strong LTR characters.  If there are neither, the
+                 paragraph direction is the view’s resolved layout direction.
+            </td></tr>
+<tr><td><code>ltr</code></td><td>3</td><td> The paragraph direction is left to right. </td></tr>
+<tr><td><code>rtl</code></td><td>4</td><td> The paragraph direction is right to left. </td></tr>
+<tr><td><code>locale</code></td><td>5</td><td> The paragraph direction is coming from the system Locale. </td></tr>
 </table>
          */
         public static final int textDirection=0x7f01005d;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** 
+             When set to true, the list will filter results as the user types. The
+             List's adapter must support the Filterable interface for this to work.
+        
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -3078,19 +3518,34 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int track=0x7f01010d;
-        /** <p>Must be one of the following constant values.</p>
+        /** 
+             Sets the transcript mode for the list. In transcript mode, the list
+             scrolls to the bottom to make new items visible when they are added.
+        
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>disabled</code></td><td>0</td><td></td></tr>
-<tr><td><code>normal</code></td><td>1</td><td></td></tr>
-<tr><td><code>alwaysScroll</code></td><td>2</td><td></td></tr>
+<tr><td><code>disabled</code></td><td>0</td><td> Disables transcript mode. This is the default value. </td></tr>
+<tr><td><code>normal</code></td><td>1</td><td>
+                 The list will automatically scroll to the bottom when
+                 a data set change notification is received and only if the last item is
+                 already visible on screen.
+            </td></tr>
+<tr><td><code>alwaysScroll</code></td><td>2</td><td>
+                 The list will automatically scroll to the bottom, no matter what items
+                 are currently visible.
+            </td></tr>
 </table>
          */
         public static final int transcriptMode=0x7f010007;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             x location of the pivot point around which the view will rotate and scale.
+             This xml attribute sets the pivotX property of the View.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -3100,7 +3555,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int transformPivotX=0x7f010053;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             y location of the pivot point around which the view will rotate and scale.
+             This xml attribute sets the pivotY property of the View.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -3110,7 +3569,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int transformPivotY=0x7f010054;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             translation in x of the view. This value is added post-layout to the left
+             property of the view, which is set by its layout.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -3120,7 +3583,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int translationX=0x7f010051;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** 
+             translation in y of the view. This value is added post-layout to the left
+             property of the view, which is set by its layout.
+        
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -3130,15 +3597,16 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int translationY=0x7f010052;
-        /** <p>Must be one of the following constant values.</p>
+        /**  Determines which side the vertical scroll bar should be placed on. 
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>defaultPosition</code></td><td>0</td><td></td></tr>
-<tr><td><code>left</code></td><td>1</td><td></td></tr>
-<tr><td><code>right</code></td><td>2</td><td></td></tr>
+<tr><td><code>defaultPosition</code></td><td>0</td><td> Place the scroll bar wherever the system default determines. </td></tr>
+<tr><td><code>left</code></td><td>1</td><td> Place the scroll bar on the left. </td></tr>
+<tr><td><code>right</code></td><td>2</td><td> Place the scroll bar on the right. </td></tr>
 </table>
          */
         public static final int verticalScrollbarPosition=0x7f01005a;
@@ -3150,15 +3618,16 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int viewAspectRatio=0x7f0100bd;
-        /** <p>Must be one of the following constant values.</p>
+        /**  Controls the initial visibility of the view. 
+         <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>visible</code></td><td>0</td><td></td></tr>
-<tr><td><code>invisible</code></td><td>1</td><td></td></tr>
-<tr><td><code>gone</code></td><td>2</td><td></td></tr>
+<tr><td><code>visible</code></td><td>0</td><td> Visible on screen; the default value. </td></tr>
+<tr><td><code>invisible</code></td><td>1</td><td> Not displayed, but taken into account during layout (space is left for it). </td></tr>
+<tr><td><code>gone</code></td><td>2</td><td> Completely hidden, as if the view had not been added. </td></tr>
 </table>
          */
         public static final int visibility=0x7f01002b;
@@ -3670,23 +4139,23 @@ containing a value of this type.
         public static final int weather=0x7f02009d;
     }
     public static final class id {
-        public static final int IVfir1=0x7f0c00f1;
-        public static final int IVfir10=0x7f0c00fa;
-        public static final int IVfir2=0x7f0c00f2;
-        public static final int IVfir3=0x7f0c00f3;
-        public static final int IVfir4=0x7f0c00f4;
-        public static final int IVfir5=0x7f0c00f5;
-        public static final int IVfir6=0x7f0c00f6;
-        public static final int IVfir7=0x7f0c00f7;
-        public static final int IVfir8=0x7f0c00f8;
-        public static final int IVfir9=0x7f0c00f9;
+        public static final int IVfir1=0x7f0c00e3;
+        public static final int IVfir10=0x7f0c00ec;
+        public static final int IVfir2=0x7f0c00e4;
+        public static final int IVfir3=0x7f0c00e5;
+        public static final int IVfir4=0x7f0c00e6;
+        public static final int IVfir5=0x7f0c00e7;
+        public static final int IVfir6=0x7f0c00e8;
+        public static final int IVfir7=0x7f0c00e9;
+        public static final int IVfir8=0x7f0c00ea;
+        public static final int IVfir9=0x7f0c00eb;
         public static final int __leak_canary_action=0x7f0c007b;
         public static final int __leak_canary_display_leak_list=0x7f0c007a;
         public static final int __leak_canary_row_connector=0x7f0c007e;
         public static final int __leak_canary_row_more=0x7f0c007f;
         public static final int __leak_canary_row_text=0x7f0c007c;
         public static final int __leak_canary_row_time=0x7f0c007d;
-        public static final int action0=0x7f0c0101;
+        public static final int action0=0x7f0c0100;
         public static final int action_bar=0x7f0c009d;
         public static final int action_bar_activity_content=0x7f0c0001;
         public static final int action_bar_container=0x7f0c009c;
@@ -3695,13 +4164,13 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f0c0081;
         public static final int action_bar_title=0x7f0c0080;
         public static final int action_context_bar=0x7f0c009e;
-        public static final int action_divider=0x7f0c0105;
+        public static final int action_divider=0x7f0c0104;
         public static final int action_menu_divider=0x7f0c0003;
         public static final int action_menu_presenter=0x7f0c0004;
         public static final int action_mode_bar=0x7f0c009a;
         public static final int action_mode_bar_stub=0x7f0c0099;
         public static final int action_mode_close_button=0x7f0c0082;
-        public static final int action_settings=0x7f0c011d;
+        public static final int action_settings=0x7f0c011c;
         public static final int activity_chooser_view_content=0x7f0c0083;
         public static final int adjust_height=0x7f0c005e;
         public static final int adjust_width=0x7f0c005f;
@@ -3713,15 +4182,15 @@ containing a value of this type.
         public static final int animation=0x7f0c0036;
         public static final int anyRtl=0x7f0c002b;
         public static final int auto=0x7f0c001c;
-        public static final int back=0x7f0c00d1;
+        public static final int back=0x7f0c00d0;
         public static final int beforeDescendants=0x7f0c0039;
         public static final int beginning=0x7f0c005c;
         public static final int blocksDescendants=0x7f0c003a;
         public static final int bottom=0x7f0c0049;
         public static final int buttonPanel=0x7f0c0093;
-        public static final int calendarView=0x7f0c00e1;
-        public static final int cancel_action=0x7f0c0102;
-        public static final int cbLoopViewPager=0x7f0c00e4;
+        public static final int calendarView=0x7f0c00e0;
+        public static final int cancel_action=0x7f0c0101;
+        public static final int cbLoopViewPager=0x7f0c00ed;
         public static final int cb_item_tag=0x7f0c0005;
         public static final int center=0x7f0c002d;
         public static final int centerCrop=0x7f0c0055;
@@ -3729,8 +4198,8 @@ containing a value of this type.
         public static final int center_horizontal=0x7f0c004a;
         public static final int center_vertical=0x7f0c004b;
         public static final int checkbox=0x7f0c0095;
-        public static final int chronometer=0x7f0c0108;
-        public static final int climate=0x7f0c00df;
+        public static final int chronometer=0x7f0c0107;
+        public static final int climate=0x7f0c00de;
         public static final int clip_horizontal=0x7f0c004c;
         public static final int clip_vertical=0x7f0c004d;
         public static final int collapseActionView=0x7f0c0060;
@@ -3754,17 +4223,17 @@ containing a value of this type.
         public static final int dropdown=0x7f0c0071;
         public static final int edit_query=0x7f0c009f;
         public static final int end=0x7f0c004e;
-        public static final int end_padder=0x7f0c010d;
+        public static final int end_padder=0x7f0c010c;
         public static final int enterAlways=0x7f0c0043;
         public static final int enterAlwaysCollapsed=0x7f0c0044;
         public static final int exitUntilCollapsed=0x7f0c0045;
         public static final int expand_activities_button=0x7f0c0084;
         public static final int expanded_menu=0x7f0c0094;
         public static final int fab=0x7f0c00b1;
-        public static final int famourname=0x7f0c00f0;
+        public static final int famourname=0x7f0c00f9;
         public static final int famoursall=0x7f0c00c8;
         public static final int famouspeople=0x7f0c00c5;
-        public static final int fileRec_info=0x7f0c00e2;
+        public static final int fileRec_info=0x7f0c00e1;
         public static final int fill=0x7f0c004f;
         public static final int fill_horizontal=0x7f0c0050;
         public static final int fill_vertical=0x7f0c0051;
@@ -3775,16 +4244,16 @@ containing a value of this type.
         public static final int fitXY=0x7f0c005a;
         public static final int fixed=0x7f0c0072;
         public static final int focusCrop=0x7f0c005b;
-        public static final int funtion_about_us=0x7f0c00cb;
-        public static final int funtion_more=0x7f0c00ec;
+        public static final int funtion_about_us=0x7f0c00ca;
+        public static final int funtion_more=0x7f0c00f5;
         public static final int funtion_nearactivity=0x7f0c00c3;
-        public static final int funtion_open=0x7f0c00cd;
+        public static final int funtion_open=0x7f0c00cc;
         public static final int funtion_ourdo=0x7f0c00c6;
         public static final int funtion_picture=0x7f0c00c1;
-        public static final int funtion_ppt=0x7f0c00cf;
-        public static final int funtion_weater=0x7f0c00e8;
+        public static final int funtion_ppt=0x7f0c00ce;
+        public static final int funtion_weater=0x7f0c00f1;
         public static final int funtionlayout=0x7f0c00bf;
-        public static final int gif2=0x7f0c00ed;
+        public static final int gif2=0x7f0c00f6;
         public static final int gone=0x7f0c0013;
         public static final int gravity=0x7f0c002e;
         public static final int hardware=0x7f0c0025;
@@ -3797,50 +4266,50 @@ containing a value of this type.
         public static final int ifContentScrolls=0x7f0c0020;
         public static final int ifRoom=0x7f0c0061;
         public static final int image=0x7f0c0085;
-        public static final int imageSwitcher1=0x7f0c00ef;
+        public static final int imageSwitcher1=0x7f0c00f8;
         public static final int imageView=0x7f0c00ad;
         public static final int imageView1=0x7f0c00b8;
-        public static final int imageViewsec=0x7f0c00fb;
-        public static final int image_photo=0x7f0c010e;
-        public static final int imagecode=0x7f0c00ea;
-        public static final int imagecodelayout=0x7f0c00d2;
-        public static final int img_about_us=0x7f0c00cc;
+        public static final int imageViewsec=0x7f0c00fa;
+        public static final int image_photo=0x7f0c010d;
+        public static final int imagecode=0x7f0c00f3;
+        public static final int imagecodelayout=0x7f0c00d1;
+        public static final int img_about_us=0x7f0c00cb;
         public static final int img_gallery=0x7f0c00c2;
-        public static final int img_more=0x7f0c00ee;
+        public static final int img_more=0x7f0c00f7;
         public static final int img_near=0x7f0c00c4;
-        public static final int img_open=0x7f0c00ce;
-        public static final int img_ppt=0x7f0c00d0;
-        public static final int img_wechat=0x7f0c00eb;
-        public static final int info=0x7f0c010c;
+        public static final int img_open=0x7f0c00cd;
+        public static final int img_ppt=0x7f0c00cf;
+        public static final int img_wechat=0x7f0c00f4;
+        public static final int info=0x7f0c010b;
         public static final int inherit=0x7f0c0027;
         public static final int insideInset=0x7f0c0018;
         public static final int insideOverlay=0x7f0c0019;
         public static final int invisible=0x7f0c0014;
         public static final int left=0x7f0c0023;
         public static final int light=0x7f0c006f;
-        public static final int line1=0x7f0c0106;
-        public static final int line3=0x7f0c010a;
+        public static final int line1=0x7f0c0105;
+        public static final int line3=0x7f0c0109;
         public static final int linear=0x7f0c0069;
         public static final int linearLayout1=0x7f0c00c0;
         public static final int list=0x7f0c00b5;
         public static final int listMode=0x7f0c003b;
         public static final int list_item=0x7f0c0087;
-        public static final int loPageTurningPoint=0x7f0c00e5;
+        public static final int loPageTurningPoint=0x7f0c00ee;
         public static final int locale=0x7f0c0028;
         public static final int low=0x7f0c001e;
         public static final int ltr=0x7f0c0029;
         public static final int mainLayout=0x7f0c00be;
-        public static final int media_actions=0x7f0c0104;
+        public static final int media_actions=0x7f0c0103;
         public static final int middle=0x7f0c005d;
         public static final int mini=0x7f0c0054;
         public static final int multipleChoice=0x7f0c000f;
         public static final int multipleChoiceModal=0x7f0c0010;
         public static final int multiply=0x7f0c0075;
-        public static final int nearDate=0x7f0c0100;
-        public static final int nearImage=0x7f0c00fe;
-        public static final int nearName=0x7f0c00ff;
+        public static final int nearDate=0x7f0c00ff;
+        public static final int nearImage=0x7f0c00fd;
+        public static final int nearName=0x7f0c00fe;
         public static final int near_list=0x7f0c00b2;
-        public static final int nearitem=0x7f0c00fd;
+        public static final int nearitem=0x7f0c00fc;
         public static final int never=0x7f0c0021;
         public static final int next=0x7f0c00bb;
         public static final int no=0x7f0c0033;
@@ -3851,21 +4320,21 @@ containing a value of this type.
         public static final int outsideOverlay=0x7f0c001b;
         public static final int parallax=0x7f0c0047;
         public static final int parentPanel=0x7f0c008a;
-        public static final int pause=0x7f0c011a;
-        public static final int pd_download=0x7f0c00e3;
-        public static final int peoplelanguage=0x7f0c00ca;
+        public static final int pause=0x7f0c0119;
+        public static final int pd_download=0x7f0c00e2;
+        public static final int peoplelanguage=0x7f0c00c9;
         public static final int pin=0x7f0c0048;
-        public static final int play=0x7f0c0119;
+        public static final int play=0x7f0c0118;
         public static final int prev=0x7f0c00ba;
         public static final int progress_circular=0x7f0c0007;
         public static final int progress_horizontal=0x7f0c0008;
-        public static final int ptr_id_arrow=0x7f0c0116;
-        public static final int ptr_id_header=0x7f0c0112;
-        public static final int ptr_id_header_container=0x7f0c0111;
-        public static final int ptr_id_last_updated=0x7f0c0115;
-        public static final int ptr_id_spinner=0x7f0c0117;
-        public static final int ptr_id_text=0x7f0c0114;
-        public static final int ptr_id_textwrapper=0x7f0c0113;
+        public static final int ptr_id_arrow=0x7f0c0115;
+        public static final int ptr_id_header=0x7f0c0111;
+        public static final int ptr_id_header_container=0x7f0c0110;
+        public static final int ptr_id_last_updated=0x7f0c0114;
+        public static final int ptr_id_spinner=0x7f0c0116;
+        public static final int ptr_id_text=0x7f0c0113;
+        public static final int ptr_id_textwrapper=0x7f0c0112;
         public static final int radial=0x7f0c006a;
         public static final int radio=0x7f0c0097;
         public static final int restart=0x7f0c0063;
@@ -3879,7 +4348,7 @@ containing a value of this type.
         public static final int scrollView=0x7f0c008f;
         public static final int scrollable=0x7f0c0073;
         public static final int scrolling=0x7f0c0037;
-        public static final int sdv_background=0x7f0c00d6;
+        public static final int sdv_background=0x7f0c00d5;
         public static final int search_badge=0x7f0c00a1;
         public static final int search_bar=0x7f0c00a0;
         public static final int search_button=0x7f0c00a2;
@@ -3891,15 +4360,14 @@ containing a value of this type.
         public static final int search_src_text=0x7f0c00a6;
         public static final int search_voice_btn=0x7f0c00aa;
         public static final int select_dialog_listview=0x7f0c00ab;
-        public static final int shimmer_view_container=0x7f0c00c9;
         public static final int shortcut=0x7f0c0096;
         public static final int show=0x7f0c00b6;
         public static final int showCustom=0x7f0c003f;
         public static final int showHome=0x7f0c0040;
         public static final int showTitle=0x7f0c0041;
         public static final int singleChoice=0x7f0c0012;
-        public static final int snackbar_action=0x7f0c00e7;
-        public static final int snackbar_text=0x7f0c00e6;
+        public static final int snackbar_action=0x7f0c00f0;
+        public static final int snackbar_text=0x7f0c00ef;
         public static final int software=0x7f0c0026;
         public static final int split_action_bar=0x7f0c0009;
         public static final int src_atop=0x7f0c0077;
@@ -3907,35 +4375,35 @@ containing a value of this type.
         public static final int src_over=0x7f0c0079;
         public static final int standard=0x7f0c006c;
         public static final int start=0x7f0c0052;
-        public static final int status_bar_latest_event_content=0x7f0c0103;
-        public static final int stop=0x7f0c011b;
-        public static final int subitem1=0x7f0c00d8;
-        public static final int subitem2=0x7f0c00d9;
-        public static final int subitem3=0x7f0c00da;
+        public static final int status_bar_latest_event_content=0x7f0c0102;
+        public static final int stop=0x7f0c011a;
+        public static final int subitem1=0x7f0c00d7;
+        public static final int subitem2=0x7f0c00d8;
+        public static final int subitem3=0x7f0c00d9;
         public static final int submit_area=0x7f0c00a8;
-        public static final int surfaceView1=0x7f0c0118;
+        public static final int surfaceView1=0x7f0c0117;
         public static final int tabMode=0x7f0c003c;
-        public static final int temperature=0x7f0c00de;
-        public static final int text=0x7f0c010b;
-        public static final int text2=0x7f0c0109;
+        public static final int temperature=0x7f0c00dd;
+        public static final int text=0x7f0c010a;
+        public static final int text2=0x7f0c0108;
         public static final int textEnd=0x7f0c002f;
         public static final int textSpacerNoButtons=0x7f0c0090;
         public static final int textStart=0x7f0c0030;
         public static final int textView=0x7f0c00c7;
         public static final int textView2=0x7f0c00ac;
-        public static final int textViewSec=0x7f0c00fc;
-        public static final int textViewWorks=0x7f0c011c;
+        public static final int textViewSec=0x7f0c00fb;
+        public static final int textViewWorks=0x7f0c011b;
         public static final int textViewpoint=0x7f0c00ae;
         public static final int textnear=0x7f0c00b0;
-        public static final int textview_date=0x7f0c0110;
-        public static final int textview_name=0x7f0c010f;
-        public static final int time=0x7f0c0107;
-        public static final int time_now=0x7f0c00d3;
+        public static final int textview_date=0x7f0c010f;
+        public static final int textview_name=0x7f0c010e;
+        public static final int time=0x7f0c0106;
+        public static final int time_now=0x7f0c00d2;
         public static final int title=0x7f0c0089;
         public static final int title_template=0x7f0c008c;
         public static final int top=0x7f0c0053;
         public static final int topPanel=0x7f0c008b;
-        public static final int tv_title=0x7f0c00d7;
+        public static final int tv_title=0x7f0c00d6;
         public static final int up=0x7f0c000a;
         public static final int useLogo=0x7f0c0042;
         public static final int vertical=0x7f0c0017;
@@ -3944,15 +4412,15 @@ containing a value of this type.
         public static final int view_offset_helper=0x7f0c000b;
         public static final int viewpagerForOpen=0x7f0c00b3;
         public static final int viewpagerfornear=0x7f0c00af;
-        public static final int viewpagerforweather=0x7f0c00d4;
-        public static final int viewpagerforworks=0x7f0c00d5;
+        public static final int viewpagerforweather=0x7f0c00d3;
+        public static final int viewpagerforworks=0x7f0c00d4;
         public static final int visible=0x7f0c0015;
-        public static final int weather_diviver=0x7f0c00dc;
-        public static final int weather_img=0x7f0c00dd;
-        public static final int week=0x7f0c00db;
-        public static final int week_today=0x7f0c00e9;
+        public static final int weather_diviver=0x7f0c00db;
+        public static final int weather_img=0x7f0c00dc;
+        public static final int week=0x7f0c00da;
+        public static final int week_today=0x7f0c00f2;
         public static final int wide=0x7f0c006d;
-        public static final int wind=0x7f0c00e0;
+        public static final int wind=0x7f0c00df;
         public static final int withText=0x7f0c0062;
         public static final int wrap_content=0x7f0c0074;
         public static final int yes=0x7f0c0034;
@@ -4020,34 +4488,36 @@ containing a value of this type.
         public static final int design_navigation_item_subheader=0x7f030031;
         public static final int design_navigation_menu=0x7f030032;
         public static final int file_download_notification=0x7f030033;
-        public static final int include_viewpager=0x7f030034;
-        public static final int item_image=0x7f030035;
-        public static final int layout_snackbar=0x7f030036;
-        public static final int layout_snackbar_include=0x7f030037;
-        public static final int layout_tab_icon=0x7f030038;
-        public static final int layout_tab_text=0x7f030039;
-        public static final int model_weather_wechar_more=0x7f03003a;
-        public static final int modle_2x2=0x7f03003b;
-        public static final int myfirstlayout=0x7f03003c;
-        public static final int mysecondlayout=0x7f03003d;
-        public static final int near_fragmeant_item=0x7f03003e;
-        public static final int near_item_layout=0x7f03003f;
-        public static final int notification_media_action=0x7f030040;
-        public static final int notification_media_cancel_action=0x7f030041;
-        public static final int notification_template_big_media=0x7f030042;
-        public static final int notification_template_big_media_narrow=0x7f030043;
-        public static final int notification_template_lines=0x7f030044;
-        public static final int notification_template_media=0x7f030045;
-        public static final int notification_template_part_chronometer=0x7f030046;
-        public static final int notification_template_part_time=0x7f030047;
-        public static final int open_item_layout=0x7f030048;
-        public static final int pull_to_refresh_header=0x7f030049;
-        public static final int select_dialog_item_material=0x7f03004a;
-        public static final int select_dialog_multichoice_material=0x7f03004b;
-        public static final int select_dialog_singlechoice_material=0x7f03004c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03004d;
-        public static final int videoplaylocation=0x7f03004e;
-        public static final int works_fragment_layout=0x7f03004f;
+        public static final int firstlayout=0x7f030034;
+        public static final int include_viewpager=0x7f030035;
+        public static final int item_image=0x7f030036;
+        public static final int layout_snackbar=0x7f030037;
+        public static final int layout_snackbar_include=0x7f030038;
+        public static final int layout_tab_icon=0x7f030039;
+        public static final int layout_tab_text=0x7f03003a;
+        public static final int model_weather_wechar_more=0x7f03003b;
+        public static final int modle_2x2=0x7f03003c;
+        public static final int myfirstlayout=0x7f03003d;
+        public static final int mysecondlayout=0x7f03003e;
+        public static final int near_fragmeant_item=0x7f03003f;
+        public static final int near_item_layout=0x7f030040;
+        public static final int notification_media_action=0x7f030041;
+        public static final int notification_media_cancel_action=0x7f030042;
+        public static final int notification_template_big_media=0x7f030043;
+        public static final int notification_template_big_media_narrow=0x7f030044;
+        public static final int notification_template_lines=0x7f030045;
+        public static final int notification_template_media=0x7f030046;
+        public static final int notification_template_part_chronometer=0x7f030047;
+        public static final int notification_template_part_time=0x7f030048;
+        public static final int open_item_layout=0x7f030049;
+        public static final int pull_to_refresh_header=0x7f03004a;
+        public static final int secondlayout=0x7f03004b;
+        public static final int select_dialog_item_material=0x7f03004c;
+        public static final int select_dialog_multichoice_material=0x7f03004d;
+        public static final int select_dialog_singlechoice_material=0x7f03004e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03004f;
+        public static final int videoplaylocation=0x7f030050;
+        public static final int works_fragment_layout=0x7f030051;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -4132,7 +4602,13 @@ containing a value of this type.
         public static final int AlertDialog_AppCompat_Light=0x7f080077;
         public static final int Animation_AppCompat_Dialog=0x7f080078;
         public static final int Animation_AppCompat_DropDownUp=0x7f080079;
-        /**  API 14 theme customizations can go here. 
+        /**  API 11 theme customizations can go here. 
+ API 14 theme customizations can go here. 
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
          */
         public static final int AppBaseTheme=0x7f080004;
         public static final int AppTheme=0x7f08007a;
@@ -4456,17 +4932,29 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AbsListView_cacheColorHint com.example.myweather:cacheColorHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_choiceMode com.example.myweather:choiceMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_drawSelectorOnTop com.example.myweather:drawSelectorOnTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_fastScrollAlwaysVisible com.example.myweather:fastScrollAlwaysVisible}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_fastScrollEnabled com.example.myweather:fastScrollEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_listSelector com.example.myweather:listSelector}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_scrollingCache com.example.myweather:scrollingCache}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_smoothScrollbar com.example.myweather:smoothScrollbar}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_stackFromBottom com.example.myweather:stackFromBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_textFilterEnabled com.example.myweather:textFilterEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #AbsListView_transcriptMode com.example.myweather:transcriptMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #AbsListView_cacheColorHint com.example.myweather:cacheColorHint}</code></td><td>
+             Indicates that this list will always be drawn on top of solid, single-color
+             opaque background.</td></tr>
+           <tr><td><code>{@link #AbsListView_choiceMode com.example.myweather:choiceMode}</code></td><td>
+             Defines the choice behavior for the view.</td></tr>
+           <tr><td><code>{@link #AbsListView_drawSelectorOnTop com.example.myweather:drawSelectorOnTop}</code></td><td>
+             When set to true, the selector will be drawn over the selected item.</td></tr>
+           <tr><td><code>{@link #AbsListView_fastScrollAlwaysVisible com.example.myweather:fastScrollAlwaysVisible}</code></td><td>
+             When set to true, the list will always show the fast scroll interface.</td></tr>
+           <tr><td><code>{@link #AbsListView_fastScrollEnabled com.example.myweather:fastScrollEnabled}</code></td><td>
+             Enables the fast scroll thumb that can be dragged to quickly scroll through
+             the list.</td></tr>
+           <tr><td><code>{@link #AbsListView_listSelector com.example.myweather:listSelector}</code></td><td> Drawable used to indicate the currently selected item in the list.</td></tr>
+           <tr><td><code>{@link #AbsListView_scrollingCache com.example.myweather:scrollingCache}</code></td><td>
+             When set to true, the list uses a drawing cache during scrolling.</td></tr>
+           <tr><td><code>{@link #AbsListView_smoothScrollbar com.example.myweather:smoothScrollbar}</code></td><td>
+             When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen.</td></tr>
+           <tr><td><code>{@link #AbsListView_stackFromBottom com.example.myweather:stackFromBottom}</code></td><td> Used by ListView and GridView to stack their content from the bottom.</td></tr>
+           <tr><td><code>{@link #AbsListView_textFilterEnabled com.example.myweather:textFilterEnabled}</code></td><td>
+             When set to true, the list will filter results as the user types.</td></tr>
+           <tr><td><code>{@link #AbsListView_transcriptMode com.example.myweather:transcriptMode}</code></td><td>
+             Sets the transcript mode for the list.</td></tr>
            </table>
            @see #AbsListView_cacheColorHint
            @see #AbsListView_choiceMode
@@ -4486,8 +4974,12 @@ containing a value of this type.
             0x7f01000a, 0x7f01000b, 0x7f01000c
         };
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#cacheColorHint}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             Indicates that this list will always be drawn on top of solid, single-color
+             opaque background. This allows the list to optimize drawing.
+        
 
 
           <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -4497,12 +4989,25 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:cacheColorHint
         */
         public static final int AbsListView_cacheColorHint = 6;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#choiceMode}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             Defines the choice behavior for the view. By default, lists do not have
+             any choice behavior. By setting the choiceMode to singleChoice, the list
+             allows up to one item to be in a chosen state. By setting the choiceMode to
+             multipleChoice, the list allows any number of items to be chosen.
+             Finally, by setting the choiceMode to multipleChoiceModal the list allows
+             any number of items to be chosen in a special selection mode.
+             The application will supply a
+             {@link android.widget.AbsListView.MultiChoiceModeListener} using
+             {@link android.widget.AbsListView#setMultiChoiceModeListener} to control the
+             selection mode. This uses the {@link android.view.ActionMode} API.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -4511,17 +5016,23 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>singleChoice</code></td><td>1</td><td></td></tr>
-<tr><td><code>multipleChoice</code></td><td>2</td><td></td></tr>
-<tr><td><code>multipleChoiceModal</code></td><td>3</td><td></td></tr>
+<tr><td><code>none</code></td><td>0</td><td> Normal list that does not indicate choices. </td></tr>
+<tr><td><code>singleChoice</code></td><td>1</td><td> The list allows up to one choice. </td></tr>
+<tr><td><code>multipleChoice</code></td><td>2</td><td> The list allows multiple choices. </td></tr>
+<tr><td><code>multipleChoiceModal</code></td><td>3</td><td> The list allows multiple choices in a custom selection mode. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:choiceMode
         */
         public static final int AbsListView_choiceMode = 9;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#drawSelectorOnTop}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             When set to true, the selector will be drawn over the selected item.
+             Otherwise the selector is drawn behind the selected item. The default
+             value is false.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4530,12 +5041,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:drawSelectorOnTop
         */
         public static final int AbsListView_drawSelectorOnTop = 1;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fastScrollAlwaysVisible}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             When set to true, the list will always show the fast scroll interface.
+             This setting implies fastScrollEnabled.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4544,12 +5060,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:fastScrollAlwaysVisible
         */
         public static final int AbsListView_fastScrollAlwaysVisible = 10;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fastScrollEnabled}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             Enables the fast scroll thumb that can be dragged to quickly scroll through
+             the list.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4558,24 +5079,32 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:fastScrollEnabled
         */
         public static final int AbsListView_fastScrollEnabled = 7;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#listSelector}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+           Drawable used to indicate the currently selected item in the list. 
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:listSelector
         */
         public static final int AbsListView_listSelector = 0;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollingCache}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             When set to true, the list uses a drawing cache during scrolling.
+             This makes the rendering faster but uses more memory. The default
+             value is true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4584,12 +5113,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollingCache
         */
         public static final int AbsListView_scrollingCache = 3;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#smoothScrollbar}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen. This
+             property is set to true by default but should be set to false if your adapter
+             will display items of varying heights. When this property is set to true and
+             your adapter displays items of varying heights, the scrollbar thumb will
+             change size as the user scrolls through the list. When set to fale, the list
+             will use only the number of items in the adapter and the number of items visible
+             on screen to determine the scrollbar's properties.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4598,12 +5138,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:smoothScrollbar
         */
         public static final int AbsListView_smoothScrollbar = 8;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#stackFromBottom}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+           Used by ListView and GridView to stack their content from the bottom. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4612,12 +5154,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:stackFromBottom
         */
         public static final int AbsListView_stackFromBottom = 2;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#textFilterEnabled}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             When set to true, the list will filter results as the user types. The
+             List's adapter must support the Filterable interface for this to work.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -4626,12 +5173,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:textFilterEnabled
         */
         public static final int AbsListView_textFilterEnabled = 4;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#transcriptMode}
-          attribute's value can be found in the {@link #AbsListView} array.
+          <p>
+          @attr description
+          
+             Sets the transcript mode for the list. In transcript mode, the list
+             scrolls to the bottom to make new items visible when they are added.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -4640,10 +5192,18 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>disabled</code></td><td>0</td><td></td></tr>
-<tr><td><code>normal</code></td><td>1</td><td></td></tr>
-<tr><td><code>alwaysScroll</code></td><td>2</td><td></td></tr>
+<tr><td><code>disabled</code></td><td>0</td><td> Disables transcript mode. This is the default value. </td></tr>
+<tr><td><code>normal</code></td><td>1</td><td>
+                 The list will automatically scroll to the bottom when
+                 a data set change notification is received and only if the last item is
+                 already visible on screen.
+            </td></tr>
+<tr><td><code>alwaysScroll</code></td><td>2</td><td>
+                 The list will automatically scroll to the bottom, no matter what items
+                 are currently visible.
+            </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:transcriptMode
         */
         public static final int AbsListView_transcriptMode = 5;
@@ -7029,11 +7589,13 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ListView_dividerHeight com.example.myweather:dividerHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ListView_footerDividersEnabled com.example.myweather:footerDividersEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #ListView_headerDividersEnabled com.example.myweather:headerDividersEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #ListView_overScrollFooter com.example.myweather:overScrollFooter}</code></td><td></td></tr>
-           <tr><td><code>{@link #ListView_overScrollHeader com.example.myweather:overScrollHeader}</code></td><td></td></tr>
+           <tr><td><code>{@link #ListView_dividerHeight com.example.myweather:dividerHeight}</code></td><td> Drawable or color to draw between list items.</td></tr>
+           <tr><td><code>{@link #ListView_footerDividersEnabled com.example.myweather:footerDividersEnabled}</code></td><td>
+             When set to false, the ListView will not draw the divider before each footer view.</td></tr>
+           <tr><td><code>{@link #ListView_headerDividersEnabled com.example.myweather:headerDividersEnabled}</code></td><td>
+             When set to false, the ListView will not draw the divider after each header view.</td></tr>
+           <tr><td><code>{@link #ListView_overScrollFooter com.example.myweather:overScrollFooter}</code></td><td> Drawable to draw below list content.</td></tr>
+           <tr><td><code>{@link #ListView_overScrollHeader com.example.myweather:overScrollHeader}</code></td><td> Drawable to draw above list content.</td></tr>
            </table>
            @see #ListView_dividerHeight
            @see #ListView_footerDividersEnabled
@@ -7046,8 +7608,14 @@ containing a value of this type.
             0x7f010014
         };
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#dividerHeight}
-          attribute's value can be found in the {@link #ListView} array.
+          <p>
+          @attr description
+           Drawable or color to draw between list items. 
+ <attr name="divider" format="reference|color" /> 
+
+             Height of the divider. Will use the intrinsic height of the divider if this
+             is not specified.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -7058,12 +7626,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:dividerHeight
         */
         public static final int ListView_dividerHeight = 0;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#footerDividersEnabled}
-          attribute's value can be found in the {@link #ListView} array.
+          <p>
+          @attr description
+          
+             When set to false, the ListView will not draw the divider before each footer view.
+             The default value is true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -7072,12 +7645,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:footerDividersEnabled
         */
         public static final int ListView_footerDividersEnabled = 2;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#headerDividersEnabled}
-          attribute's value can be found in the {@link #ListView} array.
+          <p>
+          @attr description
+          
+             When set to false, the ListView will not draw the divider after each header view.
+             The default value is true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -7086,30 +7664,35 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:headerDividersEnabled
         */
         public static final int ListView_headerDividersEnabled = 1;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#overScrollFooter}
-          attribute's value can be found in the {@link #ListView} array.
+          <p>
+          @attr description
+           Drawable to draw below list content. 
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:overScrollFooter
         */
         public static final int ListView_overScrollFooter = 4;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#overScrollHeader}
-          attribute's value can be found in the {@link #ListView} array.
+          <p>
+          @attr description
+           Drawable to draw above list content. 
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:overScrollHeader
         */
         public static final int ListView_overScrollHeader = 3;
@@ -11053,78 +11636,154 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #View_accessibilityFocusable com.example.myweather:accessibilityFocusable}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_alpha com.example.myweather:alpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_accessibilityFocusable com.example.myweather:accessibilityFocusable}</code></td><td> @hide Controls whether this view can take accessibility focus.</td></tr>
+           <tr><td><code>{@link #View_alpha com.example.myweather:alpha}</code></td><td>
+             alpha property of the view, as a value between 0 (completely transparent) and 1
+             (completely opaque).</td></tr>
            <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
            <tr><td><code>{@link #View_android_theme android:theme}</code></td><td></td></tr>
            <tr><td><code>{@link #View_backgroundTint com.example.myweather:backgroundTint}</code></td><td></td></tr>
            <tr><td><code>{@link #View_backgroundTintMode com.example.myweather:backgroundTintMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_clickable com.example.myweather:clickable}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_contentDescription com.example.myweather:contentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_drawingCacheQuality com.example.myweather:drawingCacheQuality}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_duplicateParentState com.example.myweather:duplicateParentState}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_fadeScrollbars com.example.myweather:fadeScrollbars}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_fadingEdge com.example.myweather:fadingEdge}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_fadingEdgeLength com.example.myweather:fadingEdgeLength}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_filterTouchesWhenObscured com.example.myweather:filterTouchesWhenObscured}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_fitsSystemWindows com.example.myweather:fitsSystemWindows}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_focusable com.example.myweather:focusable}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_focusableInTouchMode com.example.myweather:focusableInTouchMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_hapticFeedbackEnabled com.example.myweather:hapticFeedbackEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_id com.example.myweather:id}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_importantForAccessibility com.example.myweather:importantForAccessibility}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_isScrollContainer com.example.myweather:isScrollContainer}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_keepScreenOn com.example.myweather:keepScreenOn}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_layerType com.example.myweather:layerType}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_layoutDirection com.example.myweather:layoutDirection}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_longClickable com.example.myweather:longClickable}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_minHeight com.example.myweather:minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_minWidth com.example.myweather:minWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_nextFocusDown com.example.myweather:nextFocusDown}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_nextFocusForward com.example.myweather:nextFocusForward}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_nextFocusLeft com.example.myweather:nextFocusLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_nextFocusRight com.example.myweather:nextFocusRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_nextFocusUp com.example.myweather:nextFocusUp}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_onClick com.example.myweather:onClick}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_overScrollMode com.example.myweather:overScrollMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_padding com.example.myweather:padding}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingBottom com.example.myweather:paddingBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingEnd com.example.myweather:paddingEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingLeft com.example.myweather:paddingLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingRight com.example.myweather:paddingRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingStart com.example.myweather:paddingStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingTop com.example.myweather:paddingTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_requiresFadingEdge com.example.myweather:requiresFadingEdge}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_rotation com.example.myweather:rotation}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_rotationX com.example.myweather:rotationX}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_rotationY com.example.myweather:rotationY}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_saveEnabled com.example.myweather:saveEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scaleX com.example.myweather:scaleX}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scaleY com.example.myweather:scaleY}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollX com.example.myweather:scrollX}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollY com.example.myweather:scrollY}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarAlwaysDrawHorizontalTrack com.example.myweather:scrollbarAlwaysDrawHorizontalTrack}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarAlwaysDrawVerticalTrack com.example.myweather:scrollbarAlwaysDrawVerticalTrack}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarDefaultDelayBeforeFade com.example.myweather:scrollbarDefaultDelayBeforeFade}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarFadeDuration com.example.myweather:scrollbarFadeDuration}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarSize com.example.myweather:scrollbarSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarStyle com.example.myweather:scrollbarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarThumbHorizontal com.example.myweather:scrollbarThumbHorizontal}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarThumbVertical com.example.myweather:scrollbarThumbVertical}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarTrackHorizontal com.example.myweather:scrollbarTrackHorizontal}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbarTrackVertical com.example.myweather:scrollbarTrackVertical}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_scrollbars com.example.myweather:scrollbars}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_soundEffectsEnabled com.example.myweather:soundEffectsEnabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_tag com.example.myweather:tag}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_textAlignment com.example.myweather:textAlignment}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_textDirection com.example.myweather:textDirection}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_clickable com.example.myweather:clickable}</code></td><td> Defines whether this view reacts to click events.</td></tr>
+           <tr><td><code>{@link #View_contentDescription com.example.myweather:contentDescription}</code></td><td>
+             Defines text that briefly describes content of the view.</td></tr>
+           <tr><td><code>{@link #View_drawingCacheQuality com.example.myweather:drawingCacheQuality}</code></td><td>
+             Defines the quality of translucent drawing caches.</td></tr>
+           <tr><td><code>{@link #View_duplicateParentState com.example.myweather:duplicateParentState}</code></td><td>
+             When this attribute is set to true, the view gets its drawable state
+             (focused, pressed, etc.</td></tr>
+           <tr><td><code>{@link #View_fadeScrollbars com.example.myweather:fadeScrollbars}</code></td><td> Defines whether to fade out scrollbars when they are not in use.</td></tr>
+           <tr><td><code>{@link #View_fadingEdge com.example.myweather:fadingEdge}</code></td><td>
+             This attribute is deprecated and will be ignored as of
+             API level 14 ({@link android.os.Build.VERSION_CODES#ICE_CREAM_SANDWICH}).</td></tr>
+           <tr><td><code>{@link #View_fadingEdgeLength com.example.myweather:fadingEdgeLength}</code></td><td> Defines the length of the fading edges.</td></tr>
+           <tr><td><code>{@link #View_filterTouchesWhenObscured com.example.myweather:filterTouchesWhenObscured}</code></td><td>
+             Specifies whether to filter touches when the view's window is obscured by
+             another visible window.</td></tr>
+           <tr><td><code>{@link #View_fitsSystemWindows com.example.myweather:fitsSystemWindows}</code></td><td>
+             Boolean internal attribute to adjust view layout based on
+             system windows such as the status bar.</td></tr>
+           <tr><td><code>{@link #View_focusable com.example.myweather:focusable}</code></td><td>
+             Boolean that controls whether a view can take focus.</td></tr>
+           <tr><td><code>{@link #View_focusableInTouchMode com.example.myweather:focusableInTouchMode}</code></td><td>
+             Boolean that controls whether a view can take focus while in touch mode.</td></tr>
+           <tr><td><code>{@link #View_hapticFeedbackEnabled com.example.myweather:hapticFeedbackEnabled}</code></td><td>
+             Boolean that controls whether a view should have haptic feedback
+             enabled for events such as long presses.</td></tr>
+           <tr><td><code>{@link #View_id com.example.myweather:id}</code></td><td>
+             Supply an identifier name for this view, to later retrieve it
+             with {@link android.view.View#findViewById View.findViewById()} or
+             {@link android.app.Activity#findViewById Activity.findViewById()}.</td></tr>
+           <tr><td><code>{@link #View_importantForAccessibility com.example.myweather:importantForAccessibility}</code></td><td>
+             Controls how this View is important for accessibility which is if it fires
+             accessibility events and if it is reported to accessibility services that
+             query the screen.</td></tr>
+           <tr><td><code>{@link #View_isScrollContainer com.example.myweather:isScrollContainer}</code></td><td>
+             Set this if the view will serve as a scrolling container, meaing
+             that it can be resized to shrink its overall window so that there
+             will be space for an input method.</td></tr>
+           <tr><td><code>{@link #View_keepScreenOn com.example.myweather:keepScreenOn}</code></td><td>
+             Controls whether the view's window should keep the screen on
+             while visible.</td></tr>
+           <tr><td><code>{@link #View_layerType com.example.myweather:layerType}</code></td><td>
+             Specifies the type of layer backing this view.</td></tr>
+           <tr><td><code>{@link #View_layoutDirection com.example.myweather:layoutDirection}</code></td><td>
+             Defines the direction of layout drawing.</td></tr>
+           <tr><td><code>{@link #View_longClickable com.example.myweather:longClickable}</code></td><td> Defines whether this view reacts to long click events.</td></tr>
+           <tr><td><code>{@link #View_minHeight com.example.myweather:minHeight}</code></td><td>
+             Defines the minimum height of the view.</td></tr>
+           <tr><td><code>{@link #View_minWidth com.example.myweather:minWidth}</code></td><td>
+             Defines the minimum width of the view.</td></tr>
+           <tr><td><code>{@link #View_nextFocusDown com.example.myweather:nextFocusDown}</code></td><td>
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_DOWN}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.</td></tr>
+           <tr><td><code>{@link #View_nextFocusForward com.example.myweather:nextFocusForward}</code></td><td>
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_FORWARD}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.</td></tr>
+           <tr><td><code>{@link #View_nextFocusLeft com.example.myweather:nextFocusLeft}</code></td><td>
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_LEFT}.</td></tr>
+           <tr><td><code>{@link #View_nextFocusRight com.example.myweather:nextFocusRight}</code></td><td>
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_RIGHT}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.</td></tr>
+           <tr><td><code>{@link #View_nextFocusUp com.example.myweather:nextFocusUp}</code></td><td>
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_UP}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.</td></tr>
+           <tr><td><code>{@link #View_onClick com.example.myweather:onClick}</code></td><td>
+             Name of the method in this View's context to invoke when the view is
+             clicked.</td></tr>
+           <tr><td><code>{@link #View_overScrollMode com.example.myweather:overScrollMode}</code></td><td>
+             Defines over-scrolling behavior.</td></tr>
+           <tr><td><code>{@link #View_padding com.example.myweather:padding}</code></td><td>
+             A drawable to use as the background.</td></tr>
+           <tr><td><code>{@link #View_paddingBottom com.example.myweather:paddingBottom}</code></td><td> Sets the padding, in pixels, of the bottom edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingEnd com.example.myweather:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingLeft com.example.myweather:paddingLeft}</code></td><td> Sets the padding, in pixels, of the left edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingRight com.example.myweather:paddingRight}</code></td><td> Sets the padding, in pixels, of the right edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingStart com.example.myweather:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingTop com.example.myweather:paddingTop}</code></td><td> Sets the padding, in pixels, of the top edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_requiresFadingEdge com.example.myweather:requiresFadingEdge}</code></td><td> Defines which edges should be faded on scrolling.</td></tr>
+           <tr><td><code>{@link #View_rotation com.example.myweather:rotation}</code></td><td> rotation of the view, in degrees.</td></tr>
+           <tr><td><code>{@link #View_rotationX com.example.myweather:rotationX}</code></td><td> rotation of the view around the x axis, in degrees.</td></tr>
+           <tr><td><code>{@link #View_rotationY com.example.myweather:rotationY}</code></td><td> rotation of the view around the y axis, in degrees.</td></tr>
+           <tr><td><code>{@link #View_saveEnabled com.example.myweather:saveEnabled}</code></td><td>
+             If unset, no state will be saved for this view when it is being
+             frozen.</td></tr>
+           <tr><td><code>{@link #View_scaleX com.example.myweather:scaleX}</code></td><td> scale of the view in the x direction.</td></tr>
+           <tr><td><code>{@link #View_scaleY com.example.myweather:scaleY}</code></td><td> scale of the view in the y direction.</td></tr>
+           <tr><td><code>{@link #View_scrollX com.example.myweather:scrollX}</code></td><td> The initial horizontal scroll offset, in pixels.</td></tr>
+           <tr><td><code>{@link #View_scrollY com.example.myweather:scrollY}</code></td><td> The initial vertical scroll offset, in pixels.</td></tr>
+           <tr><td><code>{@link #View_scrollbarAlwaysDrawHorizontalTrack com.example.myweather:scrollbarAlwaysDrawHorizontalTrack}</code></td><td> Defines whether the horizontal scrollbar track should always be drawn.</td></tr>
+           <tr><td><code>{@link #View_scrollbarAlwaysDrawVerticalTrack com.example.myweather:scrollbarAlwaysDrawVerticalTrack}</code></td><td> Defines whether the vertical scrollbar track should always be drawn.</td></tr>
+           <tr><td><code>{@link #View_scrollbarDefaultDelayBeforeFade com.example.myweather:scrollbarDefaultDelayBeforeFade}</code></td><td> Defines the delay in milliseconds that a scrollbar waits before fade out.</td></tr>
+           <tr><td><code>{@link #View_scrollbarFadeDuration com.example.myweather:scrollbarFadeDuration}</code></td><td> Defines the delay in milliseconds that a scrollbar takes to fade out.</td></tr>
+           <tr><td><code>{@link #View_scrollbarSize com.example.myweather:scrollbarSize}</code></td><td> Sets the width of vertical scrollbars and height of horizontal scrollbars.</td></tr>
+           <tr><td><code>{@link #View_scrollbarStyle com.example.myweather:scrollbarStyle}</code></td><td>
+             Controls the scrollbar style and position.</td></tr>
+           <tr><td><code>{@link #View_scrollbarThumbHorizontal com.example.myweather:scrollbarThumbHorizontal}</code></td><td> Defines the horizontal scrollbar thumb drawable.</td></tr>
+           <tr><td><code>{@link #View_scrollbarThumbVertical com.example.myweather:scrollbarThumbVertical}</code></td><td> Defines the vertical scrollbar thumb drawable.</td></tr>
+           <tr><td><code>{@link #View_scrollbarTrackHorizontal com.example.myweather:scrollbarTrackHorizontal}</code></td><td> Defines the horizontal scrollbar track drawable.</td></tr>
+           <tr><td><code>{@link #View_scrollbarTrackVertical com.example.myweather:scrollbarTrackVertical}</code></td><td> Defines the vertical scrollbar track drawable.</td></tr>
+           <tr><td><code>{@link #View_scrollbars com.example.myweather:scrollbars}</code></td><td> Defines which scrollbars should be displayed on scrolling or not.</td></tr>
+           <tr><td><code>{@link #View_soundEffectsEnabled com.example.myweather:soundEffectsEnabled}</code></td><td>
+             Boolean that controls whether a view should have sound effects
+             enabled for events such as clicking and touching.</td></tr>
+           <tr><td><code>{@link #View_tag com.example.myweather:tag}</code></td><td>
+             Supply a tag for this view containing a String, to be retrieved
+             later with {@link android.view.View#getTag View.getTag()} or
+             searched for with {@link android.view.View#findViewWithTag
+             View.findViewWithTag()}.</td></tr>
+           <tr><td><code>{@link #View_textAlignment com.example.myweather:textAlignment}</code></td><td>
+             Alignment of the text.</td></tr>
+           <tr><td><code>{@link #View_textDirection com.example.myweather:textDirection}</code></td><td>
+             Direction of the text.</td></tr>
            <tr><td><code>{@link #View_theme com.example.myweather:theme}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_transformPivotX com.example.myweather:transformPivotX}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_transformPivotY com.example.myweather:transformPivotY}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_translationX com.example.myweather:translationX}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_translationY com.example.myweather:translationY}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_verticalScrollbarPosition com.example.myweather:verticalScrollbarPosition}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_visibility com.example.myweather:visibility}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_transformPivotX com.example.myweather:transformPivotX}</code></td><td>
+             x location of the pivot point around which the view will rotate and scale.</td></tr>
+           <tr><td><code>{@link #View_transformPivotY com.example.myweather:transformPivotY}</code></td><td>
+             y location of the pivot point around which the view will rotate and scale.</td></tr>
+           <tr><td><code>{@link #View_translationX com.example.myweather:translationX}</code></td><td>
+             translation in x of the view.</td></tr>
+           <tr><td><code>{@link #View_translationY com.example.myweather:translationY}</code></td><td>
+             translation in y of the view.</td></tr>
+           <tr><td><code>{@link #View_verticalScrollbarPosition com.example.myweather:verticalScrollbarPosition}</code></td><td> Determines which side the vertical scroll bar should be placed on.</td></tr>
+           <tr><td><code>{@link #View_visibility com.example.myweather:visibility}</code></td><td> Controls the initial visibility of the view.</td></tr>
            </table>
            @see #View_accessibilityFocusable
            @see #View_alpha
@@ -11220,8 +11879,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010060, 0x7f01019c, 0x7f01019d, 0x7f01019e
         };
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#accessibilityFocusable}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           @hide Controls whether this view can take accessibility focus. 
 
 
           <p>May be an integer value, such as "<code>100</code>".
@@ -11236,16 +11896,51 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>yes</code></td><td>1</td><td></td></tr>
-<tr><td><code>no</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 The system determines whether the view can take accessibility focus - default
+                 (recommended).
+                 <p>
+                 Such a view is consideted by the focus search if it is:
+                 <ul>
+                 <li>
+                 Important for accessibility and actionable (clickable, long clickable, focusable)
+                 </li>
+                 <li>
+                 Important for accessibility, not actionable (clickable, long clickable, focusable),
+                 and does not have an actionable predecessor.
+                 </li>
+                 </ul>
+                 An accessibility srvice can request putting accessibility focus on such a view.
+                 </p>
+            </td></tr>
+<tr><td><code>yes</code></td><td>1</td><td>
+                 The view can take accessibility focus.
+                 <p>
+                 A view that can take accessibility focus is always considered during focus
+                 search and an accessibility service can request putting accessibility focus
+                 on it.
+                 </p>
+            </td></tr>
+<tr><td><code>no</code></td><td>2</td><td>
+                 The view can not take accessibility focus.
+                 <p>
+                 A view that can not take accessibility focus is never considered during focus
+                 search and an accessibility service can not request putting accessibility focus
+                 on it.
+                 </p>
+            </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:accessibilityFocusable
         */
         public static final int View_accessibilityFocusable = 68;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#alpha}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             alpha property of the view, as a value between 0 (completely transparent) and 1
+             (completely opaque).
+        
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11254,6 +11949,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:alpha
         */
         public static final int View_alpha = 52;
@@ -11305,8 +12001,9 @@ containing a value of this type.
         */
         public static final int View_backgroundTintMode = 71;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#clickable}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines whether this view reacts to click events. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11315,12 +12012,18 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:clickable
         */
         public static final int View_clickable = 38;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#contentDescription}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines text that briefly describes content of the view. This property is used
+             primarily for accessibility. Since some views do not have textual
+             representation this attribute can be used for providing such.
+        
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -11329,12 +12032,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:contentDescription
         */
         public static final int View_contentDescription = 49;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#drawingCacheQuality}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the quality of translucent drawing caches. This property is used
+             only when the drawing cache is enabled and translucent. The default value is auto.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -11343,16 +12051,30 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>low</code></td><td>1</td><td></td></tr>
-<tr><td><code>high</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 Lets the framework decide what quality level should be used
+                 for the drawing cache.
+            </td></tr>
+<tr><td><code>low</code></td><td>1</td><td>
+                 Low quality. When set to low quality, the drawing cache uses a lower color
+                 depth, thus losing precision in rendering gradients, but uses less memory.
+            </td></tr>
+<tr><td><code>high</code></td><td>2</td><td>
+                 High quality. When set to high quality, the drawing cache uses a higher
+                 color depth but uses more memory.
+            </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:drawingCacheQuality
         */
         public static final int View_drawingCacheQuality = 42;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#duplicateParentState}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             When this attribute is set to true, the view gets its drawable state
+             (focused, pressed, etc.) from its direct parent rather than from itself.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11361,12 +12083,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:duplicateParentState
         */
         public static final int View_duplicateParentState = 44;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fadeScrollbars}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines whether to fade out scrollbars when they are not in use. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11375,12 +12099,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:fadeScrollbars
         */
         public static final int View_fadeScrollbars = 20;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fadingEdge}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             This attribute is deprecated and will be ignored as of
+             API level 14 ({@link android.os.Build.VERSION_CODES#ICE_CREAM_SANDWICH}).
+             Using fading edges may introduce noticeable performance
+             degradations and should be used only when required by the application's
+             visual design. To request fading edges with API level 14 and above,
+             use the <code>android:requiresFadingEdge</code> attribute instead.
+        
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -11389,16 +12122,18 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00001000</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00002000</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No edge is faded. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00001000</td><td> Fades horizontal edges only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00002000</td><td> Fades vertical edges only. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:fadingEdge
         */
         public static final int View_fadingEdge = 30;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fadingEdgeLength}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the length of the fading edges. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11409,12 +12144,19 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:fadingEdgeLength
         */
         public static final int View_fadingEdgeLength = 32;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#filterTouchesWhenObscured}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Specifies whether to filter touches when the view's window is obscured by
+             another visible window.  When set to true, the view will not receive touches
+             whenever a toast, dialog or other window appears above the view's window.
+             Refer to the {@link android.view.View} security documentation for more details.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11423,12 +12165,19 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:filterTouchesWhenObscured
         */
         public static final int View_filterTouchesWhenObscured = 41;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#fitsSystemWindows}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Boolean internal attribute to adjust view layout based on
+             system windows such as the status bar.
+             If true, adjusts the padding of this view to leave space for the system windows.
+             Will only take effect if this view is in a non-embedded activity.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11437,12 +12186,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:fitsSystemWindows
         */
         public static final int View_fitsSystemWindows = 16;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#focusable}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Boolean that controls whether a view can take focus.  By default the user can not
+             move focus to a view; by setting this attribute to true the view is
+             allowed to take focus.  This value does not impact the behavior of
+             directly calling {@link android.view.View#requestFocus}, which will
+             always request focus regardless of this view.  It only impacts where
+             focus navigation will try to move focus.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11451,12 +12209,18 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:focusable
         */
         public static final int View_focusable = 13;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#focusableInTouchMode}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Boolean that controls whether a view can take focus while in touch mode.
+             If this is true for a view, that view can gain focus when clicked on, and can keep
+             focus if another view is clicked on that doesn't have this attribute set to true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11465,12 +12229,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:focusableInTouchMode
         */
         public static final int View_focusableInTouchMode = 14;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#hapticFeedbackEnabled}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Boolean that controls whether a view should have haptic feedback
+             enabled for events such as long presses.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11479,22 +12248,41 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:hapticFeedbackEnabled
         */
         public static final int View_hapticFeedbackEnabled = 48;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#id}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Supply an identifier name for this view, to later retrieve it
+             with {@link android.view.View#findViewById View.findViewById()} or
+             {@link android.app.Activity#findViewById Activity.findViewById()}.
+             This must be a
+             resource reference; typically you set this using the
+             <code>@+</code> syntax to create a new ID resources.
+             For example: <code>android:id="@+id/my_id"</code> which
+             allows you to later retrieve the view
+             with <code>findViewById(R.id.my_id)</code>.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:id
         */
         public static final int View_id = 2;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#importantForAccessibility}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Controls how this View is important for accessibility which is if it fires
+             accessibility events and if it is reported to accessibility services that
+             query the screen. Note: While not recommended, an accessibility service may
+             decide to ignore this attribute and operate on all views in the view tree.
+        
 
 
           <p>May be an integer value, such as "<code>100</code>".
@@ -11509,16 +12297,27 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>auto</code></td><td>0</td><td></td></tr>
-<tr><td><code>yes</code></td><td>1</td><td></td></tr>
-<tr><td><code>no</code></td><td>2</td><td></td></tr>
+<tr><td><code>auto</code></td><td>0</td><td>
+                 The system determines whether the view is important for accessibility - default
+                 (recommended).
+            </td></tr>
+<tr><td><code>yes</code></td><td>1</td><td> The view is important for accessibility. </td></tr>
+<tr><td><code>no</code></td><td>2</td><td> The view is not important for accessibility. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:importantForAccessibility
         */
         public static final int View_importantForAccessibility = 67;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#isScrollContainer}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Set this if the view will serve as a scrolling container, meaing
+             that it can be resized to shrink its overall window so that there
+             will be space for an input method.  If not set, the default
+             value will be true if "scrollbars" has the vertical scrollbar
+             set, else it will be false.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11527,12 +12326,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:isScrollContainer
         */
         public static final int View_isScrollContainer = 19;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#keepScreenOn}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Controls whether the view's window should keep the screen on
+             while visible.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11541,12 +12345,18 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:keepScreenOn
         */
         public static final int View_keepScreenOn = 43;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#layerType}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Specifies the type of layer backing this view. The default value is none.
+             Refer to {@link android.view.View#setLayerType(int, android.graphics.Paint)}
+             for more information.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -11555,16 +12365,32 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>software</code></td><td>1</td><td></td></tr>
-<tr><td><code>hardware</code></td><td>2</td><td></td></tr>
+<tr><td><code>none</code></td><td>0</td><td> Don't use a layer. </td></tr>
+<tr><td><code>software</code></td><td>1</td><td>
+                 Use a software layer. Refer to
+                 {@link android.view.View#setLayerType(int, android.graphics.Paint) for
+                 more information.
+            </td></tr>
+<tr><td><code>hardware</code></td><td>2</td><td>
+                 Use a hardware layer. Refer to
+                 {@link android.view.View#setLayerType(int, android.graphics.Paint) for
+                 more information.
+            </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:layerType
         */
         public static final int View_layerType = 63;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#layoutDirection}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the direction of layout drawing. This typically is associated with writing
+             direction of the language script used. The possible values are "ltr" for Left-to-Right,
+             "rtl" for Right-to-Left, "locale" and "inherit" from parent view. If there is nothing
+             to inherit, "locale" is used. "locale" falls back to "en-US". "ltr" is the direction
+             used in "en-US". The default for this attribute is "inherit".
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -11573,17 +12399,19 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>ltr</code></td><td>0</td><td></td></tr>
-<tr><td><code>rtl</code></td><td>1</td><td></td></tr>
-<tr><td><code>inherit</code></td><td>2</td><td></td></tr>
-<tr><td><code>locale</code></td><td>3</td><td></td></tr>
+<tr><td><code>ltr</code></td><td>0</td><td> Left-to-Right </td></tr>
+<tr><td><code>rtl</code></td><td>1</td><td> Right-to-Left </td></tr>
+<tr><td><code>inherit</code></td><td>2</td><td> Inherit from parent </td></tr>
+<tr><td><code>locale</code></td><td>3</td><td> Locale </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:layoutDirection
         */
         public static final int View_layoutDirection = 64;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#longClickable}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines whether this view reacts to long click events. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11592,12 +12420,18 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:longClickable
         */
         public static final int View_longClickable = 39;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#minHeight}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the minimum height of the view. It is not guaranteed
+             the view will be able to achieve this minimum height (for example,
+             if its parent layout constrains it with less available height).
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11608,12 +12442,18 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:minHeight
         */
         public static final int View_minHeight = 45;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#minWidth}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the minimum width of the view. It is not guaranteed
+             the view will be able to achieve this minimum width (for example,
+             if its parent layout constrains it with less available width).
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11624,62 +12464,116 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:minWidth
         */
         public static final int View_minWidth = 46;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#nextFocusDown}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_DOWN}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:nextFocusDown
         */
         public static final int View_nextFocusDown = 36;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#nextFocusForward}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_FORWARD}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:nextFocusForward
         */
         public static final int View_nextFocusForward = 37;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#nextFocusLeft}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_LEFT}.
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:nextFocusLeft
         */
         public static final int View_nextFocusLeft = 33;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#nextFocusRight}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_RIGHT}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:nextFocusRight
         */
         public static final int View_nextFocusRight = 34;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#nextFocusUp}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines the next view to give focus to when the next focus is
+             {@link android.view.View#FOCUS_UP}
+
+             If the reference refers to a view that does not exist or is part
+             of a hierarchy that is invisible, a {@link java.lang.RuntimeException}
+             will result when the reference is accessed.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:nextFocusUp
         */
         public static final int View_nextFocusUp = 35;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#onClick}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Name of the method in this View's context to invoke when the view is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>android:onClick="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity).
+        
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -11688,12 +12582,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:onClick
         */
         public static final int View_onClick = 50;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#overScrollMode}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Defines over-scrolling behavior. This property is used only if the
+             View is scrollable. Over-scrolling is the ability for the user to
+             receive feedback when attempting to scroll beyond meaningful content.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -11702,16 +12602,38 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>always</code></td><td>0</td><td></td></tr>
-<tr><td><code>ifContentScrolls</code></td><td>1</td><td></td></tr>
-<tr><td><code>never</code></td><td>2</td><td></td></tr>
+<tr><td><code>always</code></td><td>0</td><td>
+                 Always show over-scroll effects, even if the content fits entirely
+                 within the available space.
+            </td></tr>
+<tr><td><code>ifContentScrolls</code></td><td>1</td><td>
+                 Only show over-scroll effects if the content is large
+                 enough to meaningfully scroll.
+            </td></tr>
+<tr><td><code>never</code></td><td>2</td><td> Never show over-scroll effects. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:overScrollMode
         */
         public static final int View_overScrollMode = 51;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#padding}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             A drawable to use as the background.  This can be either a reference
+             to a full drawable resource (such as a PNG image, 9-patch,
+             XML state list description, etc), or a solid color such as "#ff000000"
+            (black).
+        
+ <attr name="background" format="reference|color" /> 
+
+             Sets the padding, in pixels, of all four edges.  Padding is defined as
+             space between the edges of the view and the view's content. A views size
+             will include it's padding.  If a {@link android.R.attr#background}
+             is provided, the padding will initially be set to that (0 if the
+             drawable does not have padding).  Explicitly setting a padding value
+             will override the corresponding padding found in the background.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11722,12 +12644,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:padding
         */
         public static final int View_padding = 6;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingBottom}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the bottom edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11738,12 +12662,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingBottom
         */
         public static final int View_paddingBottom = 10;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingEnd}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11762,12 +12688,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingEnd
         */
         public static final int View_paddingEnd = 12;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingLeft}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the left edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11778,12 +12706,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingLeft
         */
         public static final int View_paddingLeft = 7;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingRight}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the right edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11794,12 +12724,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingRight
         */
         public static final int View_paddingRight = 9;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingStart}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11818,12 +12750,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingStart
         */
         public static final int View_paddingStart = 11;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#paddingTop}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the padding, in pixels, of the top edge; see {@link android.R.attr#padding}. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11834,12 +12768,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:paddingTop
         */
         public static final int View_paddingTop = 8;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#requiresFadingEdge}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines which edges should be faded on scrolling. 
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -11848,16 +12784,18 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00001000</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00002000</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No edge is faded. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00001000</td><td> Fades horizontal edges only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00002000</td><td> Fades vertical edges only. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:requiresFadingEdge
         */
         public static final int View_requiresFadingEdge = 31;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#rotation}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           rotation of the view, in degrees. 
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11866,12 +12804,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:rotation
         */
         public static final int View_rotation = 57;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#rotationX}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           rotation of the view around the x axis, in degrees. 
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11880,12 +12820,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:rotationX
         */
         public static final int View_rotationX = 58;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#rotationY}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           rotation of the view around the y axis, in degrees. 
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11894,12 +12836,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:rotationY
         */
         public static final int View_rotationY = 59;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#saveEnabled}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             If unset, no state will be saved for this view when it is being
+             frozen. The default is true, allowing the view to be saved
+             (however it also must have an ID assigned to it for its
+             state to be saved).  Setting this to false only disables the
+             state for this view, not for its children which may still
+             be saved.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11908,12 +12859,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:saveEnabled
         */
         public static final int View_saveEnabled = 40;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scaleX}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           scale of the view in the x direction. 
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11922,12 +12875,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scaleX
         */
         public static final int View_scaleX = 60;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scaleY}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           scale of the view in the y direction. 
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -11936,12 +12891,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scaleY
         */
         public static final int View_scaleY = 61;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollX}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           The initial horizontal scroll offset, in pixels. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11952,12 +12909,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollX
         */
         public static final int View_scrollX = 4;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollY}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           The initial vertical scroll offset, in pixels. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -11968,12 +12927,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollY
         */
         public static final int View_scrollY = 5;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarAlwaysDrawHorizontalTrack}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines whether the horizontal scrollbar track should always be drawn. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11982,12 +12943,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarAlwaysDrawHorizontalTrack
         */
         public static final int View_scrollbarAlwaysDrawHorizontalTrack = 28;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarAlwaysDrawVerticalTrack}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines whether the vertical scrollbar track should always be drawn. 
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -11996,12 +12959,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarAlwaysDrawVerticalTrack
         */
         public static final int View_scrollbarAlwaysDrawVerticalTrack = 29;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarDefaultDelayBeforeFade}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the delay in milliseconds that a scrollbar waits before fade out. 
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -12010,12 +12975,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarDefaultDelayBeforeFade
         */
         public static final int View_scrollbarDefaultDelayBeforeFade = 22;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarFadeDuration}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the delay in milliseconds that a scrollbar takes to fade out. 
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -12024,12 +12991,14 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarFadeDuration
         */
         public static final int View_scrollbarFadeDuration = 21;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarSize}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Sets the width of vertical scrollbars and height of horizontal scrollbars. 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -12040,12 +13009,23 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarSize
         */
         public static final int View_scrollbarSize = 23;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarStyle}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Controls the scrollbar style and position. The scrollbars can be overlaid or
+             inset. When inset, they add to the padding of the view. And the
+             scrollbars can be drawn inside the padding area or on the edge of
+             the view. For example, if a view has a background drawable and you
+             want to draw the scrollbars inside the padding specified by the
+             drawable, you can use insideOverlay or insideInset. If you want them
+             to appear at the edge of the view, ignoring the padding, then you can
+             use outsideOverlay or outsideInset.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -12054,57 +13034,67 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>insideOverlay</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>insideInset</code></td><td>0x01000000</td><td></td></tr>
-<tr><td><code>outsideOverlay</code></td><td>0x02000000</td><td></td></tr>
-<tr><td><code>outsideInset</code></td><td>0x03000000</td><td></td></tr>
+<tr><td><code>insideOverlay</code></td><td>0x0</td><td> Inside the padding and overlaid </td></tr>
+<tr><td><code>insideInset</code></td><td>0x01000000</td><td> Inside the padding and inset </td></tr>
+<tr><td><code>outsideOverlay</code></td><td>0x02000000</td><td> Edge of the view and overlaid </td></tr>
+<tr><td><code>outsideInset</code></td><td>0x03000000</td><td> Edge of the view and inset </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarStyle
         */
         public static final int View_scrollbarStyle = 18;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarThumbHorizontal}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the horizontal scrollbar thumb drawable. 
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarThumbHorizontal
         */
         public static final int View_scrollbarThumbHorizontal = 24;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarThumbVertical}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the vertical scrollbar thumb drawable. 
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarThumbVertical
         */
         public static final int View_scrollbarThumbVertical = 25;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarTrackHorizontal}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the horizontal scrollbar track drawable. 
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarTrackHorizontal
         */
         public static final int View_scrollbarTrackHorizontal = 26;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbarTrackVertical}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines the vertical scrollbar track drawable. 
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbarTrackVertical
         */
         public static final int View_scrollbarTrackVertical = 27;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#scrollbars}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Defines which scrollbars should be displayed on scrolling or not. 
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -12113,16 +13103,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x00000000</td><td></td></tr>
-<tr><td><code>horizontal</code></td><td>0x00000100</td><td></td></tr>
-<tr><td><code>vertical</code></td><td>0x00000200</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x00000000</td><td> No scrollbar is displayed. </td></tr>
+<tr><td><code>horizontal</code></td><td>0x00000100</td><td> Displays horizontal scrollbar only. </td></tr>
+<tr><td><code>vertical</code></td><td>0x00000200</td><td> Displays vertical scrollbar only. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:scrollbars
         */
         public static final int View_scrollbars = 17;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#soundEffectsEnabled}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Boolean that controls whether a view should have sound effects
+             enabled for events such as clicking and touching.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12131,12 +13126,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:soundEffectsEnabled
         */
         public static final int View_soundEffectsEnabled = 47;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#tag}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Supply a tag for this view containing a String, to be retrieved
+             later with {@link android.view.View#getTag View.getTag()} or
+             searched for with {@link android.view.View#findViewWithTag
+             View.findViewWithTag()}.  It is generally preferable to use
+             IDs (through the android:id attribute) instead of tags because
+             they are faster and allow for compile-time type checking.
+        
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -12145,12 +13149,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:tag
         */
         public static final int View_tag = 3;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#textAlignment}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Alignment of the text. A heuristic is used to determine the resolved
+            text alignment.
+        
 
 
           <p>May be an integer value, such as "<code>100</code>".
@@ -12165,20 +13174,35 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>inherit</code></td><td>0</td><td></td></tr>
-<tr><td><code>gravity</code></td><td>1</td><td></td></tr>
-<tr><td><code>textStart</code></td><td>2</td><td></td></tr>
-<tr><td><code>textEnd</code></td><td>3</td><td></td></tr>
-<tr><td><code>center</code></td><td>4</td><td></td></tr>
-<tr><td><code>viewStart</code></td><td>5</td><td></td></tr>
-<tr><td><code>viewEnd</code></td><td>6</td><td></td></tr>
+<tr><td><code>inherit</code></td><td>0</td><td> Default </td></tr>
+<tr><td><code>gravity</code></td><td>1</td><td>
+                 Default for the root view. The gravity determines the alignment, ALIGN_NORMAL,
+                ALIGN_CENTER, or ALIGN_OPPOSITE, which are relative to each paragraph’s
+                text direction
+            </td></tr>
+<tr><td><code>textStart</code></td><td>2</td><td> Align to the start of the paragraph, e.g. ALIGN_NORMAL. </td></tr>
+<tr><td><code>textEnd</code></td><td>3</td><td> Align to the end of the paragraph, e.g. ALIGN_OPPOSITE. </td></tr>
+<tr><td><code>center</code></td><td>4</td><td> Center the paragraph, e.g. ALIGN_CENTER. </td></tr>
+<tr><td><code>viewStart</code></td><td>5</td><td>
+                 Align to the start of the view, which is ALIGN_LEFT if the view’s resolved
+                layoutDirection is LTR, and ALIGN_RIGHT otherwise.
+            </td></tr>
+<tr><td><code>viewEnd</code></td><td>6</td><td>
+                 Align to the end of the view, which is ALIGN_RIGHT if the view’s resolved
+                layoutDirection is LTR, and ALIGN_LEFT otherwise
+            </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:textAlignment
         */
         public static final int View_textAlignment = 66;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#textDirection}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             Direction of the text. A heuristic is used to determine the resolved text direction
+             of paragraphs.
+        
 
 
           <p>May be an integer value, such as "<code>100</code>".
@@ -12193,13 +13217,22 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>inherit</code></td><td>0</td><td></td></tr>
-<tr><td><code>firstStrong</code></td><td>1</td><td></td></tr>
-<tr><td><code>anyRtl</code></td><td>2</td><td></td></tr>
-<tr><td><code>ltr</code></td><td>3</td><td></td></tr>
-<tr><td><code>rtl</code></td><td>4</td><td></td></tr>
-<tr><td><code>locale</code></td><td>5</td><td></td></tr>
+<tr><td><code>inherit</code></td><td>0</td><td> Default </td></tr>
+<tr><td><code>firstStrong</code></td><td>1</td><td>
+                 Default for the root view. The first strong directional character determines the
+                 paragraph direction.  If there is no strong directional character, the paragraph
+                 direction is the view’s resolved layout direction.
+            </td></tr>
+<tr><td><code>anyRtl</code></td><td>2</td><td>
+                 The paragraph direction is RTL if it contains any strong RTL character, otherwise
+                 it is LTR if it contains any strong LTR characters.  If there are neither, the
+                 paragraph direction is the view’s resolved layout direction.
+            </td></tr>
+<tr><td><code>ltr</code></td><td>3</td><td> The paragraph direction is left to right. </td></tr>
+<tr><td><code>rtl</code></td><td>4</td><td> The paragraph direction is right to left. </td></tr>
+<tr><td><code>locale</code></td><td>5</td><td> The paragraph direction is coming from the system Locale. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:textDirection
         */
         public static final int View_textDirection = 65;
@@ -12214,8 +13247,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int View_theme = 69;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#transformPivotX}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             x location of the pivot point around which the view will rotate and scale.
+             This xml attribute sets the pivotX property of the View.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -12226,12 +13263,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:transformPivotX
         */
         public static final int View_transformPivotX = 55;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#transformPivotY}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             y location of the pivot point around which the view will rotate and scale.
+             This xml attribute sets the pivotY property of the View.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -12242,12 +13284,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:transformPivotY
         */
         public static final int View_transformPivotY = 56;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#translationX}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             translation in x of the view. This value is added post-layout to the left
+             property of the view, which is set by its layout.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -12258,12 +13305,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:translationX
         */
         public static final int View_translationX = 53;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#translationY}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+          
+             translation in y of the view. This value is added post-layout to the left
+             property of the view, which is set by its layout.
+        
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -12274,12 +13326,14 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:translationY
         */
         public static final int View_translationY = 54;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#verticalScrollbarPosition}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Determines which side the vertical scroll bar should be placed on. 
 
 
           <p>Must be one of the following constant values.</p>
@@ -12288,16 +13342,18 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>defaultPosition</code></td><td>0</td><td></td></tr>
-<tr><td><code>left</code></td><td>1</td><td></td></tr>
-<tr><td><code>right</code></td><td>2</td><td></td></tr>
+<tr><td><code>defaultPosition</code></td><td>0</td><td> Place the scroll bar wherever the system default determines. </td></tr>
+<tr><td><code>left</code></td><td>1</td><td> Place the scroll bar on the left. </td></tr>
+<tr><td><code>right</code></td><td>2</td><td> Place the scroll bar on the right. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:verticalScrollbarPosition
         */
         public static final int View_verticalScrollbarPosition = 62;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#visibility}
-          attribute's value can be found in the {@link #View} array.
+          <p>
+          @attr description
+           Controls the initial visibility of the view. 
 
 
           <p>Must be one of the following constant values.</p>
@@ -12306,10 +13362,11 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>visible</code></td><td>0</td><td></td></tr>
-<tr><td><code>invisible</code></td><td>1</td><td></td></tr>
-<tr><td><code>gone</code></td><td>2</td><td></td></tr>
+<tr><td><code>visible</code></td><td>0</td><td> Visible on screen; the default value. </td></tr>
+<tr><td><code>invisible</code></td><td>1</td><td> Not displayed, but taken into account during layout (space is left for it). </td></tr>
+<tr><td><code>gone</code></td><td>2</td><td> Completely hidden, as if the view had not been added. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:visibility
         */
         public static final int View_visibility = 15;
@@ -12319,16 +13376,33 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ViewGroup_addStatesFromChildren com.example.myweather:addStatesFromChildren}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_alwaysDrawnWithCache com.example.myweather:alwaysDrawnWithCache}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_animateLayoutChanges com.example.myweather:animateLayoutChanges}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_animationCache com.example.myweather:animationCache}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_clipChildren com.example.myweather:clipChildren}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_clipToPadding com.example.myweather:clipToPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_descendantFocusability com.example.myweather:descendantFocusability}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_layoutAnimation com.example.myweather:layoutAnimation}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_persistentDrawingCache com.example.myweather:persistentDrawingCache}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroup_splitMotionEvents com.example.myweather:splitMotionEvents}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewGroup_addStatesFromChildren com.example.myweather:addStatesFromChildren}</code></td><td>
+             Sets whether this ViewGroup's drawable states also include
+             its children's drawable states.</td></tr>
+           <tr><td><code>{@link #ViewGroup_alwaysDrawnWithCache com.example.myweather:alwaysDrawnWithCache}</code></td><td>
+             Defines whether the ViewGroup should always draw its children using their
+             drawing cache or not.</td></tr>
+           <tr><td><code>{@link #ViewGroup_animateLayoutChanges com.example.myweather:animateLayoutChanges}</code></td><td>
+             Defines whether changes in layout (caused by adding and removing items) should
+             cause a LayoutTransition to run.</td></tr>
+           <tr><td><code>{@link #ViewGroup_animationCache com.example.myweather:animationCache}</code></td><td>
+             Defines whether layout animations should create a drawing cache for their
+             children.</td></tr>
+           <tr><td><code>{@link #ViewGroup_clipChildren com.example.myweather:clipChildren}</code></td><td>
+             Defines whether a child is limited to draw inside of its bounds or not.</td></tr>
+           <tr><td><code>{@link #ViewGroup_clipToPadding com.example.myweather:clipToPadding}</code></td><td>
+             Defines whether the ViewGroup will clip its drawing surface so as to exclude
+             the padding area.</td></tr>
+           <tr><td><code>{@link #ViewGroup_descendantFocusability com.example.myweather:descendantFocusability}</code></td><td>
+             Defines the relationship between the ViewGroup and its descendants
+             when looking for a View to take focus.</td></tr>
+           <tr><td><code>{@link #ViewGroup_layoutAnimation com.example.myweather:layoutAnimation}</code></td><td>
+             Defines the layout animation to use the first time the ViewGroup is laid out.</td></tr>
+           <tr><td><code>{@link #ViewGroup_persistentDrawingCache com.example.myweather:persistentDrawingCache}</code></td><td>
+             Defines the persistence of the drawing cache.</td></tr>
+           <tr><td><code>{@link #ViewGroup_splitMotionEvents com.example.myweather:splitMotionEvents}</code></td><td>
+             Sets whether this ViewGroup should split MotionEvents
+             to separate child views during touch event dispatch.</td></tr>
            </table>
            @see #ViewGroup_addStatesFromChildren
            @see #ViewGroup_alwaysDrawnWithCache
@@ -12347,8 +13421,14 @@ containing a value of this type.
             0x7f010069, 0x7f01006a
         };
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#addStatesFromChildren}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Sets whether this ViewGroup's drawable states also include
+             its children's drawable states.  This is used, for example, to
+             make a group appear to be focused when its child EditText or button
+             is focused.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12357,12 +13437,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:addStatesFromChildren
         */
         public static final int ViewGroup_addStatesFromChildren = 7;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#alwaysDrawnWithCache}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines whether the ViewGroup should always draw its children using their
+             drawing cache or not. The default value is true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12371,12 +13456,19 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:alwaysDrawnWithCache
         */
         public static final int ViewGroup_alwaysDrawnWithCache = 6;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#animateLayoutChanges}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines whether changes in layout (caused by adding and removing items) should
+             cause a LayoutTransition to run. When this flag is set to true, a default
+             LayoutTransition object will be set on the ViewGroup container and default
+             animations will run when these layout changes occur.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12385,12 +13477,19 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:animateLayoutChanges
         */
         public static final int ViewGroup_animateLayoutChanges = 0;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#animationCache}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines whether layout animations should create a drawing cache for their
+             children. Enabling the animation cache consumes more memory and requires
+             a longer initialization but provides better performance. The animation
+             cache is enabled by default.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12399,12 +13498,20 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:animationCache
         */
         public static final int ViewGroup_animationCache = 4;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#clipChildren}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines whether a child is limited to draw inside of its bounds or not.
+             This is useful with animations that scale the size of the children to more
+             than 100% for instance. In such a case, this property should be set to false
+             to allow the children to draw outside of their bounds. The default value of
+             this property is true.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12413,12 +13520,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:clipChildren
         */
         public static final int ViewGroup_clipChildren = 1;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#clipToPadding}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines whether the ViewGroup will clip its drawing surface so as to exclude
+             the padding area. This property is set to true by default.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12427,12 +13539,17 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:clipToPadding
         */
         public static final int ViewGroup_clipToPadding = 2;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#descendantFocusability}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines the relationship between the ViewGroup and its descendants
+             when looking for a View to take focus.
+        
 
 
           <p>Must be one of the following constant values.</p>
@@ -12441,26 +13558,40 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>beforeDescendants</code></td><td>0</td><td></td></tr>
-<tr><td><code>afterDescendants</code></td><td>1</td><td></td></tr>
-<tr><td><code>blocksDescendants</code></td><td>2</td><td></td></tr>
+<tr><td><code>beforeDescendants</code></td><td>0</td><td> The ViewGroup will get focus before any of its descendants. </td></tr>
+<tr><td><code>afterDescendants</code></td><td>1</td><td> The ViewGroup will get focus only if none of its descendants want it. </td></tr>
+<tr><td><code>blocksDescendants</code></td><td>2</td><td> The ViewGroup will block its descendants from receiving focus. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:descendantFocusability
         */
         public static final int ViewGroup_descendantFocusability = 8;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#layoutAnimation}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines the layout animation to use the first time the ViewGroup is laid out.
+             Layout animations can also be started manually after the first layout.
+        
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
           @attr name com.example.myweather:layoutAnimation
         */
         public static final int ViewGroup_layoutAnimation = 3;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#persistentDrawingCache}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Defines the persistence of the drawing cache. The drawing cache might be
+             enabled by a ViewGroup for all its children in specific situations (for
+             instance during a scrolling.) This property lets you persist the cache
+             in memory after its initial usage. Persisting the cache consumes more
+             memory but may prevent frequent garbage collection is the cache is created
+             over and over again. By default the persistence is set to scrolling.
+        
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -12469,17 +13600,30 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>animation</code></td><td>0x1</td><td></td></tr>
-<tr><td><code>scrolling</code></td><td>0x2</td><td></td></tr>
-<tr><td><code>all</code></td><td>0x3</td><td></td></tr>
+<tr><td><code>none</code></td><td>0x0</td><td> The drawing cache is not persisted after use. </td></tr>
+<tr><td><code>animation</code></td><td>0x1</td><td> The drawing cache is persisted after a layout animation. </td></tr>
+<tr><td><code>scrolling</code></td><td>0x2</td><td> The drawing cache is persisted after a scroll. </td></tr>
+<tr><td><code>all</code></td><td>0x3</td><td> The drawing cache is always persisted. </td></tr>
 </table>
+          <p>This is a private symbol.
           @attr name com.example.myweather:persistentDrawingCache
         */
         public static final int ViewGroup_persistentDrawingCache = 5;
         /**
-          <p>This symbol is the offset where the {@link com.example.myweather.R.attr#splitMotionEvents}
-          attribute's value can be found in the {@link #ViewGroup} array.
+          <p>
+          @attr description
+          
+             Sets whether this ViewGroup should split MotionEvents
+             to separate child views during touch event dispatch.
+             If false (default), touch events will be dispatched to
+             the child view where the first pointer went down until
+             the last pointer goes up.
+             If true, touch events may be dispatched to multiple children.
+             MotionEvents for each pointer will be dispatched to the child
+             view where the initial ACTION_DOWN event happened.
+             See {@link android.view.ViewGroup#setMotionEventSplittingEnabled(boolean)}
+             for more information.
+        
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -12488,6 +13632,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
+          <p>This is a private symbol.
           @attr name com.example.myweather:splitMotionEvents
         */
         public static final int ViewGroup_splitMotionEvents = 9;

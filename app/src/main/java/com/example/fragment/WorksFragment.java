@@ -65,11 +65,13 @@ public class WorksFragment extends Fragment {
                 }
                 for (int i = 0; i < j; i++) {
                     String p = imagePathList.get(i);
+
                     Bitmap bitmap = decodeSampledBitmapFromResource(p,300,600);
+
                     imageView[i].setImageBitmap(bitmap);//不会变形
                 }
             }
-            readWorldFile(Path);
+            readWordFile(Path);
         }catch (Exception e)
         {
             e.printStackTrace();
@@ -111,16 +113,16 @@ public class WorksFragment extends Fragment {
         Log.e(TAG,"SetPath has be use");
     }
 
-    public void readWorldFile(String P) {
+    public void readWordFile(String P) {
         BufferedReader bre = null;
         try {
-            bre = new BufferedReader(new FileReader(P + "/world.txt"));//此时获取到的bre就是整个文件的缓存流
-            Log.e(TAG,"i find a txt file names:"+P+"/world.txt");
+            bre = new BufferedReader(new FileReader(P + "/word.txt"));//此时获取到的bre就是整个文件的缓存流
+            Log.e(TAG,"i find a txt file names:"+P+"/word.txt");
             String str = null;
             while ((str = bre.readLine()) != null) // 判断最后一行不存在，为空结束循环
             {
                 Log.e(TAG,str);
-                getWorld(str);
+                getWord(str);
             }
             bre.close();
         } catch (IOException e) {
@@ -130,9 +132,9 @@ public class WorksFragment extends Fragment {
     }
 
     /*
-    解析world文件
+    解析word文件
      */
-    public void getWorld(String s) {
+    public void getWord(String s) {
         String[] w = s.split(" ");
         if (w[0].equals("mess")) {
             String mess=new String();

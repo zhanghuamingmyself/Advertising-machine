@@ -42,7 +42,7 @@ public class PictureGridActivity extends Activity {
 	private FloatingActionButton back;
 	private ImageView imageView;
 	private static boolean isTime = true;//定时器是否允许
-	private static PictureGridActivity.MyHandler mHandler;
+	private static MyHandler mHandler;
 	private static class MyHandler extends Handler {
 		private WeakReference<Context> reference;
 		public MyHandler(Context context) {
@@ -128,16 +128,16 @@ public class PictureGridActivity extends Activity {
 		adapter = new ImageGridAdapter(this, imageUrls);
 		mAdapterView.setAdapter(adapter);
 		queryMediaImages();
-		mHandler = new PictureGridActivity.MyHandler(this);
+		mHandler = new MyHandler(this);
 		new Thread(mRunnable).start(); //启动新的线程
 	}
 
 	public String getRealPathFromURI(Uri contentUri) {
 		String res = null;
-		String[] proj = { MediaStore.Images.Media.DATA };
+		String[] proj = { Images.Media.DATA };
 		Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
 		if(cursor.moveToFirst()){
-			int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			int column_index = cursor.getColumnIndexOrThrow(Images.Media.DATA);
 			res = cursor.getString(column_index);
 		}
 		cursor.close();

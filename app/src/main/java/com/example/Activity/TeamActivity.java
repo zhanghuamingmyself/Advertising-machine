@@ -3,11 +3,8 @@ package com.example.Activity;
 团队展示主Activity
  */
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
+
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,8 +18,6 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -32,6 +27,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -53,6 +49,8 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.example.Okhttp.base.BaseActivity;
 import com.example.Util.BannerItem;
 import com.example.Util.GifView;
+import com.example.Util.IpMessageConst;
+import com.example.Util.IpMessageProtocol;
 import com.example.Util.NetworkImageHolderView;
 import com.example.Util.TimeUtil;
 import com.example.Weather.ApiClient;
@@ -71,15 +69,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.request.BaseRequest;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
 import com.squareup.leakcanary.RefWatcher;
 import com.wifi.getFile.Data.ChatMessage;
 import com.wifi.getFile.Interfaces.ReceiveMsgListener;
-import com.wifi.getFile.utils.IpMessageConst;
-import com.wifi.getFile.utils.IpMessageProtocol;
-
-
-
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -89,8 +83,6 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
 import java.net.URLEncoder;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -103,10 +95,7 @@ import okhttp3.Call;
 import okhttp3.Headers;
 import okhttp3.Response;
 
-import static com.example.Activity.R.id.imagecodelayout;
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
-
-
 
 public class TeamActivity extends BaseActivity implements View.OnClickListener, ReceiveMsgListener {
     private String TAG = "main";
@@ -125,7 +114,9 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
             R.drawable.gdme,
             R.drawable.alk, R.drawable.lbtnys}; // 定义并初始化保存图片id的数组
     private String[] imageSwitchTitle = new String[Application.getInstance().GetImageSwitchTitleCounter()];//ImageSwitch的标题
+
     private String[] word = new String[Application.getInstance().GetWordCounter()];
+
 
     private ImageSwitcher imageSwitcher; // 声明一个图像切换器对象
 
@@ -137,6 +128,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
 
     private static boolean TimeRunning = false;
+
     private String wifimess;
     private String selfName = "广告机";
     private String selfGroup = "android";
@@ -146,6 +138,8 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
     private static Boolean T = true;
     private static String URIAddress = "http://172.16.40.247:57451/";
     private static Runnable mRunnable = new Runnable() {
+
+        private Boolean T = true;
 
         public void run() {
             while (T) {
@@ -168,6 +162,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
     private boolean AorP = true;
     private boolean changeAP = false;
+
 
     private static MyHandler mHandler;
     /**
@@ -232,7 +227,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                             activity.AorP = false;
                             // requestJson("http://www.livetune.me:57451/alldir");
                             activity.changeAppBrightness(activity, 30);
-
                         } else if (s.toString().equals("上午") && activity.AorP == false) {
                             activity.AorP = true;
                             activity.changeAppBrightness(activity, 230);
@@ -250,7 +244,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                                 activity.imageSwitchTitleIndex = 0;
                         } else activity.timenumForF++;
 
-                        if (activity.timenumForP == 150) {
+                        if (activity.timenumForP == 300) {
                             activity.timenumForP = 0;
                             activity.TimeRunning = false;
                             Intent pictureplayIntent = new Intent(activity, PicturePlayLocation.class);
@@ -284,12 +278,11 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                         for (int i = 0; i < activity.needDir.size(); i++) {
                             activity.MakeDir(activity.needDir.get(i));
                             String URL = activity.needDir.get(i).replaceFirst(Environment.getExternalStorageDirectory().toString() + "/myapp/",
-                                    URIAddress+"show/"
+                                    "http://172.16.40.247:57451/show/"
                             );
                             activity.requestFileJson(URL);
-                            Log.e(activity.TAG, "正在请求显示"+"文件夹的文件------" + URL);
+                            Log.e(activity.TAG, "正在请求功能" + URL);
                         }
-
                         break;
                     default:
                         break;
@@ -302,6 +295,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
     // 根据亮度值修改当前window亮度随便更新天气进程
     public void changeAppBrightness(Context context, int brightness) {
         new GetWeatherTask(cityName).execute();// 启动更新天气进程
+
         Window window = ((Activity) context).getWindow();
         WindowManager.LayoutParams lp = window.getAttributes();
         if (brightness == -1) {
@@ -351,6 +345,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                 }); //设置点击监听事件
     }
 
+
     private ShimmerFrameLayout mShimmerViewContainer;
 
     @Override
@@ -391,13 +386,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
-
-        mShimmerViewContainer = (ShimmerFrameLayout) findViewById(R.id.shimmer_view_container);
-        mShimmerViewContainer.setDuration(5000);
-        mShimmerViewContainer.setRepeatMode(ObjectAnimator.REVERSE);
-        mShimmerViewContainer.startShimmerAnimation();
-
     }
 
 
@@ -432,90 +420,92 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         return false;
     }
 
-    public class GetWeatherTask extends AsyncTask<Void, Void, Integer> {
-        private static final String BASE_URL = "http://sixweather.3gpk.net/SixWeather.aspx?city=%s";
-        private Application mApplication;
-        private String mCity;
-        private static final int SCUESS = 0;
-        private static final int FAIL = -1;
+public class GetWeatherTask extends AsyncTask<Void, Void, Integer> {
+    private static final String BASE_URL = "http://sixweather.3gpk.net/SixWeather.aspx?city=%s";
+    private Application mApplication;
+    private String mCity;
+    private static final int SCUESS = 0;
+    private static final int FAIL = -1;
 
 
-        public GetWeatherTask(String city) {
-            this.mCity = city;
-            mApplication = Application.getInstance();
-        }
-
-        @Override
-        protected Integer doInBackground(Void... params) {
-            try {
-                String url = String.format(BASE_URL,
-                        URLEncoder.encode(mCity, "utf-8"));
-
-
-                // 最后才执行网络请求
-                String netResult = ApiClient.connServerForResult(url);
-                if (!TextUtils.isEmpty(netResult)) {
-                    WeatherInfo allWeather = XmlPullParseUtil
-                            .parseWeatherInfo(netResult);
-                    if (allWeather != null) {
-                        mApplication.SetAllWeather(allWeather);
-
-                    }
-                    return SCUESS;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return FAIL;
-        }
-
-
-        @Override
-        protected void onPostExecute(Integer result) {
-            super.onPostExecute(result);
-            switch (result) {
-                case SCUESS:
-                    weekTv.setText("今天 " + TimeUtil.getWeek(0, TimeUtil.XING_QI));
-                    String climate = mApplication.GetAllWeather().getWeather0();
-                    climateTv.setText(climate);
-                    temperatureTv.setText(mApplication.GetAllWeather().getTemp0());
-                    int weatherIcon = R.drawable.biz_plugin_weather_qing;
-                    if (climate.contains("转")) {// 天气带转字，取前面那部分
-                        String[] strs = climate.split("转");
-                        climate = strs[0];
-                        if (climate.contains("到")) {// 如果转字前面那部分带到字，则取它的后部分
-                            strs = climate.split("到");
-                            climate = strs[1];
-                        }
-                    }
-                    if (mApplication.getWeatherIconMap().containsKey(climate)) {
-                        weatherIcon = mApplication.getWeatherIconMap().get(climate);
-                    }
-
-                    weatherImg.setImageResource(weatherIcon);
-                    windTv.setText(mApplication.GetAllWeather().getWind0());
-
-
-                    break;
-                case FAIL:
-                    Snackbar.make(time_show, "upadta weater false", Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null).show();
-                    break;
-            }
-
-        }
+    public GetWeatherTask(String city) {
+        this.mCity = city;
+        mApplication = Application.getInstance();
     }
+
+    @Override
+    protected Integer doInBackground(Void... params) {
+        try {
+            String url = String.format(BASE_URL,
+                    URLEncoder.encode(mCity, "utf-8"));
+
+
+            // 最后才执行网络请求
+            String netResult = ApiClient.connServerForResult(url);
+            if (!TextUtils.isEmpty(netResult)) {
+                WeatherInfo allWeather = XmlPullParseUtil
+                        .parseWeatherInfo(netResult);
+                if (allWeather != null) {
+                    mApplication.SetAllWeather(allWeather);
+
+                }
+                return SCUESS;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return FAIL;
+    }
+
+
+    @Override
+    protected void onPostExecute(Integer result) {
+        super.onPostExecute(result);
+        switch (result) {
+            case SCUESS:
+                weekTv.setText("今天 " + TimeUtil.getWeek(0, TimeUtil.XING_QI));
+                String climate = mApplication.GetAllWeather().getWeather0();
+                climateTv.setText(climate);
+                temperatureTv.setText(mApplication.GetAllWeather().getTemp0());
+                int weatherIcon = R.drawable.biz_plugin_weather_qing;
+                if (climate.contains("转")) {// 天气带转字，取前面那部分
+                    String[] strs = climate.split("转");
+                    climate = strs[0];
+                    if (climate.contains("到")) {// 如果转字前面那部分带到字，则取它的后部分
+                        strs = climate.split("到");
+                        climate = strs[1];
+                    }
+                }
+                if (mApplication.getWeatherIconMap().containsKey(climate)) {
+                    weatherIcon = mApplication.getWeatherIconMap().get(climate);
+                }
+
+                weatherImg.setImageResource(weatherIcon);
+                windTv.setText(mApplication.GetAllWeather().getWind0());
+
+
+                break;
+            case FAIL:
+                Snackbar.make(time_show, "upadta weater false", Snackbar.LENGTH_SHORT)
+                        .setAction("Action", null).show();
+                break;
+        }
+
+    }
+}
 
     private void initData() {
         new GetWeatherTask(cityName).execute();// 启动更新天气进程
         TimeRunning = true;
         new Thread(mRunnable).start(); //启动新的线程
+
         peoplelanguageTv.setText(word[0]);
     }
 
     private void initView() {
         // TODO Auto-generated method stub
         time_show = (TextView) findViewById(R.id.time_now);
+        time_show.setOnClickListener(this);
         weekTv = (TextView) findViewById(R.id.week_today);
         temperatureTv = (TextView) findViewById(R.id.temperature);
         climateTv = (TextView) findViewById(R.id.climate);
@@ -567,7 +557,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
         });
         imageSwitcher.setImageResource(imageId[0]);
-        imagecodeLayout = (View) findViewById(imagecodelayout);
+        imagecodeLayout = (View) findViewById(R.id.imagecodelayout);
         imagecodeLayout.setVisibility(View.INVISIBLE);
         imagecodeLayout.setOnClickListener(this);
         funtion_imagecode = (View) findViewById(R.id.imagecode);
@@ -578,12 +568,13 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
         convenientBanner = (ConvenientBanner) findViewById(R.id.convenientBanner);
     }
 
-    public interface ClickAnimation {
-        public void onClick(View v);
-    }
+
+public interface ClickAnimation {
+    public void onClick(View v);
+}
 
     private void animateClickView(final View v, final ClickAnimation callback) {
-        float factor = (float)0.8;
+        float factor = (float) 0.8;
         animate(v).scaleX(factor).scaleY(factor).alpha(0).setListener(new com.nineoldandroids.animation.AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(com.nineoldandroids.animation.Animator animation) {
@@ -635,10 +626,10 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                         alertDialog.show();
                         break;
                     case R.id.funtion_more:
-                       // updataAPK("new.apk");
+                        // updataAPK("new.apk");
                         //changeBackGroundByAPK();
                         //requestJson("http://172.16.40.247:57451/alldir");//获取服务器所有文件信息
-                        requestJson(URIAddress+"alldir");
+                        requestJson(URIAddress + "alldir");
                         break;
                     case R.id.funtion_picture:
                         TimeRunning = false;
@@ -661,14 +652,14 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                         startActivityForResult(pictureplayIntent, 0X11);
                         overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up); //设置切换动画，从下进入，上退出
 
-                       changeBackGroundByAPK();
+                        changeBackGroundByAPK();
                         break;
                     case R.id.imagecode:
                         imagecodeLayout.setVisibility(View.VISIBLE);
                         //  funtionlayoutView.setVisibility(View.INVISIBLE);
                         back.setVisibility(View.INVISIBLE);
                         break;
-                    case imagecodelayout:
+                    case R.id.imagecodelayout:
                         timenumForP = 0;
                         //  funtionlayoutView.setVisibility(View.VISIBLE);
                         imagecodeLayout.setVisibility(View.INVISIBLE);
@@ -716,7 +707,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
             }
         });
     }
-
 
     void weateranim() {
         Animation anim = AnimationUtils.loadAnimation(TeamActivity.this,
@@ -1034,7 +1024,8 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
     void saveFile(String URL) // 将URL传入就能下载到相应的文件夹
     {
-        Log.e(TAG,"正在保存文件-----------"+URL);
+        Log.e(TAG, "正在保存文件-----------" + URL);
+
         String nowPath = path;
         String fileName = null;
         String[] item = URL.split("/");
@@ -1057,7 +1048,6 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
                 fileName = item[item.length - 1];
                 break;
             } else if (s.equals("picture")) {
-                nowPath += "picture/";
                 nowPath += item[i + 1];
                 fileName = item[item.length - 1];
                 break;
@@ -1103,114 +1093,113 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
     private Boolean NetDirThreadOver = false;
     private ArrayList<String> needDir;
 
-    class CheckDirThread extends Thread // 线程查看文件夹
-    {
+class CheckDirThread extends Thread // 线程查看文件夹
+{
 
-        String json;
+    String json;
 
-        @Override
-        public void run() {
-            LocatDirThreadOver = false;
-            if (MyDir == null) {
-                MyDir = new ArrayList<>();
-            } else {
-                MyDir.clear();
+    @Override
+    public void run() {
+        LocatDirThreadOver = false;
+        if (MyDir == null) {
+            MyDir = new ArrayList<>();
+        } else {
+            MyDir.clear();
+        }
+        File Root = new File(Environment.getExternalStorageDirectory()
+                .toString() + "/myapp/");
+        File[] Dir1Item = Root.listFiles();
+
+        if (Dir1Item != null) {
+            for (int i = 0; i < Dir1Item.length; i++) {
+                if (Dir1Item[i].isDirectory()) {
+                    File[] Dir2Item = Dir1Item[i].listFiles();
+                    for (int j = 0; j < Dir2Item.length; j++) {
+                        if (Dir2Item[j].isDirectory()) {
+                            MyDir.add(Dir2Item[j].getPath());
+                            Log.e(TAG, "我的本地文件夹有：" + Dir2Item[j].getPath());
+                        }
+                    }
+                }
             }
-            File Root = new File(Environment.getExternalStorageDirectory()
-                    .toString() + "/myapp/");
-            File[] Dir1Item = Root.listFiles();
+        }
+        LocatDirThreadOver = true;
 
-            if (Dir1Item != null) {
-                for (int i = 0; i < Dir1Item.length; i++) {
-                    if (Dir1Item[i].isDirectory()) {
-                        File[] Dir2Item = Dir1Item[i].listFiles();
-                        for (int j = 0; j < Dir2Item.length; j++) {
-                            if (Dir2Item[j].isDirectory()) {
-                                MyDir.add(Dir2Item[j].getPath());
-                                Log.e(TAG, "我的本地文件夹有：" + Dir2Item[j].getPath());
+        NetDirThreadOver = false;
+        if (netDir == null) {
+            netDir = new ArrayList<String>();
+        } else {
+            netDir.clear();
+        }
+        String path = Environment.getExternalStorageDirectory()
+                .toString() + "/myapp/";
+        String[] action = json.split("/");
+        if (action != null) {
+            int actionLen = action.length;
+            for (int i = 0; i < actionLen; i++) {
+                if ((!action[i].equals(" ")) && action[i] != null) {
+                    String pp = path;
+                    String[] item = action[i].split(" ");
+                    if (item != null) {
+                        int itemLen = item.length;
+                        pp += item[0];
+                        pp += '/';
+                        for (int j = 1; j < itemLen; j++) {
+                            if ((!item[j].equals(" "))
+                                    && item[j] != null) {
+                                String p = pp;
+                                p += item[j];
+                                netDir.add(p);
+                                Log.e(TAG, "网络文件夹有：" + p);
                             }
                         }
                     }
                 }
             }
-            LocatDirThreadOver = true;
+        }
+        NetDirThreadOver = true;
 
-            NetDirThreadOver = false;
-            if (netDir == null) {
-                netDir = new ArrayList<String>();
-            } else {
-                netDir.clear();
-            }
-            String path = Environment.getExternalStorageDirectory()
-                    .toString() + "/myapp/";
-            String[] action = json.split("/");
-            Log.i(TAG,"01Dir json get fileList            "+action[0]+"           "+action[1]);
-            if (action != null) {
-                int actionLen = action.length;
-                for (int i = 0; i < actionLen; i++) {
-                    if ((!action[i].equals(" ")) && action[i] != null) {
-                        String pp = path;
-                        String[] item = action[i].split(" ");
-                        if (item != null) {
-                            int itemLen = item.length;
-                            pp += item[0];
-                            pp += '/';
-                            for (int j = 1; j < itemLen; j++) {
-                                if ((!item[j].equals(" "))
-                                        && item[j] != null) {
-                                    String p = pp;
-                                    p += item[j];
-                                    netDir.add(p);
-                                    Log.e(TAG, "网络文件夹有：" + p);
-                                }
-                            }
-                        }
-                    }
+        if (needDir == null) {
+            needDir = new ArrayList<>();
+        } else {
+            needDir.clear();
+        }
+        for (int i = 0; i < netDir.size(); i++) {
+            int m_diff_n = 0;
+            for (int j = 0; j < MyDir.size(); j++) {
+                if (!MyDir.get(j).equals(netDir.get(i))) {
+                    m_diff_n++;
                 }
             }
-            NetDirThreadOver = true;
-
-            if (needDir == null) {
-                needDir = new ArrayList<>();
-            } else {
-                needDir.clear();
+            if (m_diff_n == MyDir.size()) ;
+            {
+                needDir.add(netDir.get(i));
+                Log.e(TAG, "I Want the dir" + netDir.get(i));
             }
-            for (int i = 0; i < netDir.size(); i++) {
-                int m_diff_n = 0;
-                for (int j = 0; j < MyDir.size(); j++) {
-                    if (!MyDir.get(j).equals(netDir.get(i))) {
-                        m_diff_n++;
-                    }
-                }
-                if (m_diff_n == MyDir.size()) ;
-                {
-                    needDir.add(netDir.get(i));
-                    Log.e(TAG, "I Want the dir" + netDir.get(i));
-                }
-            }
-
-
-            for (int i = 0; i < MyDir.size(); i++) {
-                int n_diff_m = 0;
-                for (int j = 0; j < netDir.size(); j++) {
-                    if (!netDir.get(j).equals(MyDir.get(i))) {
-                        n_diff_m++;
-                    }
-                }
-                if (n_diff_m == netDir.size()) {
-                    DelDir(MyDir.get(i));//删除不要的文件夹
-                    Log.e(TAG, "I Want to delect the dir name:" + MyDir.get(i));
-                }
-            }
-            Message msg = new Message();
-            msg.what = 4;  //消息(一个整型值)
-            mHandler.sendMessage(msg);// 每隔1秒发送一个msg给mHandler
         }
 
-        public CheckDirThread(String json) {
-            this.json = json;
+        for (int i = 0; i < MyDir.size(); i++) {
+            int n_diff_m = 0;
+            for (int j = 0; j < netDir.size(); j++) {
+                if (!netDir.get(j).equals(MyDir.get(i))) {
+                    n_diff_m++;
+                }
+            }
+            if (n_diff_m == netDir.size()) {
+                DelDir(MyDir.get(i));//删除不要的文件夹
+                Log.e(TAG, "I Want to delect the dir name:" + MyDir.get(i));
+            }
         }
+        Message msg = new Message();
+        msg.what = 4;  //消息(一个整型值)
+        mHandler.sendMessage(msg);// 每隔1秒发送一个msg给mHandler
     }
+
+    public CheckDirThread(String json) {
+        this.json = json;
+    }
+
+}
 
     public void fileDownload(String URL, String filePath, String fileName) {
         final String URL_DOWNLOAD = URL;
@@ -1544,7 +1533,7 @@ public class TeamActivity extends BaseActivity implements View.OnClickListener, 
 
 
             int imagecodeID = mResources.getIdentifier("imagecodelayout", "drawable", "com.zhanghuaming.myskin");
-            ImageView imagecode = (ImageView) findViewById(imagecodelayout);
+            ImageView imagecode = (ImageView) findViewById(R.id.imagecodelayout);
             imagecodeLayout.setBackground(mResources.getDrawable(imagecodeID));
 
 

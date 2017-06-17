@@ -37,7 +37,7 @@ public class OpenActivity extends FragmentActivity {
     private FloatingActionButton back;
 
     private static boolean isTime = true;//定时器是否允许
-    private static OpenActivity.MyHandler mHandler ;
+    private static MyHandler mHandler ;
     private static class MyHandler extends Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -122,7 +122,7 @@ public class OpenActivity extends FragmentActivity {
         mPagerAdapter = new PagerAdapter(
                 getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mPagerAdapter);
-        mHandler = new OpenActivity.MyHandler(this);
+        mHandler = new MyHandler(this);
         new Thread(mRunnable).start(); //启动新的线程
 
     }

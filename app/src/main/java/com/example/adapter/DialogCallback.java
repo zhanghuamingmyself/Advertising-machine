@@ -27,6 +27,7 @@ public abstract class DialogCallback<T> extends JsonCallback<T> {
         dialog.setCanceledOnTouchOutside(false);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setMessage("同步中...");
+        dialog.setMessage("请求网络中...");
 
     }
 

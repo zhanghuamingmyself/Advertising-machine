@@ -49,6 +49,7 @@
                     <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="com.example.Util.pictureplayActivity"
             android:launchMode="singleTask"></activity>
         <activity android:name="com.example.Activity.PicturePlayLocation"
@@ -74,8 +75,8 @@
         <activity android:name=".CalendarActivity"
             android:launchMode="singleTask"></activity>
         <service android:name="com.example.Server.MyFloatservice"
-            android:launchMode="singleTask"></service><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+            android:launchMode="singleTask"></service>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

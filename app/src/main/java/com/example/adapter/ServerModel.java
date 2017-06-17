@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class ServerModel implements Serializable {
     private static final long serialVersionUID = -823022761336296999L;
+
     public String music;
     public String mynewapp;
     public String myskin;
@@ -39,5 +40,6 @@ public class ServerModel implements Serializable {
                 "ppt " + ppt + "/" +
                 "word " + word + "/" +
                 "setting " + setting;
+
     }
 }

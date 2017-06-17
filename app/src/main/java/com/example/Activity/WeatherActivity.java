@@ -44,7 +44,7 @@ public class WeatherActivity extends FragmentActivity {
 
 
     private static boolean isTime = true;//定时器是否允许
-    private static WeatherActivity.MyHandler mHandler ;
+    private static MyHandler mHandler ;
     private static class MyHandler extends android.os.Handler {
         private WeakReference<Context> reference;
         public MyHandler(Context context) {
@@ -117,7 +117,7 @@ public class WeatherActivity extends FragmentActivity {
         setContentView(R.layout.activity_weather);
         initData();
         initView();
-        mHandler = new WeatherActivity.MyHandler(this);
+        mHandler = new MyHandler(this);
         new GetWeatherTask(cityName).execute();
 
 

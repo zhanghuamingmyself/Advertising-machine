@@ -178,6 +178,7 @@ public class VideoPlayLocation extends Activity implements SurfaceHolder.Callbac
     }
 
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
